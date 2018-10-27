@@ -3,7 +3,21 @@
 \subsection{Product functions}
 %-------------------------------------------------------------------------------------------------------------
 \subsection{User charateristics}
+\begin{itemize}
+\item	\textit{Visitor}: a person, third party or user, that has not registered in yet and has access only to registration. 
+\item	\textit{User}: every registered person from whom the system collects location and health data. The user has access to all data collected since his registration and to the AutomatedSOS and Track4Run services.
+\item	\textit{Third parties}: every entity registered with the purpose to request data from Data4Help for external use. 
+\item	\textit{Emergency service}: external participant that receives and take charge of the request for help sent by AutomatedSOS. 
+\end{itemize}
 %-------------------------------------------------------------------------------------------------------------
-\subsection{Assumptions, dependencies and constraints}
 
+\subsection{Assumptions, dependencies and constraints}
+\begin{itemize}
+\item	[\textbf{D1}] Data provided by the user on themselves are correct
+\item	[\textbf{D2}] The kinds of data collected on the users’ health conditions is comprehensive and enough to determine their health status
+\item	[\textbf{D3}] The device collecting the data is accurate enough 
+\item	[\textbf{D4}] The device can successfully contact the Emergency Service 24/7
+\item	[\textbf{D5}] Emergency Service takes charge of every request sending an ambulance
+\item	[\textbf{D6}] The ROs organize only authorized running competitors, respecting laws and common sense
+\end{itemize}
 
