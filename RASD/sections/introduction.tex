@@ -1,74 +1,103 @@
-\subsection{Purpose}
-\subsubsection{Goals}
+\section{Purpose}
+\subsection{Goals}
 \begin{itemize}
 \item
-[\textbf{G1}] Monitor the location and health status of users 
+[\textbf{G1}] Allow users to properly use the services they wish to employ
 \item
-[\textbf{G2}] Third parties can request the saved data 
+[\textbf{G2}] Allow visitor to register as individual or third-party user
 \item
-[\textbf{G3}] Third parties can subscribe to the data to receive it as produced 
+[\textbf{G3}] Allow individual users to monitor their location and health parameters
 \item
-[\textbf{G4}] Third parties can request data on specific users 
+[\textbf{G4}] Allow third-party users to request the data on specific users
 \item
-[\textbf{G5}] The users can approve or deny the specific request for their data 
+[\textbf{G5}] Allow individual users to approve or deny the specific request for their data
 \item
-[\textbf{G6}] Third parties can request data on groups on individuals 
+[\textbf{G6}] Allow third-party users to request data on anonymized groups of individual users
 \item
-[\textbf{G7}] The data on groups must be properly anonymized 
+[\textbf{G7}] Call an ambulance if the system detects a critical health condition
 \item
-[\textbf{G8}] Call the ambulance if the system detects a critical health condition 
+[\textbf{G8}] Allow third-party users to organize running competitions
 \item
-[\textbf{G9}] Users can organize running competition 
+[\textbf{G9}] Allow Individual users to enrol in existing running competitions as participants 
 \item
-[\textbf{G10}] Organizators can monitor the enrols or cancel a comeptition. 
-\item
-[\textbf{G11}] Users can enrol in existing running competition as competitors
+[\textbf{G10}] Allow Individual users to subscribe in existing running competition as spectators to monitor underway competitions
 \end{itemize}
 
 
 %-------------------------------------------------------------------------------------------------------------
-\subsection{Scope}
-The service Data4Help is designed to monitor the location and health status of individual registered to it using wearable devices. Upon registration the users agree to the acquisition and usage of data by TrackMe. 
-The collected data is available to third parties to request after registering to Data4Help. The first possibility is requesting data on a specific individual, for which it is required an identification of the user; The second possibility is accessing anonymized data on groups of users, so the system will have to allow third parties to filter the users by age, geographic area, weight, etc. while keeping the data anonymized.
-For both possibilities third parties can simply acquire the data stored or subscribe to receive the data as soon as it is produced.
-AutomatedSOS is a service designed to provide emergency health support(?) for elderly people, to integrate on top of Data4Help. Those users’ parameters about blood pressure, heartbeat and blood oxygenation are constantly checked: whenever they represent a critical health condition, AutomatedSOS, within 5 seconds from the drop of those values, contacts an emergency service asking to send an ambulance at the user location.
+\section{Scope}
+The service Data4Help is designed to monitor the location and health status of individual registered to it using wearable devices. Upon registration individual users agree to the acquisition and usage of data by TrackMe and will be able to do see their own data.
+The collected data is available to be requested by registered third-party users. The first possibility is requesting data on a specific individual user, for which it is required an identification code of the individual user(Social security number, fiscal code, etc.); the second possibility is accessing anonymized data on groups of individual users, so the system will have to allow third-party users to filter the users by age, geographic area, weight, etc. while keeping the data properly anonymized.
+For both possibilities third-party users can simply acquire the data stored or subscribe to receive the data as soon as it is produced.
+\\
+\\
+AutomatedSOS is a service designed to provide emergency health support for elderly people, to be integrated on top of Data4Help. Those individual users’ parameters about blood pressure, heartbeat and blood oxygenation are constantly checked: whenever they represent a critical health condition, AutomatedSOS, within 5 seconds from the drop of those values, contacts an emergency service asking to send an ambulance at the user location.
+\\
+\\
 The main purpose of the Track4Run is to support running competition organizer and jogging lovers in convening great sport events with little effort. Namely Track4Run is a service-to-be focused on organizing running competition and on monitoring competitors. A user of Track4Run will also have to be a user of Data4Help. 
-\\ \\Users will be able to: 
+\\ 
+\\
+Third-party users will be able to: 
 \begin{itemize}
 \item 
-organize a running competition specifying time, path of the competition, restrictions on participants and message for who wants to enroll and, once organized, see the enrolled users; 
+organize a running competition specifying time, path of the competition, restrictions on participants and message for who wants to enroll;
 \item 
-cancel a race they have organized and be notified if a race they are enrolled to is canceled; 
+see the participants; 
 \item 
-discover new nearby races upon their creation; 
-\item 
-search for organized races and register to compete in a future race or spectate an ongoing race.
+cancel a run they have organized. 
 \end{itemize}
-During the race: 
+
+Individual users will be able to: 
 \begin{itemize}
 \item 
-the competing and the spectating users will be able to see the name and positions of the participants; 
+discover new nearby runs upon their creation by an app notification; 
 \item 
-the system must be able to distinguish between actual participants and users who registered to the race but are not competing, simply checking if their position is on the race path.
+be notified if a run they are participants in is canceled; 
+\item 
+search for organized runs and register to participate in a future run or spectate an ongoing run.
+\end{itemize}
+During the run: 
+\begin{itemize}
+\item 
+organizer, participants and spectators will be able to see the name and positions of the participants; 
+\item 
+the system must be able to distinguish between actual participants and individual users who registered to the run but are not competing, simply checking if their position is on the run path. 
 \end{itemize}
 
 %-------------------------------------------------------------------------------------------------------------
-\subsection{Definitions, Acronyms, Abbreviations}
-Definitions:
+\section{Definitions}
 \begin{itemize}
-\item \textit{User}:
-\item \textit{Third Party [TP]}:
-\item \textit{Emergency Service [ES]}:
-\item \textit{Race Organizer [RO]}:
-\item \textit{Race Spectator [RS]}:
-\item \textit{Race Participant [RP]}:
-\item \textit{Monitor}:
+\item \textit{Visitor}:someone that has not registered in yet;
+\item \textit{User}: a person, third-party or user, that has registered;
+\item \textit{Individual User}: every registered person from whom the system collects data; 
+\item \textit{Run Participant}: an individual who wants to take part in a run;
+\item \textit{Run Spectator}: an individual user who wants to spectate a run;
+\item \textit{Third-Party User}:every entity registered with the purpose to request data for external use;
+\item \textit{Run Organizer}: third-party users that wants to organize a run;
+\item \textit{Emergency Service}: external participant that receives and take charge of the request for an ambulance;
+\item \textit{Identification code}: a unique code for individual users or third-party users which identify them; for individual users it can be the Social security number, fiscal code, etc.; for third-party users it can be also the VAT number.
+\end{itemize}
+\section{Acronyms}
+\begin{itemize}
+\item RASD: Requirement Analysis and Specification Document. 
+\item API: Application Programming Interface
+\item TPU: Third-party User
+\item RO: Run Organizer 
+\item	RS: Run Spectator 
+\item	RP: Run Participant 
+\item	ES: Emergency Service 
+\item	ID: Identification code
+\item	D4H: Data4Help
+\item	ASOS: AutomatedSOS
+\item	T4R: Track4Run
 \end{itemize}
 
+\section{Abbreviations}
+
 %-------------------------------------------------------------------------------------------------------------
-\subsection{Revision history}
+\section{Revision history}
 %-------------------------------------------------------------------------------------------------------------
-\subsection{Reference Documents }
+\section{Reference Documents }
 %-------------------------------------------------------------------------------------------------------------
-\subsection{Document Structure}
+\section{Document Structure}
 

@@ -1,20 +1,25 @@
-\subsection{Product perspective}
+\section{Product perspective}
+Data4Help services are going to be used by Third party users interested in having access to statistical, individual data or in organizing competitions. In order to provide those services Data4help avails itself of a web page and, mobile application and a server application.  \\
+Individual users interact with the system via mobile application while third-party users interact via web page. \\
+All services provided by Data4Help are based on the collection of data associated to an individual user: since his registration, data coming from user’s device are stored in a database on the server and continuously updated. \\
+API documentation Third-party could use will be available on the web page. \\
+\includepdf[pages=-]{sections/overview/UML_RASD.pdf}
 %-------------------------------------------------------------------------------------------------------------
-\subsection{Product functions}
-\subsubsection{Data management}
-The users will be able to enter the data they are willing to share into the system. Data4Help will grant access to their data to third parties if requested anonymously. If not, it will warn the user a third party is questing access and ask for their approval; furthermore, the system will keep a record of third party subscribed to their data and it will allow the user to cancel the approval.
-\subsubsection{Data access}
-The Data4Help system will allow registered third parties to request saved data on users. Data4Help will allow them to request access to specific data on a user after providing a proper identification of the individual; it will notify them after the request is sent and when the user decides upon its approval.
-Third parties will be able also to request anonymized data by specifying a group of people according to relevant filters as age, weight, geographical area, etc. 
-Data4Help will analyse the request and decide whether it is possible to properly anonymize the requested data and will notify the third party upon its decision. If possible, will grant access to the requested data.
-\subsubsection{Data subscription}
-The Data4Help system will allow registered third parties to subscribe to data on users. This service will provide data as soon as it is produced to the third party without the need for constants approvals.
-In case a third party subscribe to have live data for a specific user the system will act as with a stored data. If the user cancels a previously granted access Data4Help will warn the third parties that had access to those data.
+\section{Product functions}
+\subsection{Data management}
+By mobile application, individual users upon registration will provide their personal data (name, age, gender, address, ID, weight, height) into the system. Data4Help will grant access to their personal and collected data to third-party users if requested anonymously. If not, it will warn the individual user that a third-party user is questing access and ask for their approval; furthermore, the system will keep a record of third-party users subscribed to their data and it will allow the individual user to cancel the approval.
+\subsection{Data access}
+The Data4Help system upon registration of third-party users will require their ID and then will allow them to request saved data on individual users. Data4Help will allow them to request access to data on a specific individual user after providing a the ID of the individual user; it will notify them after the request is sent and when the user decides upon its approval. \\
+Third-party users will be able also to request anonymized data by specifying a group of people according to relevant filters as age, weight, geographical area, etc. 
+Data4Help will analyse the request and decide whether it is possible to properly anonymize the requested data and will notify the third-party upon its decision. If possible, will grant access to the requested data. Third-party users will be able to interact with the system by web interface or using the system APIs.
+\subsection{Data subscription}
+The Data4Help system will allow registered third-party users to subscribe to data on users. This service will provide data as soon as it is produced to the third-party without the need for constants approvals.
+In case a third-party subscribe to have live data for a specific user the system will act as with a stored data. If the user cancels a previously granted access Data4Help will warn the third-party users that had access to those data. Third-party users will be able to request data by web interface or using the released Data4Help APIs.
 \\
-\subsubsection{Emergency call}
+\subsection{Emergency call}
 The Data4Help system will be able to forward a request for help to the Emergency Service within 5 seconds from the moment AutomatedSOS detects a dangerous drop in health parameters values. The Emergency Service takes charge of the request and sends an ambulance. 
 \\
-\subsubsection{Running competition organization}
+\subsection{Running competition organization}
 The Track4Run system will allow users to organize running competition. It will require to a RO: 
 \begin{itemize}
 \item time of the competition
@@ -23,28 +28,41 @@ The Track4Run system will allow users to organize running competition. It will r
 \item an optional message for who wants to enroll 
 \end{itemize}
 The system provides the RO with data on the enrolled users.
-\subsubsection{Running competition monitoring}
-The Track4Run system will allow users to monitor a running competition; it is mandatory for a RS to subscribe to the race as a spectator. The system will provide the RS with names and real-time position of all the participants.
-\subsubsection{Running competition enrolling}
+\subsection{Running competition monitoring}
+The Track4Run system will allow users to monitor a running competition; it is mandatory for a RS to subscribe to the run as a spectator. The system will provide the RS with names and real-time position of all the participants.
+\subsection{Running competition enrolling}
 The Track4Run system will allow users to enrol to an already existing competition. Track4Run will provide participants them with the final ranking and their personal data throughout the run: rate per kilometer, instantaneous speed, the missing and ran distance, the position.
 
 %-------------------------------------------------------------------------------------------------------------
-\subsection{User charateristics}
+\section{User charateristics}
 \begin{itemize}
-\item	\textit{Visitor}: a person, third party or user, that has not registered in yet and has access only to registration. 
-\item	\textit{User}: every registered person from whom the system collects location and health data. The user has access to all data collected since his registration and to the AutomatedSOS and Track4Run services.
-\item	\textit{Third parties}: every entity registered with the purpose to request data from Data4Help for external use. 
-\item	\textit{Emergency service}: external participant that receives and take charge of the request for help sent by AutomatedSOS. 
+\item	\textit{Visitor}: a person, third-party, that has not registered in yet and has access only to registration;
+\item	\textit{User}:  a person, third-party or user, that has registered;
+\item	\textit{Individual user}: every registered person from whom the system collects location and health data. The user has access to all data collected since his registration and to the AutomatedSOS and Track4Run services;
+\item	\textit{Run participant}: an individual who wants to enrol and take part in a run;
+\item	\textit{Run spectator}: an individual user who wants to spectate a run, namely to see all information on the run;
+\item \textit{Third-party user}: every entity registered with the purpose to request data from Data4Help for external use or to organize a running competition exploiting Track4Run services;
+\item	\textit{Run organizer}: third-party users that wants to organize a run and receive all information on it and the participants
+\item	\textit{Emergency service}: external participant that receives and take charge of the request for an ambulance.
 \end{itemize}
 %-------------------------------------------------------------------------------------------------------------
 
-\subsection{Assumptions, dependencies and constraints}
+\section{Assumptions}
 \begin{itemize}
-\item	[\textbf{D1}] Data provided by the user on themselves are correct
-\item	[\textbf{D2}] The kinds of data collected on the users’ health conditions is comprehensive and enough to determine their health status
-\item	[\textbf{D3}] The device collecting the data is accurate enough 
-\item	[\textbf{D4}] The device can successfully contact the Emergency Service 24/7
-\item	[\textbf{D5}] Emergency Service takes charge of every request sending an ambulance
-\item	[\textbf{D6}] The ROs organize only authorized running competitors, respecting laws and common sense
+\item	[\textbf{D1}] The age, height, weight, address, gender and name provided by the user on themselves are correct
+\item	[\textbf{D2}] The ID is unique
+\item	[\textbf{D3}] Email address in unique
+\item	[\textbf{D4}] The email is currently in use
+\item	[\textbf{D5}] The kinds of data collected on the users’ health conditions is comprehensive and enough to determine their health status
+\item	[\textbf{D6}] The user has wearable device connected to a smartphone
+\item	[\textbf{D7}] The device collecting the data is accurate enough 
+\item	[\textbf{D8}] The device can successfully contact the Emergency Service 24/7
+\item	[\textbf{D9}] Emergency Service takes charge of every request sending an ambulance
+\item	[\textbf{D10}] The ROs organize only authorized running competitions respecting laws and common sense
 \end{itemize}
+
+%-------------------------------------------------------------------------------------------------------------
+\section{Constraints}
+%-------------------------------------------------------------------------------------------------------------
+\section{Dependencies}
 

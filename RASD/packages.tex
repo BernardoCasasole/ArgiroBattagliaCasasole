@@ -1,4 +1,4 @@
-\documentclass [11pt,twoside]{article}
+\documentclass [11pt,twoside]{report}
 
 %Page margins, header and footer positions
 \usepackage{geometry}
@@ -32,3 +32,18 @@
 \usepackage{times}
 
 \date{}
+
+
+%include pdf
+\usepackage[final]{pdfpages}
+
+%Chapter style
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \interlinepenalty\@M
+    \Huge\bfseries  \thechapter.\quad #1\par\nobreak
+    \vskip 40\p@
+  }}
+\makeatother
