@@ -1,0 +1,115 @@
+open util/time
+/*
+For simplicity sake, this model considers that an abulance is called every time the status drops ti critical, not that it waits to be reactivated 
+every time it makes a call
+*/
+
+/* Signatures
+***************************************************************************************************************************************/
+abstract sig User{
+	id: one Int,
+	locationSet: set Location -> Time,
+	dataSet: set Data -> Time,
+	referenceData: set Data //Set of data for critical health condition
+}{
+	#(referenceData) > 0
+	all t: Time | one data: Data | dataSet.t = data
+}
+sig Data{}
+sig Location{}
+
+sig EmergencyCall{
+	user: one User,
+	location: one Location,
+	callTime: one Time,
+	stateSet: set CallState one -> Time
+}{
+	location = user.locationSet.callTime
+	all t: Time | one cs: CallState | stateSet.t = cs
+}
+enum CallState{N, C, B, D}
+//NOT_STARTED, CALLING, BLOCKED, DONE
+
+/* Facts
+***************************************************************************************************************************************/
+fact idUnique{
+	no disjoint u1, u2: User | u1.id = u2.id
+}
+
+fact callStates{
+	//A state is defined for every time istant after callTime
+	all ec: EmergencyCall | all t: Time | one state: CallState |
+		 state in ec.stateSet.t
+	//Created in "Calling"
+	all ec: EmergencyCall |
+		(ec.stateSet.(ec.callTime) = C) && (no t: Time | (lt[t, ec.callTime]) && (ec.stateSet.t = C))
+	//When the call is "not started", it has never changed state
+	all ec: EmergencyCall | all t1, t2: Time | 
+		(gte[t2, t1] && ec.stateSet.t2 = N) => (ec.stateSet.t1 = N)
+	//Once the call is "Blocked" it can't change state again
+	 all ec: EmergencyCall | all t1, t2: Time | 
+		(gte[t2, t1] && ec.stateSet.t1 = B) => (ec.stateSet.t2 = B)
+	//Once the call is "Done" it can't change state again
+	 all ec: EmergencyCall | all t1, t2: Time | 
+		(gte[t2, t1] && ec.stateSet.t1 = D) => (ec.stateSet.t2 = D)
+	
+}//Allowed state sequences: {N -> C -> B}{N -> C -> D}
+
+//For every instant in wich the user health went critical a call has been made when health dropped
+fact whenCriticalThereIsACall{
+	all us: User | all t: Time | 
+	(us.dataSet.t in us.referenceData) => (
+	one ec: EmergencyCall | all t1: Time |
+		(ec.user = us) &&
+		(lte[ec.callTime, t]) &&
+		((gte[t1, ec.callTime] && lte[t1, t]) => (us.dataSet.t1 in us.referenceData))
+	)
+}
+
+//No calls are made when health is not critical
+fact {
+	all ec: EmergencyCall  | one us: User | 
+	(ec.user = us) &&
+	(us.dataSet.(ec.callTime) in us.referenceData)
+}
+
+/* Predicates
+***************************************************************************************************************************************/
+pred callAmbulance[us: User, t: Time]{
+	//pre-conditions
+	//post-conditions
+	one ec: EmergencyCall |
+		(ec.user = us) &&
+		(ec.callTime = t.next) &&
+		(ec.stateSet.(t.next) = C)
+}
+
+pred completeCall[ec: EmergencyCall, t: Time]{
+	//pre-conditions
+	ec.stateSet.t = C
+	//post-conditions
+	ec.stateSet.(t.next) = D
+}
+
+pred blockCall[ec: EmergencyCall, t: Time]{
+	//pre-conditions
+	ec.stateSet.t = C
+	//post-conditions
+	ec.stateSet.(t.next) = B
+}
+
+pred show {
+	 #(User) = 2
+	#(EmergencyCall) = 2
+	(all us: User | some t: Time | callAmbulance[us, t])
+	(some ec: EmergencyCall | some t: Time | completeCall[ec, t])
+	(some ec: EmergencyCall | some t: Time | blockCall[ec, t])
+}
+
+/* Run
+***************************************************************************************************************************************/
+run callAmbulance for 5
+run completeCall for 5
+run blockCall for 5
+
+run show for 4
