@@ -1,0 +1,24 @@
+\begin{table}[h!]
+\begin{tabular}{|r|p{3in}|}
+\hline
+\textbf{ACTORS} & Third-Party User\\
+\hline
+\textbf{GOALS} & \textbf{G6}\\
+\hline
+\textbf{INPUT CONDITIONS} & The TPU is logged in\\
+\hline
+\textbf{EVENT FLOW} 
+&1. The TPU opens the ''request anonymized data'' section \\
+&2. The TPU provide the request parameters \\
+&3. The system evaluate the data requested are properly anonymized\\
+&4. The system sends a notification to the TPU \\
+\hline
+\textbf{OUTPUT CONDITIONS} & The TPU has access to the data \\
+\hline
+\textbf{EXCEPTIONS} 
+&1. The data cannot be properly anonymized \\
+&2. The data entered is incorrect\\
+&Execeptions bring the flow back to point 1 \\
+\hline
+\end{tabular}
+\end{table}

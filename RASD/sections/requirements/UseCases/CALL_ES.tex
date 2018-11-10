@@ -1,0 +1,22 @@
+\begin{table}[h!]
+\begin{tabular}{|r|p{3in}|}
+\hline
+\textbf{ACTORS} & IU, Emergency Service\\
+\hline
+\textbf{GOALS} & \textbf{G7} \\
+\hline
+\textbf{INPUT CONDITIONS} & IU has activated the AutomatedSOS service \\
+\hline
+\textbf{EVENT FLOW} 
+&1. The system register a critical health condition \\
+&2. The system prompts a warning and a ''Don't call'' button for a few seconds \\
+&3. The system contacts the ES and gives him all relevant information \\
+\hline
+\textbf{OUTPUT CONDITIONS} & The ES is in charge on the call\\
+\hline
+\textbf{EXCEPTIONS} 
+&1. The IU clicks the ''Don't call'' button \\
+&Exception cause the IU to be notified and the flow to go back to point 1.\\
+\hline
+\end{tabular}
+\end{table}
