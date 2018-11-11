@@ -1,0 +1,115 @@
+\subsection{Individual User Interface}
+The following mock-ups intend to represent a likely mobile application layout 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.5]{Mocks/Mobile_Login.PNG}
+\caption{\textbf{Login screen}: Users must insert their data in order to log in their (personal) account. A user can also recover his password whether it has been forgotten. Once all fields are filled, visitors need to press “register” button.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.5]{Mocks/Mobile_Sign_In.PNG}
+\caption{\textbf{Sign in screen}: Visitors must submit their data in order to become users.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.5]{Mocks/Mobile_D4H_Main.PNG}
+\caption{\textbf{D4H Main Screen}: Users can look at their personal data and monitor data about their heartbeat, blood pressure and oxygen saturation. From this screen they can also access the “Request Monitoring Screen”. }
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.5]{Mocks/Mobile_D4H_Requests.PNG}
+\caption{\textbf{D4H Requests Monitoring Screen}: Users can accept or deny a request, block a request sender or cancel an already accepted request.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.5]{Mocks/Mobile_ASOS_Main.PNG}
+\caption{\textbf{ASOS Main Screen}: Users can consult the recommended range of health parameters}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.5]{Mocks/Mobile_ASOS_Emergency.PNG}
+\caption{\textbf{ASOS Emergency Screen}: This screen is displayed whenever a parameter going out of health range has been detected.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.5]{Mocks/Mobile_T4R_Main.PNG}
+\caption{\textbf{T4R Main Screen}: This screen is predisposed to display competitions on a map that users can select and enrol to. On the bottom User can consult competition he took part, monitor an ongoing competition or unsubscribe to a competition he previously enrolled to. }
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.5]{Mocks/Mobile_T4R_Path.PNG}
+\caption{\textbf{T4R Path Run Screen}: Users can look at a competition path.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.5]{Mocks/Mobile_T4R_Prev_Competitions.PNG}
+\caption{\textbf{T4R Previous Competitions Screen}: Users can consult their (personal) previous competitions results.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.5]{Mocks/Mobile_T4R_Monitoring.PNG}
+\caption{\textbf{T4R Monitoring Competitions Screen}: Users can monitor an ongoing competition}
+\end{figure}
+\clearpage
+\subsection{Third-party User Interface}
+The following mock-ups intend to represent a likely mobile application layout 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.5]{Mocks/Desktop_Login.PNG}
+\caption{\textbf{Login window}: Third-Parties users must insert their data in order to log in their (personal) account. Password can be recovered whenever it has been forgotten. Once all fields are filled, third-parties users need to press “register” button.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.5]{Mocks/Desktop_Sign_In.PNG}
+\caption{\textbf{Sign In window}: Third parties have to insert their data in order to become Third-Parties users: if the visitor has a VAT he has to insert it as ID, otherwise another unique identifier must be inserted.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.5]{Mocks/Desktop_D4H_Main.PNG}
+\caption{\textbf{D4H Main window}: Third-party users can monitor their requests for one-time data and their subscriptions. They can make a new request for a subscription or a one-time data of an individual (typing the social security number or any equivalent security code). They can also get API key or make requests for data regarding a group of people (one-time data or subscription, the D4H data request constrains window will follow).}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.5]{Mocks/Desktop_D4H_Constraints.PNG}
+\caption{\textbf{D4H data request constraints window}: Third parties Users can specify the constraint to be applied to group data request.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.5]{Mocks/Desktop_T4R_Main.PNG}
+\caption{\textbf{T4R Main window}: Third parties Users can manage the competition they organized: check subscribers, delete the competition before it occurs and monitor the competition while takes place. They can organize a new competition (field about constraints can be empty) or monitor an ongoing one. }
+\end{figure}
+
+\subsection{Hardware interfaces}
+Data4Help, AutomatedSOS and Track4Run applications are software application and it is not using any hardware interfaces indeed; the user, as already mentioned in the assumption [A5], must be provided with a smartphone having 3G (or better) internet connection and GPS, a smartwatch or an equivalent wearable device. Bluetooth might also be required in the wearable device-smartphone connection.  \\
+(Data4Help system does not rely on any hardware interface; however, as mentioned in [a5] the individual user is supposed to have a smartwatch and a smartphone that has an internet connection and a GPS.  )
+\subsection{Software interfaces}
+Data4Help provides a series of functionalities that are based on the precise location of the user in every moment: none of the services provided by AutomatedSOS and Track4Run are effective without a map. The map to be used needs to be user-friendly and available on every smartphone: Google Maps meets these needs. The development will be done with tools and API provided by Google Maps Platform (https://cloud.google.com/maps-platform/).  \\
+To monitor health parameters Data4Help needs the user to constantly wear a smartwatch:
+Data4Help access data measured by the smartwatch making use of Data Layer APIs \\ https://developers.google.com/maps/documentation/javascript/datalayer.\\
+\\
+Data4Help needs to interface with a database that is accessed with a DBMS (PostgreSQL
+ https://www.postgresql.org/). 
+
+\subsection{Communication interfaces}
+Data4Help implementation should support real time communication: developers are up to ensure a secure and rapid data transmission availing themselves of communication protocols at transport layer such as UDP, TCP, real time protocols.  \\
+At application layer must be used HTTPS (HTTP + SSL certificate) to transmit safely sensitive data while at network layer it could be used IP v6 to have a more efficient routing. 
+SMTP protocol could be used to verify the e-mail provided by the user.
+
+
+
+
