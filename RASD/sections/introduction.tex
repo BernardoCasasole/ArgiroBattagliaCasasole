@@ -31,12 +31,12 @@ In this document it has been took particularly regard toward the comprehensibili
 
 %-------------------------------------------------------------------------------------------------------------
 \section{Scope}
-The service Data4Help is designed to monitor the location and health status of individual registered to it using wearable devices. Upon registration individual users agree to the acquisition and usage of data by TrackMe and will be able to do see their own data.
-The collected data is available to be requested by registered third-party users. The first possibility is requesting data on a specific individual user, for which it is required an identification code of the individual user(Social security number, fiscal code, etc.); the second possibility is accessing anonymized data on groups of individual users, so the system will have to allow third-party users to filter the users by age, geographic area, weight, etc. while keeping the data properly anonymized.
-For both possibilities third-party users can simply acquire the data stored or subscribe to receive the data as soon as it is produced.
+The service Data4Help is designed to monitor the location and health status of individual registered to it using wearable devices. Upon registration individual users agree to the acquisition and usage of data by TrackMe and will be able to see their own data.
+The collected data is available to be requested by registered third-party users. The first possibility is requesting data on a specific individual user, for which it is required an identification code of the individual user(Social security number, fiscal code, etc.); the second possibility is accessing anonymized data on groups of individual users, so the system will have to allow third-party users to filter the users by age, geographical area, weight, etc. while keeping the data properly anonymized.
+For both possibilities third-party users can simply acquire data stored or subscribe to receive data as soon as they are produced.
 \\
 \\
-AutomatedSOS is a service designed to provide emergency health support for elderly people, to be integrated on top of Data4Help. Those individual users’ parameters about blood pressure, heartbeat and blood oxygenation are constantly checked: whenever they represent a critical health condition, AutomatedSOS, within 5 seconds from the drop of those values, contacts an emergency service asking to send an ambulance at the user location.
+AutomatedSOS is a service designed to provide emergency health support for elderly people, to be integrated on top of Data4Help. Those individual users’ parameters about blood pressure, heartbeat and oxygen saturation are constantly checked: whenever they represent a critical health condition, AutomatedSOS, within 5 seconds from the drop of those values, contacts an Emergency Service asking to send an ambulance at the user location.
 \\
 \\
 The main purpose of the Track4Run is to support running competition organizer and jogging lovers in convening great sport events with little effort. Namely Track4Run is a service-to-be focused on organizing running competition and on monitoring competitors. A user of Track4Run will also have to be a user of Data4Help. 
@@ -45,7 +45,7 @@ The main purpose of the Track4Run is to support running competition organizer an
 Third-party users will be able to: 
 \begin{itemize}
 \item 
-organize a running competition specifying time, path of the competition, restrictions on participants and message for who wants to enroll;
+organize a running competition specifying time, path of the competition, restrictions on participants and messages for those who wants to enroll;
 \item 
 see the participants; 
 \item 
@@ -55,16 +55,16 @@ cancel a run they have organized.
 Individual users will be able to: 
 \begin{itemize}
 \item 
-discover new nearby runs upon their creation by an app notification; 
+discover new running competition nearby since their creation by an app notification; 
 \item 
-be notified if a run they are participants in is canceled; 
+be notified if a running competition they are enrolled in is canceled; 
 \item 
-search for organized runs and register to participate in a future run or spectate an ongoing run.
+search for organized running competitions and register to participate in a future run or spectate an ongoing run.
 \end{itemize}
 During the run: 
 \begin{itemize}
 \item 
-organizer, participants and spectators will be able to see the name and positions of the participants; 
+organizer, participants and spectators will be able to see the name and positions of participants; 
 \item 
 the system must be able to distinguish between actual participants and individual users who registered to the run but are not competing, simply checking if their position is on the run path. 
 \end{itemize}
@@ -121,11 +121,11 @@ the system must be able to distinguish between actual participants and individua
 \end{itemize}
 %-------------------------------------------------------------------------------------------------------------
 \section{Document Structure}
-\paragraph{\hyperref[sect:introduction]{Introduction}} In this first section the scope of the project and its goals are described in general tems and is introduced an outline of the system that ise examined in further detail in the others sections. Furthermore, recurring Acronyms, Definitions and Abbreviations used in the document are introduced to ease its understanding.
-\paragraph{\hyperref[sect:overview]{Overview}} The second section provide a more precise overview of the shared phenomena, via the product perspective and the class diagram, while also describing the main function the system will have, defining it further. It contains also the assumpion made on the outside world, the contraints on the project and the dependency between Data4Help, AutmatedSos and Track4Run.
-\paragraph{\hyperref[sect:requirements]{Specific Requirements}} The third section contains a visual rapresentation of the communication interface with the users and a description of the software and ardware interfaces. Morover the requirements are outlined in detail, via the use of scenarios and relative use cases and sequence diagram, and mapped on the goals. Furthermore the system attributes are introduced in detail.
+\paragraph{\hyperref[sect:introduction]{Introduction}} In this first section the scope of the project and its goals are described in general tems and it's introduced an outline of the system that is examined in further details in the others sections. Furthermore, recurring Acronyms, Definitions and Abbreviations used in the document are introduced to ease theirs understanding.
+\paragraph{\hyperref[sect:overview]{Overview}} The second section provides a more precise overview of the shared phenomena, via the product perspective and the class diagram, while also describing the main function the system will have, defining it further. It contains also the assumpions made on the outside world, the contraints on the project and the dependency between Data4Help, AutmatedSos and Track4Run.
+\paragraph{\hyperref[sect:requirements]{Specific Requirements}} The third section contains a visual representation of the communication interface with the users and a description of the software and hardware interfaces. Morover the requirements are outlined in details, via the use of scenarios and relative use cases and sequence diagrams, and mapped on the goals. Furthermore the system attributes are introduced in details.
 \paragraph{\hyperref[sect:alloy]{Formal Analysis Using Alloy}} The fourth section, being D4H, ASOS and T4R fairly indipent, contains three alloy models, one for each, and the relative results and generated world.
 \paragraph{\hyperref[sect:effort]{Effort Spent}} The fifth section contains the effort spent by each member of the group.
-\paragraph{\hyperref[sect:references]{References}} Reference documents and software used for the making of the document
+\paragraph{\hyperref[sect:references]{References}} Reference documents and software used to edit the document
 
 
