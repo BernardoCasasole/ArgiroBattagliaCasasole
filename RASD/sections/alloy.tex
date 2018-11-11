@@ -1,28 +1,44 @@
 \section{Data4Help}
+The first alloy model focus on the lifecycle of data requests performed by TPUs on IUs, on the access from TPUs to approved data and their being blocked, namely:
+\begin{itemize}
+\item a request must be created waiting for approval and must then go in a deny or approve state, after which it never changes state, unless it is a subscription request whose approval can be revocked, causing the request to go from an approval state ti a deny state;
+\item a TPU has access only to data for which exists either a stored data request approved after the data was collected or a subscription request approved at the time the data was produced
+\item a TPU cannot make a request for data of an individual user if it is blocked
+\end{itemize}
+To do so we considered a time frame for which the requests have the set of state they were in every instant. 
+The IUs have instead the set of blocked TPUs; this is considered already filled with the TPUs that the IU blocked and never change in the time frame.
+The TPUs have a set of data it has access to, after the time frame.
 \subsection{Alloy model}
-The requests contain the set of state they were in the time frame considered.
-The blocked TPUs are fixed and never change in the time frame.
-The data accessible from the TPUs is the data is has access to after the time frame.
 \input{sections/alloy/alloyD4H}
 \subsection{Generated world}
-\includegraphics[width = \textheight, angle=90]{sections/alloy/GenWorldD4H.png}
+\includegraphics[width = 0.8\textheight, angle=90]{sections/alloy/GenWorldD4H.png}
 \subsection{Alloy Result}
-\includegraphics[height = \textheight]{sections/alloy/resultD4H.png}
-
+\includegraphics[height = 0.8\textheight]{sections/alloy/resultD4H.png}
+\clearpage
 \section{AutomatedSOS}
+The second alloy model focus on the lifecycle of an emergency call:
+\begin{itemize}
+\item a call must end after it has contacted the ES or after it was blocked by the IU
+\item for every time interval in which the health was critical exactly one call must have been made
+\end{itemize}
+For simplicity sake, this model considers that an abulance is called every time the status drops ti critical.
 \subsection{Alloy model}
-For simplicity sake, this model considers that an abulance is called every time the status drops ti critical, not that it waits to be reactivated 
-every time it makes a call
 \input{sections/alloy/alloyASOS}
 \subsection{Generated world}
-\includegraphics[width = \textheight, angle=90]{sections/alloy/GenWorldASOS.png}
+\includegraphics[width = 0.8\textheight, angle=90]{sections/alloy/GenWorldASOS.png}
 \subsection{Alloy Result}
-\includegraphics[height = \textheight]{sections/alloy/resultASOS.png}
-
+\includegraphics[height = 0.8\textheight]{sections/alloy/resultASOS.png}
+\clearpage
 \section{Track4Run}
+The third alloy model focus on the lifecycle of a run and the restriction on participants:
+\begin{itemize}
+\item every organized run must either be canceled before they start or successfuly end;
+\item IUs can enroll to participate or spectate only during specific state of the run, respectively when the run has been organized but not started and when the run has started
+\end{itemize}
+For simplicity sake, this model considers that an abulance is called every time the status drops ti critical.
 \subsubsection{Alloy model}
 \input{sections/alloy/alloyT4R}
 \subsection{Generated world}
-\includegraphics[width = \textheight, angle=90]{sections/alloy/GenWorldT4R.png}
+\includegraphics[width = 0.8\textheight, angle=90]{sections/alloy/GenWorldT4R.png}
 \subsection{Alloy Result}
-\includegraphics[height = \textheight]{sections/alloy/resultT4R.png}
+\includegraphics[height = 0.8\textheight]{sections/alloy/resultT4R.png}

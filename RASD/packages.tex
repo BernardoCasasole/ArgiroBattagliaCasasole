@@ -1,5 +1,13 @@
 \documentclass [11pt,twoside]{report}
 
+%hyperlink
+\usepackage{hyperref}
+\newcommand{\hyref}[2]{\hyperref[#2]{#1 \ref*{#2} }}
+\hypersetup{
+     colorlinks   = true,
+     linkcolor    = {cyan}
+}
+
 %Page margins, header and footer positions
 \usepackage{geometry}
  \geometry{
