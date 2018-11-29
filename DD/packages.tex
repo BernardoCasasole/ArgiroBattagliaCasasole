@@ -1,0 +1,83 @@
+\documentclass [11pt,twoside]{report}
+
+%hyperlink
+\usepackage{hyperref}
+\newcommand{\website}[1]{\href{#1}{#1}}
+\hypersetup{
+     colorlinks   = true,
+     linkcolor    = {cyan},
+     urlcolor ={darkgray}
+}
+
+%Page margins, header and footer positions
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=25mm,
+ right=25mm,
+ top=30mm,
+ bottom=25mm,
+ headsep=7mm}
+ 
+\interfootnotelinepenalty=10000
+ 
+ %To display filling dots in the TOC for all entries
+\usepackage[titles]{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+%tables
+\usepackage{tabu}
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{longtable}
+\usepackage{float} % To allow the use of H modifier in long tables
+
+%graphics
+\usepackage{graphicx}
+\usepackage[dvipsnames, table]{xcolor}
+
+%Font: Times
+\usepackage{times}
+
+\date{}
+
+
+%include pdf
+\usepackage[final]{pdfpages}
+
+%Chapter style
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \interlinepenalty\@M
+    \Huge\bfseries  \thechapter.\quad #1\par\nobreak
+    \vskip 40\p@
+  }}
+\makeatother
+
+%Alloy code
+\usepackage{listings}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+\lstset{
+ morekeywords={one, set, lone, sig, fact, disjoint, run, pred, enum, no, all, some, open}
+}

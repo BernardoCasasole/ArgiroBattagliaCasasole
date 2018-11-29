@@ -1,0 +1,86 @@
+\input{packages}
+
+\begin{document}
+
+%TITLE PAGE
+
+\begin{titlepage}
+
+%LOGO
+
+{\begin{table}[t!]
+\centering
+\begin{tabu} to \textwidth { X[1.3,r,p] X[1.7,l,p] }
+\textcolor{Blue}{\textbf{\small{TrackMe project - Argiro' Anna Sofia, Battaglia Gabriele, Bernardo Casasole}}} & \includegraphics[scale=0.5]{images/PolimiLogo}
+\end{tabu}
+\end{table}}~\\ [7cm]
+
+%TITLE 
+
+\centering
+{\textcolor{Blue}{\textbf{\Huge{Design Document}}}} \\ [1cm]
+
+\end{titlepage}
+
+\begin{table}[h!]
+\begin{tabu} to \textwidth { X[0.3,r,p] X[0.7,l,p] }
+\hline
+
+\textbf{Deliverable:} & DD\\
+\textbf{Title:} & Design Document \\
+\textbf{Authors:} & Argiro' Anna Sofia, Battaglia Gabriele, Bernardo Casasole \\
+\textbf{Version:} & 0.1 \\
+\textbf{Date:} & November 27, 2018 \\
+\textbf{Download page:} & https://github.com/BernardoCasasole/ArgiroBattagliaCasasole.git \\
+\hline
+\end{tabu}
+\end{table}
+
+\setcounter{page}{2}
+
+%--------------------------------------------------------------------------------------------------------------
+\newpage
+\addcontentsline{toc}{section}{Table of Contents}
+\tableofcontents
+
+%--------------------------------------------------------------------------------------------------------------
+\clearpage
+{\color{Blue}{\chapter{Introduction}}}
+\label{sect:introduction}
+\input{sections/introduction}
+%--------------------------------------------------------------------------------------------------------------
+\clearpage
+{\color{Blue}{\chapter{Architectural Design}}}
+\label{sect:architecturalDesign}
+\input{sections/architecturalDesign}
+%--------------------------------------------------------------------------------------------------------------
+\clearpage
+{\color{Blue}{\chapter{User	 Interface Design}}}
+\label{sect:userInterfaceDesign}
+\input{sections/userInterfaceDesign}
+%--------------------------------------------------------------------------------------------------------------
+\clearpage
+{\color{Blue}{\chapter{Requirements Traceability}}}
+\label{sect:requirementsTraceability}
+\input{sections/requirementsTraceability}
+%--------------------------------------------------------------------------------------------------------------
+\clearpage
+{\color{Blue}{\chapter{Implementation, Integration and Test plan}}}
+\label{sect:implementationIntegrationTestplan}
+\input{sections/implementationIntegrationTestplan}
+%--------------------------------------------------------------------------------------------------------------
+\clearpage
+{\color{Blue}{\chapter{Effort Spent}}}
+\label{sect:effort}
+\input{sections/effort}
+%--------------------------------------------------------------------------------------------------------------
+\clearpage
+{\color{Blue}{\chapter{References}}}
+\label{sect:references}
+\input{sections/references}
+
+
+
+\end{document}
+
+
