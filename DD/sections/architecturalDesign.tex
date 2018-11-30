@@ -1,17 +1,51 @@
 \section{Overview}
 %-------------------------------------------------------------------------------------------------------------
 \section{Component view}
-\includegraphics[width = \textwidth]{sections/architecturalDesign/ComponentDiagram.png}
-\paragraph{\textit{Data collector/dispatcher}} Event based component: offers a subscription service and publish live data; pusblishes updates on the server
+%BackBone---------------------------------------------------------------------------------------------------
+\begin{figure}[H]
+\caption{Backbone Component View}
+\includegraphics[width = \textwidth]{sections/architecturalDesign/BackboneDiagram.png}
+\end{figure}
+\paragraph{\textit{Data collector/dispatcher}} Allow subscribtion and publishes/dispatches the collected live data to authorized subscribers. 
+\paragraph{\textit{Autenthication}} Offers services for User authentication.
+\paragraph{\textit{Data Dispatcher}} Allow subscribtion and publishes/dispatches the collected live data to authorized subscribers; offers the functionality to access Stored Data.
+\paragraph{\textit{Data Authorization Manager}} Offers the functionality to get the authorization to receive data.
+%D4H--------------------------------------------------------------------------------------------------------
+\begin{figure}[H]
+\caption{Data4Help Component View}
+\includegraphics[width = \textwidth]{sections/architecturalDesign/D4HDiagram.png}
+\end{figure}
+\paragraph{\textit{D4H router}} Validate the requests received from the client and dispatch them to the corresponding module or component.
+\paragraph{\textit{Data Request Manager}} Provides functionality to create, approve, deny requests, block users and provide the relative data; Anonymity Evaluator is responsible to check anonymity constraints. 
+%ASOS------------------------------------------------------------------------------------------------------
+\begin{figure}[H]
+ \caption{AutomatedSOS Component View}
+\centering
+\includegraphics[width = \textwidth]{sections/architecturalDesign/ASOSDiagram.png}
+\end{figure}
+\paragraph{\textit{ASOS router}} Validate the requests received from the client and dispatch them to the corresponding module or component.
+\paragraph{\textit{ASOS Activation}} Offers the functionality for the activation and deactivation of the ASOS service.
+\paragraph{\textit{Health Data analyzer}} Offers functionality to extrapolate the critical health parameters for every Individual User;
 \paragraph{\textit{Emergency Handler}} Responsible to handle critical health conditions based on the data published by the \textit{Data collector/dispatcher}
-\paragraph{\textit{Routers}} Validate the requests relative to their subsystem and dipatch them
-\paragraph{\textit{Autenthication}} Responsible for authentication
-\paragraph{\textit{Data Request Manager}} Provides functionality to create, approve, deny requests and block users; Anonymity Evaluator is responsible to check anonymity constraints 
-\paragraph{\textit{Data Dispatcher}} Event based component: receive live data from the IUs and dipatch it to whoever is authorized.
-\paragraph{\textit{Data Authorization Manager}} Offers the functionality to get the authorization to receive data. Offers the subscription service to receive the data pusblished from the \textit{Data Dispatcher}.
-\paragraph{\textit{Services Activation}} Offers the functionality for the activation and deactivation of services based on D4H
-\paragraph{\textit{Health Data analyzer}} Offers functionality to extrapolate the critical health parameters for every Individual User
-\paragraph{\textit{Run Manager}} Provides functionality to create, cancel, enrol in and spectate runs; 
+%T4R---------------------------------------------------------------------------------------------------------
+\begin{figure}[H]
+\caption{Track4Run Component View}
+\centering
+\includegraphics[width = \textwidth]{sections/architecturalDesign/T4RDiagram.png}
+\end{figure}
+\paragraph{\textit{T4R router}} Validate the requests received from the client and dispatch them to the corresponding module or component.
+\paragraph{\textit{T4R Activation}} Offers the functionality for the activation and deactivation of the T4R service.
+\paragraph{\textit{Run Manager}} Provides functionality to create, cancel, enrol in and spectate runs;.
+%Complete-------------------------------------------------------------------------------------------------
+\begin{figure}[H]
+\caption{Complete Component View}
+\centering
+\includegraphics[width = \textwidth]{sections/architecturalDesign/ComponentDiagram.png}
+\end{figure}
+\paragraph{\textit{Data Managing}} From a higher level poin of view for the D4H subsystem TPUs and the other services implemented (ASOS, T4R), there is little difference: they both require a form of authentication and make request for stored data or subscribe. \\
+Simplifying, \textit{Data Authorization Manager} will provide an interface for other components to obtain authorization while \textit{Data Dispatcher} will sync and provide data to authorized components. \\
+For example, \textit{Data Request Manager} will process TPUs requests and will obtain authorization from the \textit{Data Authorization Manager} and retrive the data from the \textit{Data Dispatcher} when needed. \\
+This makes the red components and modules of the architecture the backbone, collecting and dispatching data, while the other system can handle their unique authorization condition: D4H authorizing data dispatching based on approved requests, ASOS on the activation of the service and T4R on the enrollement in runs.
 %-------------------------------------------------------------------------------------------------------------
 \section{Deployment view}
 %-------------------------------------------------------------------------------------------------------------
