@@ -1,6 +1,17 @@
 \section{Overview}
 %-------------------------------------------------------------------------------------------------------------
 \section{Component view}
+\includegraphics[width = \textwidth]{sections/architecturalDesign/ComponentDiagram.png}
+\paragraph{\textit{Data collector/dispatcher}} Event based component: offers a subscription service and publish live data; pusblishes updates on the server
+\paragraph{\textit{Emergency Handler}} Responsible to handle critical health conditions based on the data published by the \textit{Data collector/dispatcher}
+\paragraph{\textit{Routers}} Validate the requests relative to their subsystem and dipatch them
+\paragraph{\textit{Autenthication}} Responsible for authentication
+\paragraph{\textit{Data Request Manager}} Provides functionality to create, approve, deny requests and block users; Anonymity Evaluator is responsible to check anonymity constraints 
+\paragraph{\textit{Data Dispatcher}} Event based component: receive live data from the IUs and dipatch it to whoever is authorized.
+\paragraph{\textit{Data Authorization Manager}} Offers the functionality to get the authorization to receive data. Offers the subscription service to receive the data pusblished from the \textit{Data Dispatcher}.
+\paragraph{\textit{Services Activation}} Offers the functionality for the activation and deactivation of services based on D4H
+\paragraph{\textit{Health Data analyzer}} Offers functionality to extrapolate the critical health parameters for every Individual User
+\paragraph{\textit{Run Manager}} Provides functionality to create, cancel, enrol in and spectate runs; 
 %-------------------------------------------------------------------------------------------------------------
 \section{Deployment view}
 %-------------------------------------------------------------------------------------------------------------
