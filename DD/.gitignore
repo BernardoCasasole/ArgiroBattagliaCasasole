@@ -1,0 +1,7 @@
+*
+!.gitignore
+!images
+!sections
+!DD.pdf
+!DD.tex
+!DD.packages.tex

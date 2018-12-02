@@ -1,0 +1,8 @@
+*
+!.gitignore
+!images
+!sections
+!Mocks
+!RASD.pdf
+!RASD.tex
+!RASD.packages.tex
