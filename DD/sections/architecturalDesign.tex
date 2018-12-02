@@ -1,19 +1,29 @@
 \section{Overview}
 %-------------------------------------------------------------------------------------------------------------
 \section{Component view}
+The system is divided in four subsystem:
+\begin{itemize}
+\item \textbf{\href{subsect:backboneComponentView}{Backbone}}: The core of the system whose services are used from all othe subsystems
+\item \textbf{\href{subsect:D4HComponentView}{Data4Help}}
+\item \textbf{\href{subsect:ASOSComponentView}{AutomatedSOS}}
+\item \textbf{\href{subsect:T4RComponentView}{Track4Run}}
+\end{itemize}
+The last three are divided on the Application server in a router, to handle requests, and a module, connected to the DBMS, containing all other components of the subsystem. 
 %BackBone---------------------------------------------------------------------------------------------------
 \subsection{Backbone}
+\label{subsect:backboneComponentView}
 \begin{figure}[H]
 \caption{Backbone Component View}
 \includegraphics[width = \textwidth]{sections/architecturalDesign/BackboneDiagram.png}
 \end{figure}
 This is the backbone of the system: collects the data on the device, keep it syncronized though the system and provide functionality to receive Live Data and to access to Stored Data; furthermore provide functionality concernig authentication.
-\paragraph{\textit{Data collector/dispatcher}} Allow subscribtion and publishes/dispatches the collected Live Data. 
+\paragraph{\textit{Data collector/dispatcher}} Allow subscribtion and publishes/dispatches the collected Live Data of the Individual User logged in from the device. 
 \paragraph{\textit{Autenthication}} Offers services related to  User authentication.
-\paragraph{\textit{Data Dispatcher}} Allow subscribtion and publishes/dispatches the collected Live Data. Offers the functionality to access Stored Data.
+\paragraph{\textit{Data Dispatcher}} Allow subscribtion and publishes/dispatches the collected Live Data of all Users. Offers the functionality to access Stored Data of all Users.
 %D4H--------------------------------------------------------------------------------------------------------
 \clearpage
 \subsection{Data4Help}
+\label{subsect:D4HComponentView}
 \begin{figure}[H]
 \caption{Data4Help Component View}
 \includegraphics[width = \textwidth]{sections/architecturalDesign/D4HDiagram.png}
@@ -21,8 +31,9 @@ This is the backbone of the system: collects the data on the device, keep it syn
 \paragraph{\textit{D4H router}} Validate the requests received from the client and dispatch them to the corresponding module or component.
 \paragraph{\textit{Data Request Manager}} Provides functionality to create, approve, deny requests, block users and provide the relative data; Anonymity Evaluator is responsible to check anonymity constraints. 
 %ASOS------------------------------------------------------------------------------------------------------
-\clearpage
+%\clearpage
 \subsection{AutomatedSOS}
+\label{subsect:ASOSComponentView}
 \begin{figure}[H]
  \caption{AutomatedSOS Component View}
 \centering
@@ -35,6 +46,7 @@ This is the backbone of the system: collects the data on the device, keep it syn
 %T4R---------------------------------------------------------------------------------------------------------
 \clearpage
 \subsection{Track4Run}
+\label{subsect:T4RComponentView}
 \begin{figure}[H]
 \caption{Track4Run Component View}
 \centering
@@ -47,13 +59,45 @@ This is the backbone of the system: collects the data on the device, keep it syn
 \clearpage
 \subsection{Full system}
 \begin{figure}[H]
+\label{fig:ComponentDiagram}
 \caption{Complete Component View}
 \centering
 \includegraphics[width = \textwidth]{sections/architecturalDesign/ComponentDiagram.png}
 \end{figure}
 \paragraph{\textit{Data Managing}} From a more high level point of view, the backbone provides services to retrive the Individual Users data, stored or live. \\
 This makes the red components and modules of the architecture the backbone, collecting and dispatching data, while the other subsystems can handle their unique authorization condition: D4H authorizing data dispatching based on approved requests, ASOS on the activation of the service and T4R on the enrollement in competitions. \\
-This way all subsystem will work independently from each other.
+This way all subsystem will work independently from each other.%EntityRelationshipDiagram-------------------------------------------------------------------------------------------------
+\clearpage
+\subsection{Entity Relationship Diagram}
+The following section provides a conceptual representation of the model.
+\begin{figure}[H]
+\caption{Entity Relationship Diagram}
+\centering
+\includegraphics[width = \textwidth]{sections/architecturalDesign/entityRelationshipDiagram.png}
+\end{figure}
+\paragraph{\textit{Tables}} 
+\begin{itemize}
+\item \textbf{\textit{User}}(\underline{ID}, Name, Email, Password)
+\item \textbf{\textit{TPU}}(\underline{ID}, Name, Email, Password)
+\item \textbf{\textit{IU}}(\underline{ID}, Name, Email, Password, Age, Gender, Address, Weight, Height)
+\item \textbf{\textit{Data}}(\underline{IU}, \underline{Time}, Location, Pulse, Blood pressure)
+\\
+\item \textbf{\textit{Subscription Request}}(\underline{IU}, \underline{IU}, \underline{TPU})
+\item \textbf{\textit{Stored Data call}}(\underline{IU}, \underline{IU}, \underline{TPU})
+\\
+\item \textbf{\textit{Emergency call}}(\underline{IU}, \underline{Time}, Execution Info)
+\\
+\item \textbf{\textit{Run}}(\underline{Identification number}, TPU, IU, Path, Start Time, End Time, Restrictions)
+\end{itemize}
+%ModelInteractionDiagram-------------------------------------------------------------------------------------------------
+\subsection{Model Interaction Diagram}
+The following diagram show a different representation of the model to better highlight its interaction with the application server. For each subsystem module that was connected to the DBMS in \ref{fig:ComponentDiagram} is shown its relationship with the module. 
+\begin{figure}[H]
+\caption{Model Interaction Diagram}
+\centering
+\includegraphics[width = \textwidth]{sections/architecturalDesign/modelInteractionDiagram.png}
+\end{figure}
+\clearpage
 %-------------------------------------------------------------------------------------------------------------
 \section{Deployment view}
 %-------------------------------------------------------------------------------------------------------------
