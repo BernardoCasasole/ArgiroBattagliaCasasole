@@ -1,4 +1,37 @@
 \section{Overview}
+%high level---------------------------------------------------------------------------------------------------
+\subsection{High level components and basic interactions}
+\begin{figure}[H]
+\caption{High level components' elements}
+\includegraphics[width = \textwidth]{sections/architecturalDesign/overview_1.jpg}
+\end{figure}
+
+The overall structure, at high level, is made of three main components and their interaction. 
+The red component refers to the tools the individual user needs to interface with Data4Help System, it communicates with the Application Server that is part of the blue component charged with the Server Architecture. This is composed by a Database Server that includes the DBMS, a Mail Server which means to exchange SMTP messages with other Mail Servers (external to the system), an Application Server communicating with any other element in the Server Architecture, a Web Server and a Proxy (meant to dispatch requests to Application and Web Servers). 
+The proxy links the Server Architecture with the green component charged with the interaction with the third party user that takes place through Data4Help Web Page. 
+
+\subsection{Interaction between Server Architecture and Individual User}
+\begin{figure}[H]
+\caption{Mobile App connections}
+\includegraphics[width = \textwidth]{sections/architecturalDesign/overview_individual_user.jpg}
+\end{figure}
+
+The Mobile App receives data from the smartwatch, exchanges informations with the Individual User and communicates with the Application Server: at different levels are specified protocols that are supposed to be used. 
+ 
+
+\subsection{Interaction between Server Architecture and Third-Party User}
+\begin{figure}[H]
+\caption{Connection between Web page and Servers}
+\includegraphics[width = \textwidth ,  height=8cm]{sections/architecturalDesign/overview_web.jpg}
+\end{figure}
+
+The browser hosting the Web Page needs to communicate both with the Web Server and the Application Server. 
+The Web Server can easily handle and exchange HTML, CSS and JavaScript files with the client; the Application Server manages methods like GET, POST  (that are present in the HTML file) receiving a REST API call and forwarding data in JSON format. Data to forward are provided by the Database Server which includes the DBMS: a request in XML is sent by the Application Server, the DBMS processes the request and extracts data from the database that are sent back to the Application Server in a XML file. To establish a communication channel between the Application Server and the Web Server is not a necessity, however it provides an alternative to REST API: developers are up to decide to implement them both or to keep the REST API alone. 
+
+%-------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------------------------------------
 \section{Component view}
 The system is divided in four subsystem:
