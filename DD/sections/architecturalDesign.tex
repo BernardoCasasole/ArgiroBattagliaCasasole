@@ -113,14 +113,12 @@ The following section provides a conceptual representation of the model.
 \item \textbf{\textit{User}}(\underline{ID}, Name, Email, Password)
 \item \textbf{\textit{TPU}}(\underline{ID}, Name, Email, Password)
 \item \textbf{\textit{IU}}(\underline{ID}, Name, Email, Password, Age, Gender, Address, Weight, Height)
-\item \textbf{\textit{Data}}(\underline{IU}, \underline{Time}, Location, Pulse, Blood pressure)
+\item \textbf{\textit{Data}}(\underline{IU}, \underline{Time}, Location, Heartbeat, Blood pressure, Oxygen saturation)
 \\
-\item \textbf{\textit{Subscription Request}}(\underline{IU}, \underline{IU}, \underline{TPU})
-\item \textbf{\textit{Stored Data call}}(\underline{IU}, \underline{IU}, \underline{TPU})
+\item \textbf{\textit{Individual Request}}(\underline{Request Identification Number}, IU, TPU, Time, State, Subscription?)
+\item \textbf{\textit{Anonym Request}}(\underline{Request Identification Number}, TPU, Time, State, Subscription?, Min Age, Max Age, Min Weight, Max Weight, Min Height, Max Height, Gender, Address)
 \\
-\item \textbf{\textit{Emergency call}}(\underline{IU}, \underline{Time}, Execution Info)
-\\
-\item \textbf{\textit{Run}}(\underline{Identification number}, TPU, IU, Path, Start Time, End Time, Restrictions)
+\item \textbf{\textit{Run}}(\underline{Identification number}, TPU, IU, Path, Start Time, End Time, Min Age, Max Age, Min participants, Max Participants)
 \end{itemize}
 %ModelInteractionDiagram-------------------------------------------------------------------------------------------------
 \subsection{Model Interaction Diagram}
@@ -137,6 +135,11 @@ The following diagram show a different representation of the model to better hig
 \section{Runtime view}
 %-------------------------------------------------------------------------------------------------------------
 \section{Component interfaces}
+\begin{figure}[H]
+\caption{Component Interfaces}
+\centering
+\includegraphics[width = \textwidth]{sections/architecturalDesign/componentInterfaces.png}
+\end{figure}
 %-------------------------------------------------------------------------------------------------------------
 \section{Selected architectural styles and patterns}
 %-------------------------------------------------------------------------------------------------------------
