@@ -1,4 +1,5 @@
 \section{Overview}
+The architecture style used is a client/server structure with multiple tiers while an event-backbone will handle the dispatch of live data through the system. The presentation layer will be hosted on both client (IUs and TPUs clients) while the application server will host the logic layer and the database server the data layer. The IU client is going to be a thick client, hosting a brach of the application logic to handle better and faster the system functionalities.
 %high level---------------------------------------------------------------------------------------------------
 \subsection{High level components and basic interactions}
 \begin{figure}[H]
@@ -36,12 +37,15 @@ The Web Server can easily handle and exchange HTML, CSS and JavaScript files wit
 \section{Component view}
 The system is divided in four subsystem:
 \begin{itemize}
-\item \textbf{\href{subsect:backboneComponentView}{Backbone}}: The core of the system whose services are used from all othe subsystems
+\item \textbf{\href{subsect:backboneComponentView}{Backbone}}
 \item \textbf{\href{subsect:D4HComponentView}{Data4Help}}
 \item \textbf{\href{subsect:ASOSComponentView}{AutomatedSOS}}
 \item \textbf{\href{subsect:T4RComponentView}{Track4Run}}
 \end{itemize}
-The last three are divided on the Application server in a router, to handle requests, and a module, connected to the DBMS, containing all other components of the subsystem. 
+The Backbone is the core of the system: all other subsystems interact with it and don't interact with each other. The backbone provides interfaces for authentication and to receive live data published form the Backbone with a event-based paradigm.\\
+The last three are divided, on the Application server, in a router that provide an interface gathering all the subsystem functionalities, and a module, directly connected to the DBMS to be able to work indipendently, containing all other components of the subsystem. \\
+On the IU and TPU clients the view component represent the presentation layer of the system.\\
+The relation between the components and the model il further defined in figure \ref{fig:ModelInteractionDiagram}.
 %BackBone---------------------------------------------------------------------------------------------------
 \subsection{Backbone}
 \label{subsect:backboneComponentView}
@@ -49,10 +53,10 @@ The last three are divided on the Application server in a router, to handle requ
 \caption{Backbone Component View}
 \includegraphics[width = \textwidth]{sections/architecturalDesign/BackboneDiagram.png}
 \end{figure}
-This is the backbone of the system: collects the data on the device, keep it syncronized though the system and provide functionality to receive Live Data and to access to Stored Data; furthermore provide functionality concernig authentication.
-\paragraph{\textit{Data collector/dispatcher}} Allow subscribtion and publishes/dispatches the collected Live Data of the Individual User logged in from the device. 
-\paragraph{\textit{Autenthication}} Offers services related to  User authentication.
-\paragraph{\textit{Data Dispatcher}} Allow subscribtion and publishes/dispatches the collected Live Data of all Users. Offers the functionality to access Stored Data of all Users.
+This is the backbone of the system: collects the data on the device, keep it syncronized though the system, stores it onto the database and provide the functionalities to receive live data; Furthermore provide functionality concernig authentication.
+\paragraph{\textit{Data collector/dispatcher}} Allow subscribtion and publishes/dispatches the collected live data of the Individual User logged in from the device. 
+\paragraph{\textit{Autenthication}} Offers services related to User authentication and the functionalities to handle their info.
+\paragraph{\textit{Data Dispatcher}} Allow subscribtion and publishes/dispatches the collected live data of all Users and it stores it onto the database.
 %D4H--------------------------------------------------------------------------------------------------------
 \clearpage
 \subsection{Data4Help}
@@ -87,7 +91,7 @@ This is the backbone of the system: collects the data on the device, keep it syn
 \end{figure}
 \paragraph{\textit{T4R router}} Validate the requests received from the client and dispatch them to the corresponding module or component.
 \paragraph{\textit{T4R Activation}} Offers the functionality for the activation and deactivation of the T4R service.
-\paragraph{\textit{Run Manager}} Provides functionality to create, cancel, enrol in and spectate runs;.
+\paragraph{\textit{Run Manager}} Provides functionality to create, cancel and enrol in runs.
 %Complete-------------------------------------------------------------------------------------------------
 \clearpage
 \subsection{Full system}
@@ -97,7 +101,7 @@ This is the backbone of the system: collects the data on the device, keep it syn
 \centering
 \includegraphics[width = \textwidth]{sections/architecturalDesign/ComponentDiagram.png}
 \end{figure}
-\paragraph{\textit{Data Managing}} From a more high level point of view, the backbone provides services to retrive the Individual Users data, stored or live. \\
+\paragraph{\textit{Data Managing}} From a more high level point of view, the backbone provides services to retrive the Individual Users live data. \\
 This makes the red components and modules of the architecture the backbone, collecting and dispatching data, while the other subsystems can handle their unique authorization condition: D4H authorizing data dispatching based on approved requests, ASOS on the activation of the service and T4R on the enrollement in competitions. \\
 This way all subsystem will work independently from each other.%EntityRelationshipDiagram-------------------------------------------------------------------------------------------------
 \clearpage
@@ -113,20 +117,20 @@ The following section provides a conceptual representation of the model.
 \item \textbf{\textit{User}}(\underline{ID}, Name, Email, Password)
 \item \textbf{\textit{TPU}}(\underline{ID}, Name, Email, Password)
 \item \textbf{\textit{IU}}(\underline{ID}, Name, Email, Password, Age, Gender, Address, Weight, Height)
-\item \textbf{\textit{Data}}(\underline{IU}, \underline{Time}, Location, Pulse, Blood pressure)
+\item \textbf{\textit{Data}}(\underline{IU}, \underline{Time}, Location, Heartbeat, Blood pressure, Oxygen saturation)
 \\
-\item \textbf{\textit{Subscription Request}}(\underline{IU}, \underline{IU}, \underline{TPU})
-\item \textbf{\textit{Stored Data call}}(\underline{IU}, \underline{IU}, \underline{TPU})
+\item \textbf{\textit{Individual Request}}(\underline{Request Identification Number}, IU, TPU, Time, State, Subscription?)
+\item \textbf{\textit{Anonym Request}}(\underline{Request Identification Number}, TPU, Time, State, Subscription?, Min Age, Max Age, Min Weight, Max Weight, Min Height, Max Height, Gender, Address)
 \\
-\item \textbf{\textit{Emergency call}}(\underline{IU}, \underline{Time}, Execution Info)
-\\
-\item \textbf{\textit{Run}}(\underline{Identification number}, TPU, IU, Path, Start Time, End Time, Restrictions)
+\item \textbf{\textit{Run}}(\underline{Run Identification number}, TPU, IU, Path, Start Time, End Time, Min Age, Max Age, Min participants, Max Participants)
+\item \textbf{\textit{Run Result}}(\underline{Run Identification number}, \underline{IU}, Lenght, Time, Arrival Position)
 \end{itemize}
 %ModelInteractionDiagram-------------------------------------------------------------------------------------------------
 \subsection{Model Interaction Diagram}
 The following diagram show a different representation of the model to better highlight its interaction with the application server. For each subsystem module that was connected to the DBMS in \ref{fig:ComponentDiagram} is shown its relationship with the module. 
 \begin{figure}[H]
 \caption{Model Interaction Diagram}
+\label{fig:ModelInteractionDiagram}
 \centering
 \includegraphics[width = \textwidth]{sections/architecturalDesign/modelInteractionDiagram.png}
 \end{figure}
@@ -137,6 +141,14 @@ The following diagram show a different representation of the model to better hig
 \section{Runtime view}
 %-------------------------------------------------------------------------------------------------------------
 \section{Component interfaces}
+The next diagram shows the most important methods of the components interfaces.\\
+The routers gather oll the method required to provide the client with the corresponding subsystem services. \\
+An generic interface \textit{Data Receiver} is extended by all the interfaces that use the \textit{Data Dispatcher} service, to receive the updates.
+\begin{figure}[H]
+\caption{Component Interfaces}
+\centering
+\includegraphics[width = \textwidth]{sections/architecturalDesign/componentInterfaces.png}
+\end{figure}
 %-------------------------------------------------------------------------------------------------------------
 \section{Selected architectural styles and patterns}
 %-------------------------------------------------------------------------------------------------------------
