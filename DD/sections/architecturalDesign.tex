@@ -52,8 +52,8 @@ The system is divided in four subsystem:
 \item \textbf{\href{subsect:T4RComponentView}{Track4Run}}
 \end{itemize}
 The Backbone is the core of the system: all other subsystems interact with it and don't interact with each other. The backbone provides interfaces for authentication and to receive live data published form the Backbone with a event-based paradigm.\\
-The last three are divided, on the Application server, in a router that provide an interface gathering all the subsystem functionalities, and a module, directly connected to the DBMS to be able to work indipendently, containing all other components of the subsystem. \\
-On the IU and TPU clients the view component represent the presentation layer of the system.\\
+The last three are divided, on the Application server, in a router that provide an interface gathering all the subsystem functionalities, and a module, containing all other components of the subsystem, which uses the exposed method of the DBMS to be able to work indipendently. \\
+On the IU and TPU clients the view component represent the presentation layer of the system, which Users can access directly.\\
 The relation between the components and the model il further defined in figure \ref{fig:ModelInteractionDiagram}.
 %BackBone---------------------------------------------------------------------------------------------------
 \subsection{Backbone}
@@ -63,11 +63,10 @@ The relation between the components and the model il further defined in figure \
 \includegraphics[width = \textwidth]{sections/architecturalDesign/BackboneDiagram.png}
 \end{figure}
 This is the backbone of the system: collects the data on the device, keep it syncronized though the system, stores it onto the database and provide the functionalities to receive live data; Furthermore provide functionality concernig authentication.
-\paragraph{\textit{Data collector/dispatcher}} Allow subscribtion and publishes/dispatches the collected live data of the Individual User logged in from the device. 
+\paragraph{\textit{Data collector/dispatcher}} Allow subscribtion from other components on the IU client and publishes/dispatches the collected live data of the Individual User logged in from the device. 
 \paragraph{\textit{Autenthication}} Offers services related to User authentication and the functionalities to handle their info.
-\paragraph{\textit{Data Dispatcher}} Allow subscribtion and publishes/dispatches the collected live data of all Users and it stores it onto the database.
+\paragraph{\textit{Data Dispatcher}} Allow subscribtion from other components on the application server and publishes/dispatches the collected live data of all Users and it stores it onto the database.
 %D4H--------------------------------------------------------------------------------------------------------
-\clearpage
 \subsection{Data4Help}
 \label{subsect:D4HComponentView}
 \begin{figure}[H]
@@ -77,7 +76,6 @@ This is the backbone of the system: collects the data on the device, keep it syn
 \paragraph{\textit{D4H router}} Validate the requests received from the client and dispatch them to the corresponding module or component.
 \paragraph{\textit{Data Request Manager}} Provides functionality to create, approve, deny requests, block users and provide the relative data; Anonymity Evaluator is responsible to check anonymity constraints. 
 %ASOS------------------------------------------------------------------------------------------------------
-%\clearpage
 \subsection{AutomatedSOS}
 \label{subsect:ASOSComponentView}
 \begin{figure}[H]
@@ -90,7 +88,6 @@ This is the backbone of the system: collects the data on the device, keep it syn
 \paragraph{\textit{Health Data analyzer}} Offers functionality to extrapolate the critical health parameters for every Individual User;
 \paragraph{\textit{Emergency Handler}} Responsible to handle critical health conditions based on the data published by the \textit{Data collector/dispatcher}
 %T4R---------------------------------------------------------------------------------------------------------
-\clearpage
 \subsection{Track4Run}
 \label{subsect:T4RComponentView}
 \begin{figure}[H]
@@ -102,7 +99,6 @@ This is the backbone of the system: collects the data on the device, keep it syn
 \paragraph{\textit{T4R Activation}} Offers the functionality for the activation and deactivation of the T4R service.
 \paragraph{\textit{Run Manager}} Provides functionality to create, cancel and enrol in runs.
 %Complete-------------------------------------------------------------------------------------------------
-\clearpage
 \subsection{Full system}
 \begin{figure}[H]
 \label{fig:ComponentDiagram}
@@ -112,8 +108,7 @@ This is the backbone of the system: collects the data on the device, keep it syn
 \end{figure}
 \paragraph{\textit{Data Managing}} From a more high level point of view, the backbone provides services to retrive the Individual Users live data. \\
 This makes the red components and modules of the architecture the backbone, collecting and dispatching data, while the other subsystems can handle their unique authorization condition: D4H authorizing data dispatching based on approved requests, ASOS on the activation of the service and T4R on the enrollement in competitions. \\
-This way all subsystem will work independently from each other.%EntityRelationshipDiagram-------------------------------------------------------------------------------------------------
-\clearpage
+This way all subsystem can work independently from each other.%EntityRelationshipDiagram-------------------------------------------------------------------------------------------------
 \subsection{Entity Relationship Diagram}
 The following section provides a conceptual representation of the model.
 \begin{figure}[H]
@@ -150,7 +145,7 @@ The following diagram show a different representation of the model to better hig
 \section{Runtime view}
 %-------------------------------------------------------------------------------------------------------------
 \section{Component interfaces}
-The next diagram shows the most important methods of the components interfaces.\\
+The next diagram shows the most important methods of the components interfaces which, for clarity, are named in figure \ref{fig:ComponentDiagram} tracing the components names.\\
 The routers gather oll the method required to provide the client with the corresponding subsystem services. \\
 An generic interface \textit{Data Receiver} is extended by all the interfaces that use the \textit{Data Dispatcher} service, to receive the updates.
 \begin{figure}[H]
@@ -160,5 +155,12 @@ An generic interface \textit{Data Receiver} is extended by all the interfaces th
 \end{figure}
 %-------------------------------------------------------------------------------------------------------------
 \section{Selected architectural styles and patterns}
-%-------------------------------------------------------------------------------------------------------------
-\section{Other design decisions}
+\paragraph{Client/server multi-tier}
+The architecture style chosen is a client/server structure with multiple tiers. The presentation layer is diveded between the two clients (IUs and TPUs clients) which are thick clients since they host a branch of the application logic to handle better and faster the system functionalities; namely, to provide the fastest possible emergency response time, the client directly handles critical conditions contacting the emergency service and the backbone handles the dispatching of the IU live data to other components on the client. \\
+The application server hosts the logic layer, exposing REST API the clients to access the subsystem functionalities and, for the D4H router, to non-human TPUs which might access directly through the APIs; The application server is divided in four subsystems, each handling a piece of logic: a backbone, handling the core logic, storing data and user authorization, and providing interfaces to other subsystem to use its functionality, while the other subsystem independently handle the functionalities of the three services offered: D4H, ASOS and T4R. \\
+The database server host the data layer and all the subsystems on the application server independtly interact with it.
+\\
+This will make for a modular software, enabling a fairly independent implementation and testing of each subsystem; Morover it, alongside the tiered structure, will improve scalability and maintainability.
+
+\paragraph{Event based paradigm}
+The backbone, namely the Data Dispatcher components, is an event-based subsystem that handles the dispatch of live data through the system. Live data collected by the Data Collector/Dispatcher serves as the event, broadcasted to all registered components. While introducing potential scalability problems, it simplify the addition of the other subsystem.
