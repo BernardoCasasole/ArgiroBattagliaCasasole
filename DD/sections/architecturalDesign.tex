@@ -27,7 +27,7 @@ The Mobile App receives data from the smartwatch, exchanges informations with th
 \end{figure}
 
 The browser hosting the Web Page needs to communicate both with the Web Server and the Application Server. 
-The Web Server can easily handle and exchange HTML, CSS and JavaScript files with the client; the Application Server manages methods like GET, POST  (that are present in the HTML file) receiving a REST API call and forwarding data in JSON format. Data to forward are provided by the Database Server which includes the DBMS: a request in XML is sent by the Application Server, the DBMS processes the request and extracts data from the database that are sent back to the Application Server in a XML file. To establish a communication channel between the Application Server and the Web Server is not a necessity, however it provides an alternative to REST API: developers are up to decide to implement them both or to keep the REST API alone. 
+The Web Server can easily handle and exchange HTML, CSS and JavaScript files with the client; the Application Server manages methods like GET, POST receiving a REST API call and forwarding data in JSON format. Data to forward are provided by the Database Server which includes the DBMS: a request in XML is sent by the Application Server, the DBMS processes the request and extracts data from the database that are sent back to the Application Server in a XML file. To establish a communication channel between the Application Server and the Web Server is not a necessity, however it provides an alternative to REST API: developers are up to decide to implement them both or to keep the REST API alone. 
 
 %-------------------------------------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------------------------------------
@@ -132,12 +132,34 @@ The following diagram show a different representation of the model to better hig
 \clearpage
 %-------------------------------------------------------------------------------------------------------------
 \section{Deployment view}
+As stated in the previous sections the system is composed by the two clients, one hosted on a web browser and the other on moblie application. They both rely on the application server while the former also interacts with the web server which host the web application.
+The application server provide the logic of the system and interacts with the database server which hosts the data layer of the system.
+\begin{figure}[H]
+\caption{Deployment view}
+\centering
+\includegraphics[width = \textwidth]{sections/architecturalDesign/DeploymentView.png}
+\end{figure}
 %-------------------------------------------------------------------------------------------------------------
 \section{Runtime view}
+\begin{figure}[H]
+\caption{IU Registration}
+\centering
+\includegraphics[width = \textwidth]{sections/architecturalDesign/IUregistration.png}
+\end{figure}
+\begin{figure}[H]
+\caption{Data Requests}
+\centering
+\includegraphics[width = \textwidth]{sections/architecturalDesign/dataRequests.png}
+\end{figure}
+\begin{figure}[H]
+\caption{Emergency call}
+\centering
+\includegraphics[width = \textwidth]{sections/architecturalDesign/emergencyCall.png}
+\end{figure}
 %-------------------------------------------------------------------------------------------------------------
 \section{Component interfaces}
 The next diagram shows the most important methods of the components interfaces which, for clarity, are named in figure \ref{fig:ComponentDiagram} tracing the components names.\\
-The routers gather oll the method required to provide the client with the corresponding subsystem services. \\
+The routers gather oll the method required to provide the client with the corresponding subsystem services and expose the relative APIs for the clients (for the D4H router also non-human TPUs) to use. \\
 An generic interface \textit{Data Receiver} is extended by all the interfaces that use the \textit{Data Dispatcher} service, to receive the updates.
 \begin{figure}[H]
 \caption{Component Interfaces}
@@ -148,14 +170,10 @@ An generic interface \textit{Data Receiver} is extended by all the interfaces th
 \section{Selected architectural styles and patterns}
 \paragraph{Client/server multi-tier}
 The architecture style chosen is a client/server structure with multiple tiers. The presentation layer is diveded between the two clients (IUs and TPUs clients) which are thick clients since they host a branch of the application logic to handle better and faster the system functionalities; namely, to provide the fastest possible emergency response time, the client directly handles critical conditions contacting the emergency service and the backbone handles the dispatching of the IU live data to other components on the client. \\
-The application server hosts the logic layer, exposing REST API the clients to access the subsystem functionalities and, for the D4H router, to non-human TPUs which might access directly through the APIs; The application server is divided in four subsystems, each handling a piece of logic: a backbone, handling the core logic, storing data and user authorization, and providing interfaces to other subsystem to use its functionality, while the other subsystem independently handle the functionalities of the three services offered: D4H, ASOS and T4R. \\
+The application server hosts the logic layer, exposing API the clients to access the subsystem functionalities and, for the D4H router, to non-human TPUs which might access directly through the APIs; The application server is divided in four subsystems, each handling a piece of logic: a backbone, handling the core logic, storing data and user authorization, and providing interfaces to other subsystem to use its functionality, while the other subsystem independently handle the functionalities of the three services offered: D4H, ASOS and T4R. \\
 The database server host the data layer and all the subsystems on the application server independtly interact with it.
 \\
 This will make for a modular software, enabling a fairly independent implementation and testing of each subsystem; Morover it, alongside the tiered structure, will improve scalability and maintainability.
 
 \paragraph{Event based paradigm}
 The backbone, namely the Data Dispatcher components, is an event-based subsystem that handles the dispatch of live data through the system. Live data collected by the Data Collector/Dispatcher serves as the event, broadcasted to all registered components. While introducing potential scalability problems, it simplify the addition of the other subsystem.
-%-------------------------------------------------------------------------------------------------------------
-\section{Other design decisions}
-\paragraph{Maps APIs}
-\paragraph{Emergency service APIs}
