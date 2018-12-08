@@ -1,6 +1,32 @@
 \section{Purpose}
 %-------------------------------------------------------------------------------------------------------------
 \section{Scope}
+Data4Help means to provide services to authenticated users only. Those services are addressed to both:
+\begin{itemize}
+\item	Individual Users
+\item Third parties Users
+\end{itemize}
+To dispatch specific functionalities to the user they are reserved, Data4Help System avails itself of:
+\begin{itemize}
+\item a Mobile App, reserved to individual users
+\item a Web Page, reserved to third party users.
+\end{itemize}
+The mobile app, using the GPS location provided by the smartphone, allows the individual user to:
+\begin{itemize}
+\item check his own health parameters (measured by a smartwatch)
+\item enable and disable additional services (AutomatedSOS and Track4Run)
+\item give or deny authorization to every third party to access health data about himself.  
+\end{itemize}
+Data4Helps System handles both data of the past and real time ones.
+The web page allows the Third-party user to:
+\begin{itemize}
+\item make requests for statistical data of the past or real time
+\item make a request for individual data of the past or real time (the request is forwarded to the individual user)
+\item organize and watch run competitions.
+\end{itemize}
+This factorization allows the system to be accurate in providing every user with all and only resources he has the right to access: authentication and authorization processes rely on the access control. \\ \\
+The necessity to use a mobile app could prevent third parties from choosing Data4Help over other services of data collection: Data4Help Web Page can be easily accessed from a browser hosted on a computer or a mobile. 
+
 %-------------------------------------------------------------------------------------------------------------
 \section{Definitions}
 \begin{itemize}
@@ -22,11 +48,14 @@
 \item	ASOS: AutomatedSOS
 \item	T4R: Track4Run
 \item UX: User experience
+\item REST: REpresentational State Transfer
 \end{itemize}
 
 \section{Abbreviations}
 \begin{itemize}
-\item Ab: abbrevation
+\item Gn: n-goal
+\item Dn: n-Domain assumption
+\item Rn: n-Requirement
 \end{itemize}
 
 %-------------------------------------------------------------------------------------------------------------
@@ -35,6 +64,7 @@
 \item \textbf{v0.1 - 27/11/18} Document created
 \item \textbf{v0.2 - 30/11/18} Component view
 \item \textbf{v0.3 - 2/12/18} Model diagrams, User inteface and High level overview
+\item \textbf{v0.4 - 8/12/18} Architectural patterns, interfaces, deployement, high level architecture review
 \end{itemize}
 %-------------------------------------------------------------------------------------------------------------
 \section{Document Structure}

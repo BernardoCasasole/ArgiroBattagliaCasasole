@@ -1,8 +1,17 @@
 \section{Overview}
-The architecture style used is a client/server structure with multiple tiers while the backbone will handle the dispatch of live data through the system. The presentation layer will be hosted on both clients (IUs and TPUs clients) while the application server will host the logic layer and the database server the data layer. The IU client is going to be a thick client, hosting a branch of the application logic to handle better and faster the system functionalities.
+The architecture style used is a client/server structure with multiple tiers while an event-backbone will handle the dispatch of live data through the system. The presentation layer will be hosted on both client (IUs and TPUs clients) while the application server will host the logic layer and the database server the data layer. The IU client is going to be a thick client, hosting a brach of the application logic to handle better and faster the system functionalities. \\ 
+Cloud server solutions, over local servers, are the ideal fit for system having variable demands and workload as Data4Help and meet the following needs:
+\begin{itemize}
+\item to avoid hardware faults: improving availability
+\item to enhance security
+\item to only pay for the exact amount of server space used
+\item minimization of data losses and recovery time. 
+\end{itemize} 
+Google Cloud Platform might be chosen over other cloud-server-hosting providers because of the possibility to use both SQL and NoSQL databases.
+\clearpage 
 %high level---------------------------------------------------------------------------------------------------
 \subsection{High level components and basic interactions}
-\begin{figure}[H]
+\begin{figure}[h]
 \caption{High level components' elements}
 \includegraphics[width = \textwidth]{sections/architecturalDesign/overview_1.jpg}
 \end{figure}
@@ -23,7 +32,7 @@ The Mobile App receives data from the smartwatch, exchanges informations with th
 \subsection{Interaction between Server Architecture and Third-Party User}
 \begin{figure}[H]
 \caption{Connection between Web page and Servers}
-\includegraphics[width = \textwidth ,  height=8cm]{sections/architecturalDesign/overview_web.jpg}
+\includegraphics[width = \textwidth]{sections/architecturalDesign/overview_web.jpg}
 \end{figure}
 
 The browser hosting the Web Page needs to communicate both with the Web Server and the Application Server. 
