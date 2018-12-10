@@ -1,4 +1,6 @@
 \section{Purpose}
+This document means to provide developers and stakeholders with detailed information regarding the architecture of Data4Help software.   
+A particular effort has been devoted to testing plan and integration testing plan, since the Integration Test Plan Document is not required. 
 %-------------------------------------------------------------------------------------------------------------
 \section{Scope}
 Data4Help means to provide services to authenticated users only. Those services are addressed to both:
@@ -9,20 +11,20 @@ Data4Help means to provide services to authenticated users only. Those services 
 To dispatch specific functionalities to the user they are reserved, Data4Help System avails itself of:
 \begin{itemize}
 \item a Mobile App, reserved to individual users
-\item a Web Page, reserved to third party users.
+\item a Web Page, reserved to third party users
 \end{itemize}
 The mobile app, using the GPS location provided by the smartphone, allows the individual user to:
 \begin{itemize}
 \item check his own health parameters (measured by a smartwatch)
 \item enable and disable additional services (AutomatedSOS and Track4Run)
-\item give or deny authorization to every third party to access health data about himself.  
+\item give or deny authorization to every third party to access health data about himself
 \end{itemize}
 Data4Helps System handles both data of the past and real time ones.
 The web page allows the Third-party user to:
 \begin{itemize}
 \item make requests for statistical data of the past or real time
-\item make a request for individual data of the past or real time (the request is forwarded to the individual user)
-\item organize and watch run competitions.
+\item make requests for individual data of the past or real time (the requests are forwarded to the individual user)
+\item organize and watch run competitions
 \end{itemize}
 This factorization allows the system to be accurate in providing every user with all and only resources he has the right to access: authentication and authorization processes rely on the access control. \\ \\
 The necessity to use a mobile app could prevent third parties from choosing Data4Help over other services of data collection: Data4Help Web Page can be easily accessed from a browser hosted on a computer or a mobile. 
@@ -68,12 +70,28 @@ The necessity to use a mobile app could prevent third parties from choosing Data
 \end{itemize}
 %-------------------------------------------------------------------------------------------------------------
 \section{Document Structure}
-\paragraph{\hyperref[sect:introduction]{Introduction}}
-\paragraph{\hyperref[sect:architecturalDesign]{Architectural Design}} 
-\paragraph{\hyperref[sect:userInterfaceDesign]{User	 Interface Design}}
-\paragraph{\hyperref[sect:requirementsTraceability]{Requirements Traceability}}
-\paragraph{\hyperref[sect:implementationIntegrationTestplan]{Implementation, Integration and Test plan}}
-\paragraph{\hyperref[sect:effort]{Effort Spent}}
-\paragraph{\hyperref[sect:references]{References}} 
+\paragraph{\hyperref[sect:introduction]{Introduction}} \mbox{}\\
+This section means to present briefly the software and the world it’s going to live in. The terminology that is going to be used through the document is specified.
+\paragraph{\hyperref[sect:architecturalDesign]{Architectural Design}} \mbox{}\\
+This section illustrates:
+\begin{itemize}
+\item high level components and their interaction
+\item main components the system is divided into and their interaction
+\item diagrams reporting entities relationship
+\item different representation of the model that highlights the interaction with server, it’s formalization in the deployment view
+\item sequence diagram showing the runtime behavior 
+\item component interfaces 
+\item patterns.
+\end{itemize}
+\paragraph{\hyperref[sect:userInterfaceDesign]{User	 Interface Design}}\mbox{}\\
+In this section each user interface (presented in RASD) is reported and accurately explained. The interaction among interfaces clarifies the path to reach every interface starting from any other. 
+\paragraph{\hyperref[sect:requirementsTraceability]{Requirements Traceability}}\mbox{}\\
+This section means to map all the requirements with the corresponding design components. 
+\paragraph{\hyperref[sect:implementationIntegrationTestplan]{Implementation, Integration and Test plan}}\mbox{}\\
+This section reports how the implementation of components has been designated, including: the implementation order, the integration order, components testing, components integration testing. Details about implementation and testing are provided.  
+\paragraph{\hyperref[sect:effort]{Effort Spent}}\mbox{}\\
+This section reports, with a tabular representation, the effort spent by each member of the group. 
+\paragraph{\hyperref[sect:references]{References}}\mbox{}\\
+This section is a list of documents and web sites consulted in order to realize the Design Document. 
 
 

@@ -1,13 +1,17 @@
 \section{Overview}
 The architecture style used is a client/server structure with multiple tiers while an event-backbone will handle the dispatch of live data through the system. The presentation layer will be hosted on both client (IUs and TPUs clients) while the application server will host the logic layer and the database server the data layer. The IU client is going to be a thick client, hosting a brach of the application logic to handle better and faster the system functionalities. \\ 
-Cloud server solutions, over local servers, are the ideal fit for system having variable demands and workload as Data4Help and meet the following needs:
+A server structure can either be hosted locally on a dedicated physical server or on a cloud server furnished by a cloud-server-hosting provider.
+Cloud server solutions, over local servers, are the ideal fit for system having variable demands and workload (such as Data4Help) and meet the following needs:
 \begin{itemize}
-\item to avoid hardware faults: improving availability
+\item to avoid hardware faults: Data4Help availability percentage needs to be equal or superior to 99.995. Since this percentage do not take into account hardware faults and a local server cannot guarantee an hundred percent availability, Data4Help availability cannot be affected by the one of a local server
+
 \item to enhance security
 \item to only pay for the exact amount of server space used
-\item minimization of data losses and recovery time. 
+\item minimization of data losses and recovery time: the availabitly of a system is affected by recovery (restart and repair) time. Data4Help system, to guarantee an availability of 99.995 percent, needs to avail itself with a recovery-time minimize solution
 \end{itemize} 
-Google Cloud Platform might be chosen over other cloud-server-hosting providers because of the possibility to use both SQL and NoSQL databases.
+Many cloud-server-hosting providers exist, solutions furnished are quite similar and valid.
+Google Cloud Platform might be chosen over other cloud-server-hosting providers because of the possibility to use both SQL and NoSQL databases. It’s up to developers to evaluate the provider to use, according to the budget assigned and a future possible differentiation of services that nowadays seems to offer similar solution at the same price. 
+Data4Help System can avail itself of a CDBMS which is a Database Manager as a cloud service: this solution is designated to be scalable and flexibles and to run on a cloud server architecture. Google Could Platform offers \href{https://cloud.google.com/sql/}{\underline{Cloud SQL}} which is a database services fully integrated with MySQL and PostgreSQL(beta). 
 \clearpage 
 %high level---------------------------------------------------------------------------------------------------
 \subsection{High level components and basic interactions}
@@ -17,7 +21,9 @@ Google Cloud Platform might be chosen over other cloud-server-hosting providers 
 \end{figure}
 
 The overall structure, at high level, is made of three main components and their interaction. 
-The red component refers to the tools the individual user needs to interface with Data4Help System, it communicates with the Application Server that is part of the blue component charged with the Server Architecture. This is composed by a Database Server that includes the DBMS, a Mail Server which means to exchange SMTP messages with other Mail Servers (external to the system), an Application Server communicating with any other element in the Server Architecture, a Web Server and a Proxy (meant to dispatch requests to Application and Web Servers). 
+
+The component on the bottom shows Data4Help mobile application and a smartwatch which are the tools that allows the Individual User to interface with Data4Help System. The mobile application communicates with the Application Server which is part of the component that represents the Server Architecture. 
+This last is composed by a Database Server that includes the DBMS, a Mail Server which means to exchange SMTP messages with other Mail Servers (external to the system), an Application Server communicating with any other element in the Server Architecture, a Web Server and a Proxy (meant to dispatch requests to Application and Web Servers). 
 The proxy links the Server Architecture with the green component charged with the interaction with the third party user that takes place through Data4Help Web Page. 
 
 \subsection{Interaction between Server Architecture and Individual User}
@@ -26,7 +32,8 @@ The proxy links the Server Architecture with the green component charged with th
 \includegraphics[width = \textwidth]{sections/architecturalDesign/overview_individual_user.jpg}
 \end{figure}
 
-The Mobile App receives data from the smartwatch, exchanges informations with the Individual User and communicates with the Application Server: at different levels are specified protocols that are supposed to be used. 
+Data4Help Mobile App receives data from the smartwatch and exchanges informations (using differen modalities) with the Individual User and the Application Server. 
+At 3 different levels are specified protocols that are supposed to generate the connection with the Application Server; a STREAMING API communication need to be established to exchange real time data, all other information to be exchanged use REST API communication. 
  
 
 \subsection{Interaction between Server Architecture and Third-Party User}
@@ -36,7 +43,7 @@ The Mobile App receives data from the smartwatch, exchanges informations with th
 \end{figure}
 
 The browser hosting the Web Page needs to communicate both with the Web Server and the Application Server. 
-The Web Server can easily handle and exchange HTML, CSS and JavaScript files with the client; the Application Server manages methods like GET, POST receiving a REST API call and forwarding data in JSON format. Data to forward are provided by the Database Server which includes the DBMS: a request in XML is sent by the Application Server, the DBMS processes the request and extracts data from the database that are sent back to the Application Server in a XML file. To establish a communication channel between the Application Server and the Web Server is not a necessity, however it provides an alternative to REST API: developers are up to decide to implement them both or to keep the REST API alone. 
+The Web Server can easily handle and exchange HTML, CSS and JavaScript files with the client; the Application Server manages methods like GET, POST receiving a REST API call (used to exchange every information but real-time data) and forwarding data in JSON format. Real time data are exchanged using STREAMING APIs: both Data4Help web page and an external-API-user request and receive real time data. Data to forward are provided by the Database Server which includes the DBMS: a request in XML is sent by the Application Server, the DBMS processes the request and extracts data from the database that are sent back to the Application Server in a XML file. To establish a communication channel between the Application Server and the Web Server is not a necessity, however it provides an alternative to REST API: developers are up to decide to implement them both or to keep the REST and STREAMING APIs alone. 
 
 %-------------------------------------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------------------------------------
