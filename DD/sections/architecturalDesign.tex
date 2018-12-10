@@ -1,13 +1,17 @@
 \section{Overview}
 The architecture style used is a client/server structure with multiple tiers while an event-backbone will handle the dispatch of live data through the system. The presentation layer will be hosted on both client (IUs and TPUs clients) while the application server will host the logic layer and the database server the data layer. The IU client is going to be a thick client, hosting a brach of the application logic to handle better and faster the system functionalities. \\ 
-Cloud server solutions, over local servers, are the ideal fit for system having variable demands and workload as Data4Help and meet the following needs:
+A server structure can either be hosted locally on a dedicated physical server or on a cloud server furnished by a cloud-server-hosting provider.
+Cloud server solutions, over local servers, are the ideal fit for system having variable demands and workload (such as Data4Help) and meet the following needs:
 \begin{itemize}
-\item to avoid hardware faults: improving availability
+\item to avoid hardware faults: Data4Help availability percentage needs to be equal or superior to 99.995. Since this percentage do not take into account hardware faults and a local server cannot guarantee an hundred percent availability, Data4Help availability cannot be affected by the one of a local server
+
 \item to enhance security
 \item to only pay for the exact amount of server space used
-\item minimization of data losses and recovery time. 
+\item minimization of data losses and recovery time: the availabitly of a system is affected by recovery (restart and repair) time. Data4Help system, to guarantee an availability of 99.995 percent, needs to avail itself with a recovery-time minimize solution
 \end{itemize} 
-Google Cloud Platform might be chosen over other cloud-server-hosting providers because of the possibility to use both SQL and NoSQL databases.
+Many cloud-server-hosting providers exist, solutions furnished are quite similar and valid.
+Google Cloud Platform might be chosen over other cloud-server-hosting providers because of the possibility to use both SQL and NoSQL databases. It’s up to developers to evaluate the provider to use, according to the budget assigned and a future possible differentiation of services that nowadays seems to offer similar solution at the same price. 
+Data4Help System can avail itself of a CDBMS which is a Database Manager as a cloud service: this solution is designated to be scalable and flexibles and to run on a cloud server architecture. Google Could Platform offers \href{https://cloud.google.com/sql/}{\underline{Cloud SQL}} which is a database services fully integrated with MySQL and PostgreSQL(beta). 
 \clearpage 
 %high level---------------------------------------------------------------------------------------------------
 \subsection{High level components and basic interactions}
@@ -17,7 +21,9 @@ Google Cloud Platform might be chosen over other cloud-server-hosting providers 
 \end{figure}
 
 The overall structure, at high level, is made of three main components and their interaction. 
-The red component refers to the tools the individual user needs to interface with Data4Help System, it communicates with the Application Server that is part of the blue component charged with the Server Architecture. This is composed by a Database Server that includes the DBMS, a Mail Server which means to exchange SMTP messages with other Mail Servers (external to the system), an Application Server communicating with any other element in the Server Architecture, a Web Server and a Proxy (meant to dispatch requests to Application and Web Servers). 
+
+The component on the bottom shows Data4Help mobile application and a smartwatch which are the tools that allows the Individual User to interface with Data4Help System. The mobile application communicates with the Application Server which is part of the component that represents the Server Architecture. 
+This last is composed by a Database Server that includes the DBMS, a Mail Server which means to exchange SMTP messages with other Mail Servers (external to the system), an Application Server communicating with any other element in the Server Architecture, a Web Server and a Proxy (meant to dispatch requests to Application and Web Servers). 
 The proxy links the Server Architecture with the green component charged with the interaction with the third party user that takes place through Data4Help Web Page. 
 
 \subsection{Interaction between Server Architecture and Individual User}
@@ -26,7 +32,8 @@ The proxy links the Server Architecture with the green component charged with th
 \includegraphics[width = \textwidth]{sections/architecturalDesign/overview_individual_user.jpg}
 \end{figure}
 
-The Mobile App receives data from the smartwatch, exchanges informations with the Individual User and communicates with the Application Server: at different levels are specified protocols that are supposed to be used. 
+Data4Help Mobile App receives data from the smartwatch and exchanges informations (using differen modalities) with the Individual User and the Application Server. 
+At 3 different levels are specified protocols that are supposed to generate the connection with the Application Server; a STREAMING API communication need to be established to exchange real time data, all other information to be exchanged use REST API communication. 
  
 
 \subsection{Interaction between Server Architecture and Third-Party User}
@@ -36,7 +43,8 @@ The Mobile App receives data from the smartwatch, exchanges informations with th
 \end{figure}
 
 The browser hosting the Web Page needs to communicate both with the Web Server and the Application Server. 
-The Web Server can easily handle and exchange HTML, CSS and JavaScript files with the client; the Application Server manages methods like GET, POST receiving a REST API call and forwarding data in JSON format. Data to forward are provided by the Database Server which includes the DBMS: a request in XML is sent by the Application Server, the DBMS processes the request and extracts data from the database that are sent back to the Application Server in a XML file. To establish a communication channel between the Application Server and the Web Server is not a necessity, however it provides an alternative to REST API: developers are up to decide to implement them both or to keep the REST API alone. 
+The Web Server can easily handle and exchange HTML, CSS and JavaScript files with the client; the Application Server manages methods like GET, POST receiving a REST API call (used to exchange every information but real-time data) and forwarding data in JSON format. Real time data are exchanged using STREAMING APIs: both Data4Help web page and an external-API-user request and receive real time data. Data to forward are provided by the Database Server which includes the DBMS: a request in XML is sent by the Application Server, the DBMS processes the request and extracts data from the database that are sent back to the Application Server in a XML file. To establish a communication channel between the Application Server and the Web Server is not a necessity, however it provides an alternative to REST API: developers are up to decide to implement them both or to keep the REST and STREAMING APIs alone. 
+
 
 %-------------------------------------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------------------------------------
@@ -44,6 +52,7 @@ The Web Server can easily handle and exchange HTML, CSS and JavaScript files wit
 %-------------------------------------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------------------------------------
 \section{Component view}
+\label{sect:ComponetView}
 The system is divided in four subsystem:
 \begin{itemize}
 \item \textbf{\href{subsect:backboneComponentView}{Backbone}}
@@ -86,7 +95,7 @@ This is the backbone of the system: collects the data on the device, keep it syn
 \paragraph{\textit{ASOS router}} Validate the requests received from the client and dispatch them to the corresponding module or component.
 \paragraph{\textit{ASOS Activation}} Offers the functionality for the activation and deactivation of the ASOS service.
 \paragraph{\textit{Health Data analyzer}} Offers functionality to extrapolate the critical health parameters for every Individual User;
-\paragraph{\textit{Emergency Handler}} Responsible to handle critical health conditions based on the data published by the \textit{Data collector/dispatcher}
+\paragraph{\textit{Emergency Handler}} Responsible to handle critical health conditions based on the data published by the \textit{Data collector/dispatcher}; the method for contacting the emergency service is further explained in section \ref{subsect:ES}.
 %T4R---------------------------------------------------------------------------------------------------------
 \subsection{Track4Run}
 \label{subsect:T4RComponentView}
@@ -165,6 +174,11 @@ The application server provide the logic of the system and interacts with the da
 \centering
 \includegraphics[width = \textwidth]{sections/architecturalDesign/emergencyCall.png}
 \end{figure}
+\begin{figure}[H]
+\caption{Run Management}
+\centering
+\includegraphics[width = \textwidth]{sections/architecturalDesign/raceManager.png}
+\end{figure}
 %-------------------------------------------------------------------------------------------------------------
 \section{Component interfaces}
 The next diagram shows the most important methods of the components interfaces which, for clarity, are named in figure \ref{fig:ComponentDiagram} tracing the components names.\\
@@ -177,12 +191,26 @@ An generic interface \textit{Data Receiver} is extended by all the interfaces th
 \end{figure}
 %-------------------------------------------------------------------------------------------------------------
 \section{Selected architectural styles and patterns}
-\paragraph{Client/server multi-tier}
+\subsection{Client/server multi-tier}
 The architecture style chosen is a client/server structure with multiple tiers. The presentation layer is diveded between the two clients (IUs and TPUs clients) which are thick clients since they host a branch of the application logic to handle better and faster the system functionalities; namely, to provide the fastest possible emergency response time, the client directly handles critical conditions contacting the emergency service and the backbone handles the dispatching of the IU live data to other components on the client. \\
 The application server hosts the logic layer, exposing API the clients to access the subsystem functionalities and, for the D4H router, to non-human TPUs which might access directly through the APIs; The application server is divided in four subsystems, each handling a piece of logic: a backbone, handling the core logic, storing data and user authorization, and providing interfaces to other subsystem to use its functionality, while the other subsystem independently handle the functionalities of the three services offered: D4H, ASOS and T4R. \\
 The database server host the data layer and all the subsystems on the application server independtly interact with it.
 \\
 This will make for a modular software, enabling a fairly independent implementation and testing of each subsystem; Morover it, alongside the tiered structure, will improve scalability and maintainability.
 
-\paragraph{Event based paradigm}
+\subsection{Event based paradigm}
 The backbone, namely the Data Dispatcher components, is an event-based subsystem that handles the dispatch of live data through the system. Live data collected by the Data Collector/Dispatcher serves as the event, broadcasted to all registered components. While introducing potential scalability problems, it simplify the addition of the other subsystem.
+
+\subsection{REST and Real-Time API}
+\label{subsect:API}
+By creating a RESTful system that uses REST API and using a stateless protocol which relieve the server from storing client context between requests, we increase performance, reliability, and scalability. That said, using this software architectural style only could be too restrictive since it doesn't cope well with Real-Time trasmission of data: for example within the Backbone, meaning between the component that collects the data on the client and the component on the server that receives, stores and forward it. \\
+To publish data as fast as possible a Real-Time oriented API is used as support to handle the automated, synchronous and bi-directional communication between the server and both the clients and eventual non-human TPUs, while the REST API will be used for all other needs.
+
+\subsection{Model View Controller}
+The pattern dictates the separation the user interface components (the view components in figure \ref{fig:ComponentDiagram}), the data, which resides on the DBMS, and the response to user imput and logic, located mostrly on the application server and partly on the client.
+%-------------------------------------------------------------------------------------------------------------
+\section{Other design decisions}
+\subsection{Emergency service}
+\label{subsect:ES}
+As method of contacting an ambulance there are some options: in Europe a single emergency number exist (112) and the European Emergency Number Association (EENA) handles a network of Public Safety Answering Points (PSAPs) and provides documentation, standards and regulations for automated access to 112 services. Access is possible, in its simplest form, with an automated call which relies on the IU communicating their info, or in better and more automated forms, using the Next Generation 112 (NG112) methods that are being implemented by PSAPs all over Europe.
+
