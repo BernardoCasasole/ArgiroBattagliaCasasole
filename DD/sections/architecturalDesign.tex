@@ -88,7 +88,7 @@ This is the backbone of the system: collects the data on the device, keep it syn
 \paragraph{\textit{ASOS router}} Validate the requests received from the client and dispatch them to the corresponding module or component.
 \paragraph{\textit{ASOS Activation}} Offers the functionality for the activation and deactivation of the ASOS service.
 \paragraph{\textit{Health Data analyzer}} Offers functionality to extrapolate the critical health parameters for every Individual User;
-\paragraph{\textit{Emergency Handler}} Responsible to handle critical health conditions based on the data published by the \textit{Data collector/dispatcher}
+\paragraph{\textit{Emergency Handler}} Responsible to handle critical health conditions based on the data published by the \textit{Data collector/dispatcher}; the method for contacting the emergency service is further explained in section \ref{subsect:ES}.
 %T4R---------------------------------------------------------------------------------------------------------
 \subsection{Track4Run}
 \label{subsect:T4RComponentView}
@@ -179,14 +179,14 @@ An generic interface \textit{Data Receiver} is extended by all the interfaces th
 \end{figure}
 %-------------------------------------------------------------------------------------------------------------
 \section{Selected architectural styles and patterns}
-\paragraph{Client/server multi-tier}
+\subsection{Client/server multi-tier}
 The architecture style chosen is a client/server structure with multiple tiers. The presentation layer is diveded between the two clients (IUs and TPUs clients) which are thick clients since they host a branch of the application logic to handle better and faster the system functionalities; namely, to provide the fastest possible emergency response time, the client directly handles critical conditions contacting the emergency service and the backbone handles the dispatching of the IU live data to other components on the client. \\
 The application server hosts the logic layer, exposing API the clients to access the subsystem functionalities and, for the D4H router, to non-human TPUs which might access directly through the APIs; The application server is divided in four subsystems, each handling a piece of logic: a backbone, handling the core logic, storing data and user authorization, and providing interfaces to other subsystem to use its functionality, while the other subsystem independently handle the functionalities of the three services offered: D4H, ASOS and T4R. \\
 The database server host the data layer and all the subsystems on the application server independtly interact with it.
 \\
 This will make for a modular software, enabling a fairly independent implementation and testing of each subsystem; Morover it, alongside the tiered structure, will improve scalability and maintainability.
 
-\paragraph{Event based paradigm}
+\subsection{Event based paradigm}
 The backbone, namely the Data Dispatcher components, is an event-based subsystem that handles the dispatch of live data through the system. Live data collected by the Data Collector/Dispatcher serves as the event, broadcasted to all registered components. While introducing potential scalability problems, it simplify the addition of the other subsystem.
 
 \subsection{REST and Real-Time API}
@@ -196,3 +196,9 @@ To publish data as fast as possible a Real-Time oriented API is used as support 
 
 \subsection{Model View Controller}
 The pattern dictates the separation the user interface components (the view components in figure \ref{fig:ComponentDiagram}), the data, which resides on the DBMS, and the response to user imput and logic, located mostrly on the application server and partly on the client.
+%-------------------------------------------------------------------------------------------------------------
+\section{Other design decisions}
+\subsection{Emergency service}
+\label{subsect:ES}
+As method of contacting an ambulance there are some options: in Europe a single emergency number exist (112) and the European Emergency Number Association (EENA) handles a network of Public Safety Answering Points (PSAPs) and provides documentation, standards and regulations for automated access to 112 services. Access is possible, in its simplest form, with an automated call which relies on the IU communicating their info, or in better and more automated forms, using the Next Generation 112 (NG112) methods that are being implemented by PSAPs all over Europe.
+
