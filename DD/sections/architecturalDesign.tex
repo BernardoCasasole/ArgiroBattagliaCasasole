@@ -15,6 +15,7 @@ Data4Help System can avail itself of a CDBMS which is a Database Manager as a cl
 \clearpage 
 %high level---------------------------------------------------------------------------------------------------
 \subsection{High level components and basic interactions}
+\label{subsect:highLevel}
 \begin{figure}[h]
 \caption{High level components' elements}
 \includegraphics[width = \textwidth]{sections/architecturalDesign/overview_1.jpg}
@@ -55,10 +56,10 @@ The Web Server can easily handle and exchange HTML, CSS and JavaScript files wit
 \label{sect:ComponetView}
 The system is divided in four subsystem:
 \begin{itemize}
-\item \textbf{\href{subsect:backboneComponentView}{Backbone}}
-\item \textbf{\href{subsect:D4HComponentView}{Data4Help}}
-\item \textbf{\href{subsect:ASOSComponentView}{AutomatedSOS}}
-\item \textbf{\href{subsect:T4RComponentView}{Track4Run}}
+\item \textbf{\hyperref[subsect:backboneComponentView]{Backbone}}
+\item \textbf{\hyperref[subsect:D4HComponentView]{Data4Help}}
+\item \textbf{\hyperref[subsect:ASOSComponentView]{AutomatedSOS}}
+\item \textbf{\hyperref[subsect:T4RComponentView]{Track4Run}}
 \end{itemize}
 The Backbone is the core of the system: all other subsystems interact with it and don't interact with each other. The backbone provides interfaces for authentication and to receive live data published form the Backbone with a event-based paradigm.\\
 The last three are divided, on the Application server, in a router that provide an interface gathering all the subsystem functionalities, and a module, containing all other components of the subsystem, which uses the exposed method of the DBMS to be able to work indipendently. \\
@@ -175,7 +176,7 @@ The application server provide the logic of the system and interacts with the da
 \includegraphics[width = \textwidth]{sections/architecturalDesign/emergencyCall.png}
 \end{figure}
 \begin{figure}[H]
-\caption{Run Management}
+\caption{Run Status Management}
 \centering
 \includegraphics[width = \textwidth]{sections/architecturalDesign/raceManager.png}
 \end{figure}
@@ -204,7 +205,8 @@ The backbone, namely the Data Dispatcher components, is an event-based subsystem
 \subsection{REST and Real-Time API}
 \label{subsect:API}
 By creating a RESTful system that uses REST API and using a stateless protocol which relieve the server from storing client context between requests, we increase performance, reliability, and scalability. That said, using this software architectural style only could be too restrictive since it doesn't cope well with Real-Time trasmission of data: for example within the Backbone, meaning between the component that collects the data on the client and the component on the server that receives, stores and forward it. \\
-To publish data as fast as possible a Real-Time oriented API is used as support to handle the automated, synchronous and bi-directional communication between the server and both the clients and eventual non-human TPUs, while the REST API will be used for all other needs.
+To publish data as fast as possible a Real-Time oriented API is used as support to handle the automated, synchronous and bi-directional communication between the server and both the clients and eventual non-human TPUs, while the REST API will be used for all other needs. \\
+Namely a Sreaming API is named in the \ref{subsect:highLevel} section, which implements a real time approach through a live connection. Other, more event-based or push based method are available.
 
 \subsection{Model View Controller}
 The pattern dictates the separation the user interface components (the view components in figure \ref{fig:ComponentDiagram}), the data, which resides on the DBMS, and the response to user imput and logic, located mostrly on the application server and partly on the client.
