@@ -24,23 +24,29 @@
 \BOOKMARK [1][-]{section.2.4}{Runtime view}{chapter.2}% 24
 \BOOKMARK [1][-]{section.2.5}{Component interfaces}{chapter.2}% 25
 \BOOKMARK [1][-]{section.2.6}{Selected architectural styles and patterns}{chapter.2}% 26
-\BOOKMARK [0][-]{chapter.3}{User Interface Design}{}% 27
-\BOOKMARK [0][-]{chapter.4}{Requirements Traceability}{}% 28
-\BOOKMARK [0][-]{chapter.5}{Implementation, Integration and Test plan}{}% 29
-\BOOKMARK [1][-]{section.5.1}{Implementation strategy }{chapter.5}% 30
-\BOOKMARK [2][-]{subsection.5.1.1}{Dependences}{section.5.1}% 31
-\BOOKMARK [1][-]{section.5.2}{Testing on components strategy}{chapter.5}% 32
-\BOOKMARK [1][-]{section.5.3}{Integration strategy}{chapter.5}% 33
-\BOOKMARK [2][-]{subsection.5.3.1}{Completion of components before starting testing}{section.5.3}% 34
-\BOOKMARK [1][-]{section.5.4}{Integration test plan}{chapter.5}% 35
-\BOOKMARK [2][-]{subsection.5.4.1}{0 integration phase}{section.5.4}% 36
-\BOOKMARK [2][-]{subsection.5.4.2}{1st integration phase}{section.5.4}% 37
-\BOOKMARK [2][-]{subsection.5.4.3}{2nd integration phase}{section.5.4}% 38
-\BOOKMARK [2][-]{subsection.5.4.4}{3rd and 4th integration phase}{section.5.4}% 39
-\BOOKMARK [0][-]{chapter.6}{Effort Spent}{}% 40
-\BOOKMARK [1][-]{section.6.1}{ARGIRO' ANNA SOFIA}{chapter.6}% 41
-\BOOKMARK [1][-]{section.6.2}{BATTAGLIA GABRIELE}{chapter.6}% 42
-\BOOKMARK [1][-]{section.6.3}{CASASOLE BERNARDO}{chapter.6}% 43
-\BOOKMARK [0][-]{chapter.7}{References}{}% 44
-\BOOKMARK [1][-]{section.7.1}{Reference Documents}{chapter.7}% 45
-\BOOKMARK [1][-]{section.7.2}{Software}{chapter.7}% 46
+\BOOKMARK [2][-]{subsection.2.6.1}{Client/server multi-tier}{section.2.6}% 27
+\BOOKMARK [2][-]{subsection.2.6.2}{Event based paradigm}{section.2.6}% 28
+\BOOKMARK [2][-]{subsection.2.6.3}{REST and Real-Time API}{section.2.6}% 29
+\BOOKMARK [2][-]{subsection.2.6.4}{Model View Controller}{section.2.6}% 30
+\BOOKMARK [1][-]{section.2.7}{Other design decisions}{chapter.2}% 31
+\BOOKMARK [2][-]{subsection.2.7.1}{Emergency service}{section.2.7}% 32
+\BOOKMARK [0][-]{chapter.3}{User Interface Design}{}% 33
+\BOOKMARK [0][-]{chapter.4}{Requirements Traceability}{}% 34
+\BOOKMARK [0][-]{chapter.5}{Implementation, Integration and Test plan}{}% 35
+\BOOKMARK [1][-]{section.5.1}{Implementation strategy }{chapter.5}% 36
+\BOOKMARK [2][-]{subsection.5.1.1}{Dependences}{section.5.1}% 37
+\BOOKMARK [1][-]{section.5.2}{Testing on components strategy}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.3}{Integration strategy}{chapter.5}% 39
+\BOOKMARK [2][-]{subsection.5.3.1}{Completion of components before starting testing}{section.5.3}% 40
+\BOOKMARK [1][-]{section.5.4}{Integration test plan}{chapter.5}% 41
+\BOOKMARK [2][-]{subsection.5.4.1}{0 integration phase}{section.5.4}% 42
+\BOOKMARK [2][-]{subsection.5.4.2}{1st integration phase}{section.5.4}% 43
+\BOOKMARK [2][-]{subsection.5.4.3}{2nd integration phase}{section.5.4}% 44
+\BOOKMARK [2][-]{subsection.5.4.4}{3rd and 4th integration phase}{section.5.4}% 45
+\BOOKMARK [0][-]{chapter.6}{Effort Spent}{}% 46
+\BOOKMARK [1][-]{section.6.1}{ARGIRO' ANNA SOFIA}{chapter.6}% 47
+\BOOKMARK [1][-]{section.6.2}{BATTAGLIA GABRIELE}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.3}{CASASOLE BERNARDO}{chapter.6}% 49
+\BOOKMARK [0][-]{chapter.7}{References}{}% 50
+\BOOKMARK [1][-]{section.7.1}{Reference Documents}{chapter.7}% 51
+\BOOKMARK [1][-]{section.7.2}{Software}{chapter.7}% 52

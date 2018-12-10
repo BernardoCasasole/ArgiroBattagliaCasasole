@@ -1,72 +1,84 @@
 \contentsline {section}{Table of Contents}{3}{Doc-Start}
-\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}
-\contentsline {section}{\numberline {1.1}Purpose}{5}{section.1.1}
-\contentsline {section}{\numberline {1.2}Scope}{5}{section.1.2}
-\contentsline {section}{\numberline {1.3}Definitions}{6}{section.1.3}
-\contentsline {section}{\numberline {1.4}Acronyms}{6}{section.1.4}
-\contentsline {section}{\numberline {1.5}Abbreviations}{6}{section.1.5}
+\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}
+\contentsline {section}{\numberline {1.1}Purpose}{4}{section.1.1}
+\contentsline {section}{\numberline {1.2}Scope}{4}{section.1.2}
+\contentsline {section}{\numberline {1.3}Definitions}{5}{section.1.3}
+\contentsline {section}{\numberline {1.4}Acronyms}{5}{section.1.4}
+\contentsline {section}{\numberline {1.5}Abbreviations}{5}{section.1.5}
 \contentsline {section}{\numberline {1.6}Revision history}{6}{section.1.6}
-\contentsline {section}{\numberline {1.7}Document Structure}{7}{section.1.7}
-\contentsline {paragraph}{\hyperref [sect:introduction]{Introduction}}{7}{section*.2}
-\contentsline {paragraph}{\hyperref [sect:architecturalDesign]{Architectural Design}}{7}{section*.3}
-\contentsline {paragraph}{\hyperref [sect:userInterfaceDesign]{User Interface Design}}{7}{section*.4}
-\contentsline {paragraph}{\hyperref [sect:requirementsTraceability]{Requirements Traceability}}{7}{section*.5}
-\contentsline {paragraph}{\hyperref [sect:implementationIntegrationTestplan]{Implementation, Integration and Test plan}}{7}{section*.6}
-\contentsline {paragraph}{\hyperref [sect:effort]{Effort Spent}}{7}{section*.7}
-\contentsline {paragraph}{\hyperref [sect:references]{References}}{7}{section*.8}
-\contentsline {chapter}{\numberline {2}Architectural Design}{8}{chapter.2}
-\contentsline {section}{\numberline {2.1}Overview}{8}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}High level components and basic interactions}{9}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Interaction between Server Architecture and Individual User}{10}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Interaction between Server Architecture and Third-Party User}{11}{subsection.2.1.3}
-\contentsline {section}{\numberline {2.2}Component view}{11}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Backbone}{12}{subsection.2.2.1}
-\contentsline {paragraph}{\textit {Data collector/dispatcher}}{12}{section*.9}
-\contentsline {paragraph}{\textit {Autenthication}}{12}{section*.10}
-\contentsline {paragraph}{\textit {Data Dispatcher}}{12}{section*.11}
-\contentsline {subsection}{\numberline {2.2.2}Data4Help}{13}{subsection.2.2.2}
-\contentsline {paragraph}{\textit {D4H router}}{13}{section*.12}
-\contentsline {paragraph}{\textit {Data Request Manager}}{13}{section*.13}
-\contentsline {subsection}{\numberline {2.2.3}AutomatedSOS}{13}{subsection.2.2.3}
-\contentsline {paragraph}{\textit {ASOS router}}{13}{section*.14}
-\contentsline {paragraph}{\textit {ASOS Activation}}{13}{section*.15}
-\contentsline {paragraph}{\textit {Health Data analyzer}}{13}{section*.16}
-\contentsline {paragraph}{\textit {Emergency Handler}}{14}{section*.17}
-\contentsline {subsection}{\numberline {2.2.4}Track4Run}{14}{subsection.2.2.4}
-\contentsline {paragraph}{\textit {T4R router}}{14}{section*.18}
-\contentsline {paragraph}{\textit {T4R Activation}}{14}{section*.19}
-\contentsline {paragraph}{\textit {Run Manager}}{14}{section*.20}
-\contentsline {subsection}{\numberline {2.2.5}Full system}{15}{subsection.2.2.5}
-\contentsline {paragraph}{\textit {Data Managing}}{15}{section*.21}
-\contentsline {subsection}{\numberline {2.2.6}Entity Relationship Diagram}{15}{subsection.2.2.6}
-\contentsline {paragraph}{\textit {Tables}}{16}{section*.22}
-\contentsline {subsection}{\numberline {2.2.7}Model Interaction Diagram}{16}{subsection.2.2.7}
-\contentsline {section}{\numberline {2.3}Deployment view}{18}{section.2.3}
-\contentsline {section}{\numberline {2.4}Runtime view}{19}{section.2.4}
-\contentsline {section}{\numberline {2.5}Component interfaces}{21}{section.2.5}
+\contentsline {section}{\numberline {1.7}Document Structure}{6}{section.1.7}
+\contentsline {paragraph}{\hyperref [sect:introduction]{Introduction}}{6}{section*.2}
+\contentsline {paragraph}{\hyperref [sect:architecturalDesign]{Architectural Design}}{6}{section*.3}
+\contentsline {paragraph}{\hyperref [sect:userInterfaceDesign]{User Interface Design}}{6}{section*.4}
+\contentsline {paragraph}{\hyperref [sect:requirementsTraceability]{Requirements Traceability}}{6}{section*.5}
+\contentsline {paragraph}{\hyperref [sect:implementationIntegrationTestplan]{Implementation, Integration and Test plan}}{6}{section*.6}
+\contentsline {paragraph}{\hyperref [sect:effort]{Effort Spent}}{6}{section*.7}
+\contentsline {paragraph}{\hyperref [sect:references]{References}}{6}{section*.8}
+\contentsline {chapter}{\numberline {2}Architectural Design}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Overview}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}High level components and basic interactions}{8}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Interaction between Server Architecture and Individual User}{9}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Interaction between Server Architecture and Third-Party User}{10}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Component view}{10}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Backbone}{11}{subsection.2.2.1}
+\contentsline {paragraph}{\textit {Data collector/dispatcher}}{11}{section*.9}
+\contentsline {paragraph}{\textit {Autenthication}}{11}{section*.10}
+\contentsline {paragraph}{\textit {Data Dispatcher}}{11}{section*.11}
+\contentsline {subsection}{\numberline {2.2.2}Data4Help}{12}{subsection.2.2.2}
+\contentsline {paragraph}{\textit {D4H router}}{12}{section*.12}
+\contentsline {paragraph}{\textit {Data Request Manager}}{12}{section*.13}
+\contentsline {subsection}{\numberline {2.2.3}AutomatedSOS}{12}{subsection.2.2.3}
+\contentsline {paragraph}{\textit {ASOS router}}{12}{section*.14}
+\contentsline {paragraph}{\textit {ASOS Activation}}{12}{section*.15}
+\contentsline {paragraph}{\textit {Health Data analyzer}}{12}{section*.16}
+\contentsline {paragraph}{\textit {Emergency Handler}}{13}{section*.17}
+\contentsline {subsection}{\numberline {2.2.4}Track4Run}{13}{subsection.2.2.4}
+\contentsline {paragraph}{\textit {T4R router}}{13}{section*.18}
+\contentsline {paragraph}{\textit {T4R Activation}}{13}{section*.19}
+\contentsline {paragraph}{\textit {Run Manager}}{13}{section*.20}
+\contentsline {subsection}{\numberline {2.2.5}Full system}{14}{subsection.2.2.5}
+\contentsline {paragraph}{\textit {Data Managing}}{14}{section*.21}
+\contentsline {subsection}{\numberline {2.2.6}Entity Relationship Diagram}{14}{subsection.2.2.6}
+\contentsline {paragraph}{\textit {Tables}}{15}{section*.22}
+\contentsline {subsection}{\numberline {2.2.7}Model Interaction Diagram}{15}{subsection.2.2.7}
+\contentsline {section}{\numberline {2.3}Deployment view}{17}{section.2.3}
+\contentsline {section}{\numberline {2.4}Runtime view}{18}{section.2.4}
+\contentsline {section}{\numberline {2.5}Component interfaces}{20}{section.2.5}
 \contentsline {section}{\numberline {2.6}Selected architectural styles and patterns}{21}{section.2.6}
-\contentsline {paragraph}{Client/server multi-tier}{21}{section*.23}
-\contentsline {paragraph}{Event based paradigm}{22}{section*.24}
+\contentsline {subsection}{\numberline {2.6.1}Client/server multi-tier}{21}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Event based paradigm}{22}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}REST and Real-Time API}{22}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}Model View Controller}{22}{subsection.2.6.4}
+\contentsline {section}{\numberline {2.7}Other design decisions}{22}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Emergency service}{22}{subsection.2.7.1}
 \contentsline {chapter}{\numberline {3}User Interface Design}{23}{chapter.3}
-\contentsline {paragraph}{\textit {Third-party user}}{24}{section*.25}
-\contentsline {paragraph}{\textit {Individual user}}{25}{section*.26}
+\contentsline {paragraph}{\textit {Third-party user}}{24}{section*.23}
+\contentsline {paragraph}{\textit {Individual user}}{25}{section*.24}
 \contentsline {chapter}{\numberline {4}Requirements Traceability}{26}{chapter.4}
-\contentsline {chapter}{\numberline {5}Implementation, Integration and Test plan}{27}{chapter.5}
-\contentsline {section}{\numberline {5.1}Implementation strategy }{27}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Dependences}{27}{subsection.5.1.1}
-\contentsline {section}{\numberline {5.2}Testing on components strategy}{29}{section.5.2}
-\contentsline {section}{\numberline {5.3}Integration strategy}{30}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Completion of components before starting testing}{30}{subsection.5.3.1}
-\contentsline {section}{\numberline {5.4}Integration test plan}{32}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}0 integration phase}{32}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}1st integration phase}{33}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}2nd integration phase}{33}{subsection.5.4.3}
-\contentsline {paragraph}{The following tests should be performed firstly in the integration of the modules' components. This first stage doesn't depend on integration phases and can be performed as soon as the components are created according to section 5.3.1, exploiting stub objects and oracles where needed.}{35}{section*.27}
-\contentsline {subsection}{\numberline {5.4.4}3rd and 4th integration phase}{35}{subsection.5.4.4}
-\contentsline {chapter}{\numberline {6}Effort Spent}{38}{chapter.6}
-\contentsline {section}{\numberline {6.1}ARGIRO' ANNA SOFIA}{38}{section.6.1}
-\contentsline {section}{\numberline {6.2}BATTAGLIA GABRIELE}{39}{section.6.2}
-\contentsline {section}{\numberline {6.3}CASASOLE BERNARDO}{40}{section.6.3}
-\contentsline {chapter}{\numberline {7}References}{41}{chapter.7}
-\contentsline {section}{\numberline {7.1}Reference Documents}{41}{section.7.1}
-\contentsline {section}{\numberline {7.2}Software}{41}{section.7.2}
+\contentsline {chapter}{\numberline {5}Implementation, Integration and Test plan}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}Implementation strategy }{31}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Dependences}{31}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Testing on components strategy}{33}{section.5.2}
+\contentsline {section}{\numberline {5.3}Integration strategy}{34}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Completion of components before starting testing}{34}{subsection.5.3.1}
+\contentsline {section}{\numberline {5.4}Integration test plan}{36}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}0 integration phase}{36}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}1st integration phase}{37}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}2nd integration phase}{37}{subsection.5.4.3}
+\contentsline {paragraph}{The following tests should be performed firstly in the integration of the modules' components. This first stage doesn't depend on integration phases and can be performed as soon as the components are created according to section 5.3.1, exploiting stub objects and oracles where needed.}{39}{section*.25}
+\contentsline {subsection}{\numberline {5.4.4}3rd and 4th integration phase}{39}{subsection.5.4.4}
+\contentsline {chapter}{\numberline {6}Effort Spent}{42}{chapter.6}
+\contentsline {section}{\numberline {6.1}ARGIRO' ANNA SOFIA}{42}{section.6.1}
+\contentsline {section}{\numberline {6.2}BATTAGLIA GABRIELE}{43}{section.6.2}
+\contentsline {section}{\numberline {6.3}CASASOLE BERNARDO}{44}{section.6.3}
+\contentsline {chapter}{\numberline {7}References}{45}{chapter.7}
+\contentsline {section}{\numberline {7.1}Reference Documents}{45}{section.7.1}
+\contentsline {paragraph}{Past courses material}{45}{section*.26}
+\contentsline {paragraph}{Slides from lesson}{45}{section*.27}
+\contentsline {paragraph}{Emergency service call}{45}{section*.28}
+\contentsline {paragraph}{Software development and testing}{45}{section*.29}
+\contentsline {paragraph}{From Data Base 1 course}{45}{section*.30}
+\contentsline {paragraph}{Testing tools}{46}{section*.31}
+\contentsline {paragraph}{Cloud computing architecture}{46}{section*.32}
+\contentsline {paragraph}{API}{46}{section*.33}
+\contentsline {section}{\numberline {7.2}Software}{46}{section.7.2}
