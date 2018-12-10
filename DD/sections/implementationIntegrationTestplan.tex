@@ -56,8 +56,20 @@ Once applications' backbone is completed the implementation of D4H, T4R and ASOS
 Testing on single components should be done as soon as the components itself are produced. The testing order of the single components must be coherent with the implementation order indicated at 5.1. \\ 
 In testing process maight be usefoul the support of a multiplicity of software verifcation tools which allow to run large number of tests during the development and verifcation of the system. Of course the choice of verifcation tools depends on the programming language chosen, anyway some usefoul tools could be:
 \begin{itemize}
-\item \textbf{JUnit} - can be used in order to verify assertions on return values after method invocations.
-\item \textbf{Mockito} - a mocking framework for unit tests which can be used in order to perform scaffolding activity.
+\item \textbf{JUnit} - JUnit is one of the commonest testing software. It can be used both in unit and integration testing; the first usage is by  the way the most recomended one for the three systems developement; JUnit can be useful in verifing assertions on return values after method invocations. The aim of testing tool usage is of course helping the developers to verify the logic of a piece of the program. That's why, in orderd to avoid having to perform lots of manual tests, the use of JUnit and the resulting possibility of running automatically thests helps to identify software regressions introduced by changes in the source code meantime the implementation phase and leads to high test coverage of the code.
+
+\item \textbf{Mockito} - It is an indicated testing tool since it is a mock framework which can be used in conjunction with JUnit. Mockito also allows developers to create and configure mock objects, which according to the testing planning will probably be largely used. In particular, a use of the following test replacements (test doubles) for the real dependencies is recomended:
+\begin{itemize}
+\item Dummy object; to fill the parameters of methods.
+
+\item Fake objects; 
+
+\item Stub class; during the early integration tests some partial implementations for interfaces or classes with the purpose of using an instance of this stub maight be useful.
+
+\item Mock object; dummy implementation for an interface or a class in which the output of certain method calls is already defined by the developers. 
+\end{itemize}
+So using Mockito it will be possible to mock away external dependencies and run the integration tests sooner and validate whether the code is executed correctly.
+
 \item \textbf{Apache JMeter} - is a Java application designed to load test functional behavior and measure performance. It can be useful to simulate a heavy load on servers, but can be used also in order to analyze overall performance.
 under different load types
 \end{itemize}
