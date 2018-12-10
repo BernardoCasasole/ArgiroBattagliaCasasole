@@ -1,0 +1,497 @@
+
+\section{Implementation strategy }
+
+The implementation of D4H, T4R and ASOS will follow a critical-module-first approach. According to this strategy implementation should start whith the most complex, critical and connnected components. Both a bottom-up approach or a top-down one, considered as sole strategy, would be only partially effective. As a metter of fact the great advantage given to the design structure of the project, that is to say the possibility of parallelize the implementation of the three applications, whouldn't be fully exploited.\\ The critical-module-first approach choice is due to the structure of the system as it has been desiged. The backbone of the three application is, indeed, the same for D4H, T4R and ASOS; so it is for sure the most critical and connected module. The implementation of the three application, once all the shared components will be tested and the integration tests will be performed, could also be done in parallel. \\ Of course this implemetation strategy requires a sort of bottom-up approach. In fact, once the backbone of the application will be completed, the actual implementation will consists in the piecing together of systems to generate more complex systems. \\ About the programming language to be used, HTML5 + Java/Javascript are feasible options, but other options as Python or Android Studio are perfectly equally valid possibilities. Considering the design of the project theres no particular recommendation about programming language choice needed. \\ In order to provide a more exhaustive description of the implementation strategy an analysis of the dependences is provided.
+\subsection{Dependences}
+\begin{figure}[H]
+\caption{Dependences graph}
+\includegraphics[width = \textwidth]{sections/implementationIntegrationTestGraphs/DependenciesGraph.png}
+\end{figure}
+The represented modules refer to the 2.2 section. Arrows stand for -depends on-.\\
+The following order is not mandatory for developers. It is to be considered an advice given in order to optimize the implementation time.\\
+\textbf{1- Backbone On Server} is for sure the very first module to be implemented, since many modules depend on it and it is crucial in the comunication with the DBMS.\\ This module is composed by the following componets:
+\begin{itemize}
+\item Authentication
+\item Data Dispatcher
+\end{itemize}
+ \textbf{2- Backbone On Client} is the second module to be implemented in order to complete as soon as possible the applications' backbone.\\ This module is composed by the following componets:
+\begin{itemize}
+\item Data Collectior/Dispatcher
+\end{itemize}
+Once applications' backbone is completed the implementation of D4H, T4R and ASOS can run independently.\\ Whether a parallelized implementation is not possible a coherent with the assigment order is suggested. Here it is a possible implementation order:\\
+ \textbf{3- D4H Application Server} module is composed by the following componets:
+\begin{itemize}
+\item D4H Router
+\item Request Status Manager
+\item Blocked TPUs Manager
+\item Anonymity Evaluator
+\end{itemize}
+\textbf{4- ASOS Application Server} module is composed by the following componets:
+\begin{itemize}
+\item ASOS Router
+\item ASOS activation
+\item Health Data Analizer
+\end{itemize}
+\textbf{5- T4R Application Server} module is composed by the following componets:
+\begin{itemize}
+\item T4R Router
+\item T4R activation
+\item Run Status Manager
+\end{itemize}
+\textbf{6- D4H Web Page Client/D4H Application Client} module is composed by the following componets:
+\begin{itemize}
+\item D4H view
+\end{itemize}
+\textbf{7- ASOS UI Client} module is composed by the following componets:
+\begin{itemize}
+\item ASOS view
+\item Emergency Handler
+\end{itemize}
+\textbf{8- T4R Web Page Client/T4R Application Client} module is composed by the following componets:
+\begin{itemize}
+\item T4R view
+\end{itemize}
+%----------------------------------------------------------------------------------------------------
+\section{Testing on components strategy}
+Testing on single components should be done as soon as the components itself are produced. The testing order of the single components must be coherent with the implementation order indicated at 5.1. \\ 
+In testing process maight be usefoul the support of a multiplicity of software verifcation tools which allow to run large number of tests during the development and verifcation of the system. Of course the choice of verifcation tools depends on the programming language chosen, anyway some usefoul tools could be:
+\begin{itemize}
+\item \textbf{JUnit} - can be used in order to verify assertions on return values after method invocations.
+\item \textbf{Mockito} - a mocking framework for unit tests which can be used in order to perform scaffolding activity.
+\item \textbf{Apache JMeter} - is a Java application designed to load test functional behavior and measure performance. It can be useful to simulate a heavy load on servers, but can be used also in order to analyze overall performance.
+under different load types
+\end{itemize}
+The following table is reported in order to indicate some values that it's worth to submit. Those values are indicated to stress software and obtain a good testing coverage. \\
+The -!(type)- stands for -submit types different from the indicated one-. The \checkmark stands for -submit this kind of value-.
+\begin{table}[H]
+\centering
+\begin{tabular}{ |m{2.4cm}|m{1.9cm}||m{0.7cm}|m{0.7cm}|m{0.7cm}|m{1.1cm}|m{1.2cm}|m{0.8cm}|m{0.9cm}|m{1.0cm}| }
+ \hline
+ &  & Null & Neg. & !(int) & !(String) & !(Coord) & !(List) &  !(0\_1 value) & !(legal value) \\
+ Data & sub. model & & & & & & & &\\
+ \hline
+ age & IU & \checkmark & \checkmark &\checkmark & & & & & \\
+ \hline
+  gender & IU & \checkmark & & & \checkmark & & & & \checkmark \\
+ \hline
+  weight & IU & \checkmark & \checkmark&\checkmark & & & & &\\
+ \hline
+  height & IU & \checkmark & \checkmark&\checkmark & & & & &\\
+ \hline
+  address & IU & \checkmark & & & \checkmark & & & &\checkmark\\
+ \hline
+  activatedServices & IU & \checkmark & & & & &	\checkmark & &\checkmark\\
+ \hline
+ location & Data & \checkmark & & & & \checkmark &	 & &\checkmark\\
+ \hline
+  heartbeat & Data & \checkmark & \checkmark&\checkmark & & & & &\\
+ \hline
+  bloodPressure & Data & \checkmark & \checkmark&\checkmark & & & & &\\
+ \hline
+  time & Data & \checkmark & \checkmark&\checkmark & & & & & \checkmark \\
+ \hline
+  oxigenSaturation & Data & \checkmark & \checkmark&\checkmark & & & & &\\
+ \hline
+  state & DataRequest & \checkmark & & & \checkmark & & & &\checkmark\\
+ \hline
+ time & DataRequest & \checkmark & \checkmark&\checkmark & & & & &\checkmark \\
+ \hline
+ isSubscripted & DataRequest & & & & & & & \checkmark &\\
+ \hline
+ id & User & \checkmark & & & \checkmark & & & &\checkmark\\
+ \hline
+ name & User & \checkmark & & & \checkmark & & & &\checkmark\\
+ \hline
+ password & User & \checkmark & & & \checkmark & & & &\checkmark\\
+ \hline
+ email & User & \checkmark & & & \checkmark & & & &\checkmark\\
+ \hline
+ blockedTPUs & Blocked Requests & \checkmark & & & & &	\checkmark & &\checkmark \\
+ \hline
+ idNumber & Run & \checkmark & \checkmark&\checkmark & & & & &\\
+ \hline
+  path & Run& \checkmark & & & & \checkmark &	\checkmark & &\checkmark\\
+ \hline
+  startTime & Run & \checkmark & \checkmark&\checkmark & & & & &\checkmark \\
+ \hline
+  endTime & Run & \checkmark & \checkmark&\checkmark & & & & &\checkmark \\
+ \hline
+  minAge & Run & \checkmark & \checkmark&\checkmark & & & & &\\
+ \hline
+  maxAge & Run & \checkmark & \checkmark&\checkmark & & & & &\\
+ \hline
+  minParticipants & Run & \checkmark & \checkmark&\checkmark & & & & &\\
+ \hline
+  maxParticipants & Run & \checkmark & \checkmark&\checkmark & & & & &\\
+ \hline
+\end{tabular}
+\end{table}
+%----------------------------------------------------------------------------------------------------
+\section{Integration strategy}
+\subsection{Completion of components before starting testing}
+The integration and integration testing should start as soon as possible.Of course before starting with integration is necessary to be sure that the external services and APIs that will be used in the applications should be available and ready. In order to speed up the integration process do that, only a certain percentage of completion is actually needed. In particular the completion of components before the starting the integration should be at least:
+
+\begin{itemize}
+\item Backbone On Server - 90-100\%
+\item Backbone On Client - 80-90\%
+\item D4H Application Server - 75-85\% 
+\item ASOS Application Server - 70-80\%
+\item T4R Application Server - 70-80\%
+\item D4H Web Page Client/D4H Application Client - 65-75\%
+\item ASOS UI Client - 60-70\%
+\item T4R Web Page Client/T4R Application Client - 60-70\%
+\end{itemize}
+According to the critical-module-first approach and the testing approach expressed at point 5.2 also component integration should happen firstly in applications backbone and just then in the three applications core. Since a parallel implementation is possible, as soon as components completion meets the required percentages integration should be performed. Whether parallel implementation is not possible, the following graphical rappresentation shows a possible integration order (obviously coherent with the inplementation plan). 
+\begin{figure}[H]
+\caption{0 and 1 integration phase}
+\includegraphics[width = \textwidth]{sections/implementationIntegrationTestGraphs/IntegrationOrder0-1phase.png}
+\end{figure}
+\begin{figure}[H]
+\caption{2 integration phase}
+\includegraphics[width = \textwidth]{sections/implementationIntegrationTestGraphs/IntegrationOrder2phase.png}
+\end{figure}
+The integration order of the following modules has to depends on the implementation order. The following order is just a suggestion which doesn't consider the parallel implementation possibility.
+\begin{figure}[H]
+\caption{3 integration phase}
+\includegraphics[width = \textwidth]{sections/implementationIntegrationTestGraphs/IntegrationOrder3phase.png}
+\end{figure}
+\begin{figure}[H]
+\caption{4 integration phase}
+\includegraphics[width = \textwidth]{sections/implementationIntegrationTestGraphs/IntegrationOrder4phase.png}
+\end{figure}
+
+%----------------------------------------------------------------------------------------------------
+\section{Integration test plan}
+The following section should represents  a testing guide line: some of the most important tests that is necessary to perform in the various integration phases are listed. \\
+Tests IDs are structured as follows: the firs two characters stand for the integration test number (tNumber), while the last two characters stand for the  integration phase (iNumber).
+\subsection{0 integration phase}
+
+All the following tests wiil be generic: it is not really important the kind of data request, all that metters is submitting both valid and not valid input in order to test the server-DBMS communication. To provide a better coverage the greater possible number of different request kinds should be performed. Stub objects and oracles should be used instead of the not yet implemented components.
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t1i0} \\
+
+ \hline 
+ Components involved  	& 	 Data Dispatcher, Authentication, DBMS\\
+ Input specification  	& 	  Data x that belonging to y stored in DBMS request\\
+Output specification  	& 	 Data x\\
+Requirements-goals involved & R7, R8 - G4, G6\\
+Description  	& 	To test the communication between DBMS and the Backbone On Server in dowload some data requests have to be performed. The communication should be effective and fast enough: Database Rensponse Time should not be more then 30ms (real time data) or 200ms (historical data). The autentication procedure has to be tested as well in this section.\\
+ \hline
+\end{tabular}
+\end{table}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t2i0} \\
+ 
+ \hline 
+ Components involved  	& 	 Data Dispatcher, Authentication, DBMS\\
+ Input specification  	& 	  Data x belonging to y, storing request\\
+Output specification  	& 	Boolean: true\\
+Requirements-goals involved & R6-G3\\
+Description  	& 	 To test the communication between DBMS and the Backbone On Server in upwload some data requests have to be performed. The communication should be effective and fast enough: Database Rensponse Time should not be more then 30ms. Whether the storage is performed correctly, the return value expected is true.\\
+ \hline
+\end{tabular}
+\end{table}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t3i0} \\
+ 
+ \hline 
+Components involved  	& 	 Data Dispatcher, Authentication, DBMS\\
+ Input specification  	& 	  Data x that belonging to y not stored in DBMS request\\
+Output specification  	& 	 Warning\\
+Requirements-goals involved & R8-G3, G4, G6 \\
+Description  	& 	The system has to warn the user that the requested data are not present in DBMS. The communication should be effective and fast enough: Database Rensponse Time should not be more then 30ms (real time data) or 200ms (historical data).\\
+ \hline
+\end{tabular}
+\end{table}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t4i0} \\
+ 
+ \hline 
+Components involved  	& 	 Data Dispatcher, Authentication, DBMS\\
+ Input specification  	& 	Several requests of data x, stored or not in DBMS, have to be performed\\
+Output specification  	& Data requested\\
+Requirements-goals involved & R8, R13.1,R13.2,R7-G4, G6\\
+Description  	& 	A great number of requests (more than 1000) should be performed to test the system availability. This is necessary in order to be sure to have a proper backbone system for the application. For each request Database Rensponse Time should not be more then 30ms (real time data) or 200ms (historical data). According to requirements system availability must be at least 99.995\%.  	\\
+ \hline
+\end{tabular}
+\end{table}
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{1st integration phase}
+The following test should be performed in order to test the behaviour of the Backbone On Client. Stub objects and oracles should be used instead of the not yet implemented components.
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t1i1} \\
+ 
+ \hline 
+ Components involved  	& 	 Data Dispatcher, Authentication, DBMS, IU Data Dispatcher\\
+ Input specification  	& 	 Several storing requests x belonging to y\\
+Output specification  	& boolean\\
+Requirements-goals involved & R6-G3\\
+Description  	& 	Syncronization of client data test: if the soring request is successful a true value is returned, otherwise (false value must be returned) is necessary to check whether data are still memorized (client side).\\
+ \hline
+\end{tabular}
+\end{table}
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+\subsection{2nd integration phase}
+All the following test will be performed in order to test the integration between modules of the Backbone and the application servers. AuthenticationService, DataReciver and DataDispatcher are the interfaces involved in this integration phase. Each of the following test should be performed using different mocks (one per applicaiton). Stub objects and oracles should be used instead of the not yet implemented components.
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\\
+\\
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t1i2} \\
+ 
+ \hline 
+ Components involved  	&    Data Dispatcher, Authentication, DBMS, IU Data Dispatcher, D4H Application Server\\
+ Input specification  	&  	 Individual user or third-party user registration data\\
+Output specification  	& 	  boolean\\
+Requirements-goals involved &  R4, R4.1, R4.2-G2\\
+Description  	&  By the submission of all the required data a client should be able to register successfully. In this case a true boolean value should be returned. Some attempts with incomplete or wrong data submissions should be operated in order to test the system. In this case a false boolean value should be returned.\\
+ \hline
+\end{tabular}
+\end{table}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t2i2} \\
+ 
+ \hline 
+ Components involved  	&   Data Dispatcher, Authentication, DBMS, IU Data Dispatcher, D4H Application Server \\
+ Input specification  	&  	 Individual user or third-party user update info\\
+Output specification  	& 	  boolean	\\
+Requirements-goals involved &    R4-G2 \\
+Description  	& 	 	    Individual or third-party users should be able to update of one or more personal data. In case the process end succesfully a true boolean value should be returned. Some attempts with incomplete or wrong updates should be operated in order to test the system. In this case a false boolean value should be returned.\\
+ \hline
+\end{tabular}
+\end{table}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t3i2} \\
+ 
+ \hline 
+ Components involved  	&  Data Dispatcher, Authentication, DBMS, IU Data Dispatcher, D4H Application Server \\
+ Input specification  	&  	 Individual user or third-party user login data\\
+Output specification  	& 	  	boolean\\
+Requirements-goals involved &    R1-G1\\
+Description  	& 	 	 By the submission of all the required data a client should be able to register successfully. In this case a true boolean value should be returned. Some attempts with incomplete or wrong login data submissions should be operated in order to test the login system. In this case a false boolean value should be returned.   \\
+ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t4i2} \\
+ 
+ \hline 
+ Components involved  	&  Data Dispatcher, Authentication, DBMS, IU Data Dispatcher, D4H Application Server, T4R Application Server, ASOS Application Server  \\
+ Input specification  	&  	 Data event\\
+Output specification  	& 	 \\
+Requirements-goals involved &    R2-G1\\
+Description  	& By this test is possible to check the update of all the involved application server when a data event occurs\\
+ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t5i2} \\
+ 
+ \hline 
+ Components involved  	&  Data Dispatcher, Authentication, DBMS, IU Data Dispatcher, D4H Application Server\\
+ Input specification  	&  	IU, DataReciver \\
+Output specification  	& 	  	boolean\\
+Requirements-goals involved &     R7, R13.1-G4,G6\\
+Description  	& This test should verify whether third party users are able to subscribe or unsubscribe to data. Also not well formulated requests should be performed in order to test the subscription system. In this case a false boolean value should be returned.\\
+ \hline
+\end{tabular}
+\end{table}
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+\paragraph{The following tests should be performed firstly in the integration of the modules' components. This first stage doesn't depend on integration phases and can be performed as soon as the components are created according to section 5.3.1, exploiting stub objects and oracles where needed.}
+\subsection{3rd and 4th integration phase}
+During those integration processes stub objects and oracles should be gradually substituded by implemented components. In particular the integrationd should regard client modules with the Backbone on client and client modules with the respective server modules.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t1i3/4} \\
+ 
+ \hline 
+ Components involved  	&    Data Dispatcher, Authentication, DBMS, IU Data Dispatcher, BlockedTPUsManager, D4H Router\\
+ Input specification  	&  	 IU, TPU\\
+Output specification  	& 	  	\\
+Requirements-goals involved &  R11.2-G5\\
+Description  	& 	 	   This test should verify whether Individual users can block correctly a data requests sender. \\
+ \hline
+\end{tabular}
+\end{table}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t2i3/4} \\
+ 
+ \hline 
+ Components involved  	&    Data Dispatcher, Authentication, DBMS, IU Data Dispatcher, D4H Router, Request Status Manager\\
+ Input specification  	&  	 IU, TPU, subscription\\
+Output specification  	& 	  	int (requestID)\\
+Requirements-goals involved &  R7, R7.1,R8-G4\\
+Description  	& 	 	   This test should verify whether third-party users are able to formulate properly individual data requests. If the request is correctly formulated, a univocal request ID is generated. \\
+ \hline
+\end{tabular}
+\end{table}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t3i3/4} \\
+ 
+ \hline 
+ Components involved  	&    Data Dispatcher, Authentication, DBMS, IU Data Dispatcher, D4H Router,  Request Status Manager\\
+ Input specification  	&  	 createAnonymRequest input parameters\\
+Output specification  	& 	  	int (requestID)\\
+Requirements-goals involved &    R13.1, R13.2 ,R8-G6\\
+Description  	& 	 	   This test should verify whether third-party users are able to formulate properly group data requests. If the request is correctly formulated, a univocal request ID is generated. \\
+ \hline
+\end{tabular}
+\end{table}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t4i3/4} \\
+ 
+ \hline 
+ Components involved  	&    Data Dispatcher, Authentication, DBMS, IU Data Dispatcher, D4H Router,  Request Status Manager, Anonymity Evaluator\\
+ Input specification  	&  	 requestID\\
+Output specification  	& 	  	boolean\\
+Requirements-goals involved &    R10, R11.1, R11.2, R12-G5\\
+Description  	& 	 	   This test should verify whether users are able to cancel requests and individual users can deny or approve a single data request. Whether the action is performed correctly a true value should be returned. \\
+ \hline
+\end{tabular}
+\end{table}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t5i3/4} \\
+ 
+ \hline 
+ Components involved  	&    Data Dispatcher, Authentication, DBMS, IU Data Dispatcher, ASOS view, ASOS router, T4R view, T4R router, ASOS activation, T4R activation\\
+ Input specification  	&  	 IU, activated (boolean)\\
+Output specification  	& 	  	boolean\\
+Requirements-goals involved &  G7, G8,G9,G10\\
+Description  	& 	 	   This test should verify whether individual users are able activated or deactivated the ASOS and T4R services. Whether the action is performed correctly a true value should be returned. \\
+ \hline
+\end{tabular}
+\end{table}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t6i3/4} \\
+ 
+ \hline 
+ Components involved  	&    Data Dispatcher, Authentication, DBMS, IU Data Dispatcher,  ASOS view, ASOS router, Health Data analyzer\\
+ Input specification  	&  	 IU\\
+Output specification  	& 	  	int\\
+Requirements-goals involved &  G7\\
+Description  	& 	 	   This test should verify whether individual users can get their data parameters correctly. \\
+ \hline
+\end{tabular}
+\end{table}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t7i3/4} \\
+ \hline 
+ Components involved  	&    Data Dispatcher, Authentication, DBMS, IU Data Dispatcher, T4R view, T4R router, Run Status Manager\\
+ Input specification  	&  	createRun/updateRun input parameters\\
+Output specification  	& 	int (run identificationNumber)/boolean\\
+Requirements-goals involved &  R16.1, R16.2, R17-G8\\
+Description  	& 	 	    This test should verify whether third-party users are able to create or update their own running competitions.\\
+ \hline
+\end{tabular}
+\end{table}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t9i3/4} \\
+ \hline 
+ Components involved  	&    Data Dispatcher, Authentication, DBMS, IU Data Dispatcher, T4R view, T4R router, Run Status Manager\\
+ Input specification  	&  	  getCloseRun/cancelRun/getRun input parameters\\
+Output specification  	& 	  Run, boolean\\
+Requirements-goals involved &    R16.2, R17-G10, G8\\
+Description  	& 	 	    This test should verify whether third-party users are able to cancel a running competition they've previously organized. It  should also verify whether individual users are able to select a particular set of running competition from the map. \\
+ \hline
+\end{tabular}
+\end{table}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{4.5cm}||p{11cm}|  }
+ \hline
+ \multicolumn{2}{|c|}{Test ID: t10i3/4} \\
+ \hline 
+ Components involved  	&    Data Dispatcher, Authentication, DBMS, IU Data Dispatcher, T4R view, T4R router, Run Status Manager\\
+ Input specification  	&  	 runIdentificationNumber, IU participant\\
+Output specification  	& 	  	boolean\\
+Requirements-goals involved & R18.1, R18.2-G9    \\
+Description  	& 	 	   This test should verify whether individual users can enroll or unenroll to an organized competition.\\
+ \hline
+\end{tabular}
+\end{table}
+
+
+%----------------------------------------------------------------------------------------------------
+
