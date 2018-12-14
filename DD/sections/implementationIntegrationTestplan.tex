@@ -1,10 +1,11 @@
 
 \section{Implementation strategy }
 
-The implementation of D4H, T4R and ASOS will follow a critical-module-first approach. According to this strategy implementation should start whith the most complex, critical and connnected components. Both a bottom-up approach or a top-down one, considered as sole strategy, would be only partially effective. As a metter of fact the great advantage given to the design structure of the project, that is to say the possibility of parallelize the implementation of the three applications, whouldn't be fully exploited.\\ The critical-module-first approach choice is due to the structure of the system as it has been desiged. The backbone of the three application is, indeed, the same for D4H, T4R and ASOS; so it is for sure the most critical and connected module. The implementation of the three application, once all the shared components will be tested and the integration tests will be performed, could also be done in parallel. \\ Of course this implemetation strategy requires a sort of bottom-up approach. In fact, once the backbone of the application will be completed, the actual implementation will consists in the piecing together of systems to generate more complex systems. \\ About the programming language to be used, HTML5 + Java/Javascript are feasible options, but other options as Python or Android Studio are perfectly equally valid possibilities. Considering the design of the project theres no particular recommendation about programming language choice needed. \\ In order to provide a more exhaustive description of the implementation strategy an analysis of the dependences is provided.
+The implementation of D4H, T4R and ASOS will follow a critical-module-first approach. According to this strategy implementation should start whith the most complex, critical and connnected components. Both a bottom-up approach or a top-down one, considered as sole strategy, would be only partially effective. As a metter of fact the great advantage given to the design structure of the project, that is to say the possibility of parallelize the implementation of the three applications, wouldn't be fully exploited.\\ The critical-module-first approach choice is due to the structure of the the Data4Help System as it has been desiged. The backbone of the three application is, indeed, the same for D4H, T4R and ASOS; so it is for sure the most critical and connected module. The implementation of the three application, once all the shared components will be tested and the integration tests will be performed, could also be done in parallel. \\ Of course this implemetation strategy requires a sort of bottom-up approach. In fact, once the backbone of the application will be completed, the actual implementation will consists in the piecing together of systems to generate more complex systems. \\ About the programming language to be used, HTML5 + Java/Javascript are feasible options, but other options as Python or Android Studio are perfectly equally valid possibilities. Considering the design of the project theres no particular recommendation about programming language choice needed. \\ In order to provide a more exhaustive description of the implementation strategy an analysis of the dependences is provided. \\
+In this section the modules of the four subsystem on the Application Server are divided logically in Backbone Application Server, D4H Application Server, ASOS Application Server and T4R Application Server although they are a single software on a single server.
 \subsection{Dependences}
 \begin{figure}[H]
-\caption{Dependences graph}
+\caption{Dependencies graph}
 \includegraphics[width = \textwidth]{sections/implementationIntegrationTestGraphs/DependenciesGraph.png}
 \end{figure}
 The represented modules refer to the 2.2 section. Arrows stand for -depends on-.\\
@@ -54,9 +55,9 @@ Once applications' backbone is completed the implementation of D4H, T4R and ASOS
 %----------------------------------------------------------------------------------------------------
 \section{Testing on components strategy}
 Testing on single components should be done as soon as the components itself are produced. The testing order of the single components must be coherent with the implementation order indicated at 5.1. \\ 
-In testing process maight be usefoul the support of a multiplicity of software verifcation tools which allow to run large number of tests during the development and verifcation of the system. Of course the choice of verifcation tools depends on the programming language chosen, anyway some usefoul tools could be:
+In testing process might be useful the support of a multiplicity of software verifcation tools which allow to run large number of tests during the development and verifcation of the whole system. Of course the choice of verifcation tools depends on the programming language chosen, anyway some useful tools could be:
 \begin{itemize}
-\item \textbf{JUnit} - JUnit is one of the commonest testing software. It can be used both in unit and integration testing; the first usage is by  the way the most recomended one for the three systems developement; JUnit can be useful in verifing assertions on return values after method invocations. The aim of testing tool usage is of course helping the developers to verify the logic of a piece of the program. That's why, in orderd to avoid having to perform lots of manual tests, the use of JUnit and the resulting possibility of running automatically thests helps to identify software regressions introduced by changes in the source code meantime the implementation phase and leads to high test coverage of the code.
+\item \textbf{JUnit} - JUnit is one of the commonest testing software. It can be used both in unit and integration testing; the first usage is by the way the most recomended one for the three subsystems developement; JUnit can be useful in verifing assertions on return values after method invocations. The aim of testing tool usage is of course helping the developers to verify the logic of a piece of the program. That's why, in orderd to avoid having to perform lots of manual tests, the use of JUnit and the resulting possibility of running automatically thests helps to identify software regressions introduced by changes in the source code meantime the implementation phase and leads to high test coverage of the code.
 
 \item \textbf{Mockito} - It is an indicated testing tool since it is a mock framework which can be used in conjunction with JUnit. Mockito also allows developers to create and configure mock objects, which according to the testing planning will probably be largely used. In particular, a use of the following test replacements (test doubles) for the real dependencies is recomended:
 \begin{itemize}
@@ -64,14 +65,13 @@ In testing process maight be usefoul the support of a multiplicity of software v
 
 \item Fake objects; 
 
-\item Stub class; during the early integration tests some partial implementations for interfaces or classes with the purpose of using an instance of this stub maight be useful.
+\item Stub class; during the early integration tests some partial implementations for interfaces or classes with the purpose of using an instance of this stub might be useful.
 
 \item Mock object; dummy implementation for an interface or a class in which the output of certain method calls is already defined by the developers. 
 \end{itemize}
 So using Mockito it will be possible to mock away external dependencies and run the integration tests sooner and validate whether the code is executed correctly.
 
-\item \textbf{Apache JMeter} - is a Java application designed to load test functional behavior and measure performance. It can be useful to simulate a heavy load on servers, but can be used also in order to analyze overall performance.
-under different load types
+\item \textbf{Apache JMeter} - is a Java application designed to load test functional behavior and measure performance. It can be useful to simulate a heavy load on servers, but can be used also in order to analyze overall performance under different load types.
 \end{itemize}
 The following table is reported in order to indicate some values that it's worth to submit. Those values are indicated to stress software and obtain a good testing coverage. \\
 The -!(type)- stands for -submit types different from the indicated one-. The \checkmark stands for -submit this kind of value-.
@@ -141,7 +141,7 @@ The -!(type)- stands for -submit types different from the indicated one-. The \c
 %----------------------------------------------------------------------------------------------------
 \section{Integration strategy}
 \subsection{Completion of components before starting testing}
-The integration and integration testing should start as soon as possible.Of course before starting with integration is necessary to be sure that the external services and APIs that will be used in the applications should be available and ready. In order to speed up the integration process do that, only a certain percentage of completion is actually needed. In particular the completion of components before the starting the integration should be at least:
+The integration and integration testing should start as soon as possible. Of course before starting with integration is necessary to be sure that the external services and APIs that will be used in the applications should be available and ready. In order to speed up the integration process, only a certain percentage of completion is actually needed. In particular the completion of components before the starting the integration should be at least:
 
 \begin{itemize}
 \item Backbone On Server - 90-100\%
@@ -178,7 +178,7 @@ The following section should represents  a testing guide line: some of the most 
 Tests IDs are structured as follows: the firs two characters stand for the integration test number (tNumber), while the last two characters stand for the  integration phase (iNumber).
 \subsection{0 integration phase}
 
-All the following tests wiil be generic: it is not really important the kind of data request, all that metters is submitting both valid and not valid input in order to test the server-DBMS communication. To provide a better coverage the greater possible number of different request kinds should be performed. Stub objects and oracles should be used instead of the not yet implemented components.
+All the following tests will be generic: it is not really important the kind of data request, all that metters is submitting both valid and not valid input in order to test the server-DBMS communication. To provide a better coverage the greater possible number of different request kinds should be performed. Stub objects and oracles should be used instead of the not yet implemented components.
 %--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 \begin{table}[H]
@@ -240,7 +240,7 @@ Components involved  	& 	 Data Dispatcher, Authentication, DBMS\\
  Input specification  	& 	Several requests of data x, stored or not in DBMS, have to be performed\\
 Output specification  	& Data requested\\
 Requirements-goals involved & R8, R13.1,R13.2,R7-G4, G6\\
-Description  	& 	A great number of requests (more than 1000) should be performed to test the system availability. This is necessary in order to be sure to have a proper backbone system for the application. For each request Database Rensponse Time should not be more then 30ms (real time data) or 200ms (historical data). According to requirements system availability must be at least 99.995\%.  	\\
+Description  	& 	A great number of requests (more than 1000) should be performed to test the system availability. This is necessary in order to be sure to have a proper backbone subsystem for the application. For each request Database Rensponse Time should not be more then 30ms (real time data) or 200ms (historical data). According to requirements system availability must be at least 99.995\%.  	\\
  \hline
 \end{tabular}
 \end{table}
@@ -263,7 +263,7 @@ The following test should be performed in order to test the behaviour of the Bac
  Input specification  	& 	 Several storing requests x belonging to y\\
 Output specification  	& boolean\\
 Requirements-goals involved & R6-G3\\
-Description  	& 	Syncronization of client data test: if the soring request is successful a true value is returned, otherwise (false value must be returned) is necessary to check whether data are still memorized (client side).\\
+Description  	& 	Syncronization of client data test: if the storing request is successful a true value is returned, otherwise (false value must be returned) is necessary to check whether data are still memorized (client side).\\
  \hline
 \end{tabular}
 \end{table}
@@ -318,7 +318,7 @@ Description  	& 	 	    Individual or third-party users should be able to update 
  Input specification  	&  	 Individual user or third-party user login data\\
 Output specification  	& 	  	boolean\\
 Requirements-goals involved &    R1-G1\\
-Description  	& 	 	 By the submission of all the required data a client should be able to register successfully. In this case a true boolean value should be returned. Some attempts with incomplete or wrong login data submissions should be operated in order to test the login system. In this case a false boolean value should be returned.   \\
+Description  	& 	 	 By the submission of all the required data a client should be able to register successfully. In this case a true boolean value should be returned. Some attempts with incomplete or wrong login data submissions should be operated in order to test the login process. In this case a false boolean value should be returned.   \\
  \hline
 \end{tabular}
 \end{table}
@@ -350,7 +350,7 @@ Description  	& By this test is possible to check the update of all the involved
  Input specification  	&  	IU, DataReciver \\
 Output specification  	& 	  	boolean\\
 Requirements-goals involved &     R7, R13.1-G4,G6\\
-Description  	& This test should verify whether third party users are able to subscribe or unsubscribe to data. Also not well formulated requests should be performed in order to test the subscription system. In this case a false boolean value should be returned.\\
+Description  	& This test should verify whether third party users are able to subscribe or unsubscribe to data. Also not well formulated requests should be performed in order to test the subscription process. In this case a false boolean value should be returned.\\
  \hline
 \end{tabular}
 \end{table}
