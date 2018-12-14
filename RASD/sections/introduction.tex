@@ -9,7 +9,7 @@ In this document it has been took particularly regard toward the comprehensibili
 \item
 [\textbf{G1}] Allow users to properly use the services they wish to employ
 \item
-[\textbf{G2}] Allow visitor to register as individual or third-party user
+[\textbf{G2}] Allow visitors to register as individual or third-party user
 \item
 [\textbf{G3}] Allow individual users to monitor their location and health parameters
 \item
@@ -31,16 +31,15 @@ In this document it has been took particularly regard toward the comprehensibili
 
 %-------------------------------------------------------------------------------------------------------------
 \section{Scope}
-The service Data4Help is designed to monitor the location and health status of individual registered to it using wearable devices. Upon registration individual users agree to the acquisition and usage of data by TrackMe and will be able to see their own data.
+The Data4Help System includes the three services that TrackMe wants to develop: Data4Help, which is the main service, Track4Run and AutomatedSOS. The Data4Help Mobile Application and the Data4Help Web Page allow users to make use of the three Data4Help System services. To be specific, IU are allowed to activate or deactivate Track4Run and AutomatedSOS services whenever they want to. \\
+\\
+The service Data4Help is designed to monitor the location and health status of individuals registered to it using wearable devices. Upon registration individual users agree to the acquisition and usage of data by Data4Help and will be able to see their own data.
 The collected data is available to be requested by registered third-party users. The first possibility is requesting data on a specific individual user, for which it is required an identification code of the individual user(Social security number, fiscal code, etc.); the second possibility is accessing anonymized data on groups of individual users, so the system will have to allow third-party users to filter the users by age, geographical area, weight, etc. while keeping the data properly anonymized.
-For both possibilities third-party users can simply acquire data stored or subscribe to receive data as soon as they are produced.
+For both possibilities third-party users can simply acquire data stored or subscribe to receive data as soon as they are produced.\\
 \\
+AutomatedSOS is a service designed to provide emergency health support for elderly people, to be integrated on top of Data4Help. Those individual users’ parameters about blood pressure, heartbeat and oxygen saturation are constantly checked: whenever they represent a critical health condition, AutomatedSOS, within 5 seconds from the detection of the drop of those values, contacts an Emergency Service asking to send an ambulance at the user location.\\
 \\
-AutomatedSOS is a service designed to provide emergency health support for elderly people, to be integrated on top of Data4Help. Those individual users’ parameters about blood pressure, heartbeat and oxygen saturation are constantly checked: whenever they represent a critical health condition, AutomatedSOS, within 5 seconds from the drop of those values, contacts an Emergency Service asking to send an ambulance at the user location.
-\\
-\\
-The main purpose of the Track4Run is to support running competition organizer and jogging lovers in convening great sport events with little effort. Namely Track4Run is a service-to-be focused on organizing running competition and on monitoring competitors. A user of Track4Run will also have to be a user of Data4Help. 
-\\ 
+The main purpose of the Track4Run is to support running competition organizer and jogging lovers in convening great sport events with little effort. In particular Track4Run is a service-to-be focused on organizing running competition and on monitoring competitors. \\
 \\
 Third-party users will be able to: 
 \begin{itemize}
@@ -51,7 +50,6 @@ see the participants;
 \item 
 cancel a run they have organized. 
 \end{itemize}
-
 Individual users will be able to: 
 \begin{itemize}
 \item 
@@ -64,22 +62,21 @@ search for organized running competitions and register to participate in a futur
 During the run: 
 \begin{itemize}
 \item 
-organizer, participants and spectators will be able to see the name and positions of participants; 
-\item 
-the system must be able to distinguish between actual participants and individual users who registered to the run but are not competing, simply checking if their position is on the run path. 
+organizer, participants and spectators will be able to see the name and position of participants; 
 \end{itemize}
 
 %-------------------------------------------------------------------------------------------------------------
 \section{Definitions}
 \begin{itemize}
-\item \textit{Visitor}:someone that has not registered in yet;
-\item \textit{User}: a person, third-party or user, that has registered;
+\item \textit{Data4Help System}: the whole system, offering Data4Help, AutomateSOS and Track4Run services.
+\item \textit{Visitor}: someone that has not registered in yet;
+\item \textit{User}: an individual or third-party who has registered;
 \item \textit{Individual User}: every registered person from whom the system collects data; 
-\item \textit{Run Participant}: an individual who wants to take part in a run;
-\item \textit{Run Spectator}: an individual user who wants to spectate a run;
-\item \textit{Third-Party User}:every entity registered with the purpose to request data for external use;
-\item \textit{Run Organizer}: third-party users that wants to organize a run;
-\item \textit{Emergency Service}: external participant that receives and take charge of the request for an ambulance;
+\item \textit{Run Participant}: an individual who enrolled in a run;
+\item \textit{Run Spectator}: an individual user who spectates a run;
+\item \textit{Third-Party User}: every entity registered with the purpose to request data for external use;
+\item \textit{Run Organizer}: third-party user that wants to organize a run;
+\item \textit{Emergency Service}: external participant that receives and takes charge of the request for an ambulance;
 \item \textit{Identification code}: a unique code for individual users or third-party users which identify them; for individual users it can be the Social security number, fiscal code, etc.; for third-party users it can be also the VAT number.
 \item \textit{Stored Data}: the data on a IU collected so far.
 \item \textit{Data Request}: a request for data made from a TPU.
@@ -90,6 +87,7 @@ the system must be able to distinguish between actual participants and individua
 \begin{itemize}
 \item RASD: Requirement Analysis and Specification Document. 
 \item API: Application Programming Interface
+\item IU: Individual User
 \item TPU: Third-party User
 \item RO: Run Organizer 
 \item	RS: Run Spectator 
@@ -118,13 +116,14 @@ the system must be able to distinguish between actual participants and individua
 \item \textbf{v0.5 - 8/11/18} Updated user interfaces section, added design constrains and software system attributes sections
 \item \textbf{v1.0 - 10/11/18} Added the alloy and the effort sections, updated introduction section 
 \item \textbf{v1.1 - 11/11/18} Minor changes
+\item \textbf{v1.2 - 14/12/18} Nomenclature corrections, grammar corrections, minor changes on definitions, assumption and requirements.
 \end{itemize}
 %-------------------------------------------------------------------------------------------------------------
 \section{Document Structure}
-\paragraph{\hyperref[sect:introduction]{Introduction}} In this first section the scope of the project and its goals are described in general tems and it's introduced an outline of the system that is examined in further details in the others sections. Furthermore, recurring Acronyms, Definitions and Abbreviations used in the document are introduced to ease theirs understanding.
-\paragraph{\hyperref[sect:overview]{Overview}} The second section provides a more precise overview of the shared phenomena, via the product perspective and the class diagram, while also describing the main function the system will have, defining it further. It contains also the assumpions made on the outside world, the contraints on the project and the dependency between Data4Help, AutmatedSos and Track4Run.
-\paragraph{\hyperref[sect:requirements]{Specific Requirements}} The third section contains a visual representation of the communication interface with the users and a description of the software and hardware interfaces. Morover the requirements are outlined in details, via the use of scenarios and relative use cases and sequence diagrams, and mapped on the goals. Furthermore the system attributes are introduced in details.
-\paragraph{\hyperref[sect:alloy]{Formal Analysis Using Alloy}} The fourth section, being D4H, ASOS and T4R fairly indipent, contains three alloy models, one for each, and the relative results and generated world.
+\paragraph{\hyperref[sect:introduction]{Introduction}} In this first section the scope of the project and its goals are described in general terms and it's introduced an outline of the Data4Help System that is examined in further details in the others sections. Furthermore, recurring Acronyms, Definitions and Abbreviations used in the document are introduced to ease their understanding.
+\paragraph{\hyperref[sect:overview]{Overview}} The second section provides a more precise overview of the shared phenomena, via the product perspective and the class diagram and it also describes the main function the system will have, defining it further. It contains also the assumpions made on the outside world, the contraints on the project and the dependency between Data4Help, AutmatedSos and Track4Run.
+\paragraph{\hyperref[sect:requirements]{Specific Requirements}} The third section contains a visual representation of the communication interface with the users and a description of the software and hardware interfaces. Moreover the requirements are outlined in details, via the use of scenarios and relative use cases and sequence diagrams, and mapped on the goals. Furthermore the system attributes are introduced in details.
+\paragraph{\hyperref[sect:alloy]{Formal Analysis Using Alloy}} The fourth section, being D4H, ASOS and T4R fairly indipendent, contains three alloy models, one for each, and the relative results and generated world.
 \paragraph{\hyperref[sect:effort]{Effort Spent}} The fifth section contains the effort spent by each member of the group.
 \paragraph{\hyperref[sect:references]{References}} Reference documents and software used to edit the document
 

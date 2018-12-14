@@ -1,17 +1,17 @@
 \subsection{Scenarios}
 \subsubsection{Scenario 1}
-Alice's gym would like to collect data on their members so they asked Alice to install the Data4Help application. She downloaded it, entered her name, age, ID, password etc., she accepted the data sharing policy and, after receiving an email, confirmed her email address. Now she received a notification from the app, asking if she wants to accept or deny the request for her data, made from her gym, which she accepts.
+Alice's gym would like to collect data on their members, so Alice was asked to install the Data4Help Mobile Application. She downloaded it, entered her name, age, ID, password etc., she accepted the data sharing policy and, after receiving an email, confirmed her email address. Now she received a notification from the app, asking if she wants to accept or deny the request for her data, made from her gym, which she accepts.
 \subsubsection{Scenario 2}
-Bob, historic user of Data4Help, is getting older and older so he wants to activate the Emergency Service, AutomatedSOS. He logs in the application and requests the activation of the service.
-Incidentally the very next day, while working from home, he has a cardiac arrest. Immediatly the application calls the Emergency Service that sends an ambulance to his house, saving his life.
+Bob, historic user of the Data4Help System, is getting older and older so he wants to activate the Emergency Service, AutomatedSOS. He logs in the application and requests the activation of the service.
+Incidentally the very next day, while working from home, he has a cardiac arrest. Immediately the application calls the Emergency Service that sends an ambulance to his house, saving his life.
 \subsubsection{Scenario 3}
-Charles and Devon are passionate runners and love to compete one with the other. To be able to find more opportunities to race they installed Data4Help application and activated the Track4Run service. Soon they enroll in a race as partecipants but unfortunatly Devon, the day before of the race, get injured, so he forfeit from the run. The day after, wishing to know how his friend Charles is doing he opens the app and spectates the run. After Charles arrives first he gets a call from Devon telling him that next time he will arrive second.
+Charles and Devon are passionate runners and love to compete one with the other. To be able to find more opportunities to race they installed the Data4Help Mobile Application and activated the Track4Run service. Soon they enroll in a race as partecipants but unfortunatly Devon, the day before of the race, get injured, so he forfeit from the run. The day after, wishing to know how his friend Charles is doing he opens the app and spectates the run. After Charles arrives first he gets a call from Devon telling him that next time he will arrive second.
 \subsubsection{Scenario 4}
-EvilCorp wants to collect data on the inhabitants of a small town. Felix the supervisor registers the company on the website, entering name, ID(VAT), etc. and waits for a confirmation email. Then he enters the website again and enters the data required to make a request for data on individual users living in the area. Unfortunately for EvilCorp, there were not enough users to properly anonymize the data, so the request is rejected and Felix is fired.
+EvilCorp wants to collect data on the inhabitants of a small town. Felix the supervisor registers the company on the web page, entering name, ID(VAT), etc. and waits for a confirmation email. Then he enters the web page again and enters the data required to make a request for data on individual users living in the area. Unfortunately for EvilCorp, there were not enough users to properly anonymize the data, so the request is rejected and Felix is fired.
 \subsubsection{Scenario 5}
 GymForEveryone wants to personalize more the workout session of its premium members. In order to do so Helen, the manager, logs in the gym account and sends, one by one, the request to the data of the premium members. The day after some of them have accepted the request while some of them denied it. With the data obtained she starts creating new workout sessions.
 \subsubsection{Scenario 6}
-IHealth wants to monitor large groups of people in order to collect data for research. In order to do that its researchers created a company account via website. Jhon the scientist then makes a request to monitor the data of people living in Milan to evaluate stress levels. Being able to properly anonymize the data, the system gives him access to live data. After some days, shocked by the results, starts funding a campaign to urge Milan to work less and relax more.
+IHealth wants to monitor large groups of people in order to collect data for research. In order to do that its researchers created a company account via web page. Jhon the scientist then makes a request to monitor the data of people living in Milan to evaluate stress levels. Being able to properly anonymize the data, the system gives him access to live data. After some days, shocked by the results, starts funding a campaign to urge Milan to work less and relax more.
 \clearpage
 
 \includepdf[pages=-]{sections/requirements/UseCases/USE_CASE_RASD.pdf}
@@ -98,13 +98,13 @@ IHealth wants to monitor large groups of people in order to collect data for res
 \begin{itemize}
 \item [\textbf{G1}] Allow users to properly use the services they wish to employ 
 
-\subitem \textbf{R1} The Users must be able to log in 
+\subitem \textbf{R1} The User must be able to log in 
 \subitem \textbf{R2} An IU must be able to opt in and out of any additional service besides D4H
 
 \item [\textbf{G2}] Allow visitor to register as individual or third-party user 
 
 \subitem \textbf{D1}, \textbf{D2}, \textbf{D3}, \textbf{D4}
-\subitem \textbf{R4} A visitor must be able to register to D4H 
+\subitem \textbf{R4} A visitor must be able to register to the Data4Help System
 \subitem \textbf{R4.1} A visitor must insert name, age, gender, height, weight, ID, address, email and password
 \subitem \textbf{R4.2} A third party must insert name, ID, email and password 
 
@@ -117,7 +117,7 @@ IHealth wants to monitor large groups of people in order to collect data for res
 \item [\textbf{G4}] Allow third-party users to request the data on specific users
 
 \subitem \textbf{D2}
-\subitem \textbf{R7} A logged in TPU must be able to request the stored data or subscribe to newly produced data, after providing an ID of the user
+\subitem \textbf{R7} A TPU must be able to request the stored data or subscribe to newly produced data, after providing an ID of the user
 \subitem \textbf{R7.1} A TPU must be warned whether the data they requested is available
 \subitem \textbf{R8} A TPU must be able to obtain the data it has access to 
 
@@ -126,7 +126,7 @@ IHealth wants to monitor large groups of people in order to collect data for res
 \subitem \textbf{R9} The IU must be notified when a TPU request their data
 \subitem \textbf{R10} An IU must be able to accept the request on their data
 \subitem \textbf{R11.1} An IU must be able to deny access to their data
-\subitem \textbf{R11.2} An IU must be able to deny block a TPU to automatically deny their future requests for data
+\subitem \textbf{R11.2} An IU must be able to block a TPU to automatically deny their future requests for data
 \subitem \textbf{R12} User must be able to cancel the TPU subscriptions to their data that they previously accepted
 
 \item [\textbf{G6}] Allow third-party users to request data on anonymized groups of individual users
@@ -138,26 +138,25 @@ IHealth wants to monitor large groups of people in order to collect data for res
 \item [\textbf{G7}] Call an ambulance if the system detects a critical health condition
 
 \subitem \textbf{D5}, \textbf{D7}, \textbf{D8}
-\subitem \textbf{R14} When a critical condition is registered, the system should contact the ES and provide it location and health status of the IU
+\subitem \textbf{R14} When a critical condition is registered, the system should contact the ES and provide it with the location and health status of the IU
 \subitem \textbf{R15} The IU must be able to cancel the call
 
 \item [\textbf{G8}] Allow third-party users to organize running competitions
 
 \subitem \textbf{D9}
 \subitem \textbf{R16.1} A TPU must be able to create a new run, specifying time, duration, path, restriction for enrolment
-\subitem \textbf{R16.2} A run organize must be able to must be able to cancel a run 
-\subitem \textbf{R17} Run organizers, participants and spectators must be able to cancel a run see the status of the ongoing run
+\subitem \textbf{R16.2} An organizer must be able to cancel a run 
+\subitem \textbf{R17} Run organizers, participants and spectators must be able to see the status of the ongoing run
 
 \item [\textbf{G9}] Allow Individual users to enrol in existing running competitions as participants
 
 \subitem \textbf{D9}
 \subitem \textbf{R18.1}An IU must be able to enrol in a future run
 \subitem \textbf{R18.2}A participant must be able to cancel their inscription to the run 
-\subitem \textbf{R17}Run organizers, participants and spectators must be able to cancel a run see the status of the ongoing run
+\subitem \textbf{R17}Run organizers, participants and spectators must be able to see the status of the ongoing run
 
 \item [\textbf{G10}] Allow Individual users to subscribe in existing running competition as spectators to monitor underway competitions
 
-\subitem \textbf{D9}
-\subitem \textbf{R19}An IU must be able to spectate a ongoing run 
-\subitem \textbf{R17}o	Run organizers, participants and spectators must be able to cancel a run see the status of the ongoing run
+\subitem \textbf{D9} 
+\subitem \textbf{R17}Run organizers, participants and spectators must be able to see the status of the ongoing run
 \end{itemize}

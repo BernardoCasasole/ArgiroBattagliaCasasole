@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>6</zoom_level>
+  <zoom_level>16</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>414</x>
-      <y>336</y>
-      <w>60</w>
-      <h>84</h>
+      <x>1088</x>
+      <y>448</y>
+      <w>160</w>
+      <h>224</h>
     </coordinates>
     <panel_attributes>IndividualUser
 --
@@ -21,10 +21,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>216</x>
-      <y>168</y>
-      <w>54</w>
-      <h>54</h>
+      <x>560</x>
+      <y>0</y>
+      <w>144</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>User
 --
@@ -37,10 +37,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>6</x>
-      <y>342</y>
-      <w>78</w>
-      <h>60</h>
+      <x>0</x>
+      <y>464</y>
+      <w>208</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>ThirdPartyUser
 --
@@ -50,10 +50,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>36</x>
-      <y>216</y>
-      <w>216</w>
-      <h>138</h>
+      <x>80</x>
+      <y>128</y>
+      <w>576</w>
+      <h>368</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>340.0;10.0;340.0;70.0;10.0;70.0;10.0;210.0</additional_attributes>
@@ -61,10 +61,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>234</x>
-      <y>216</y>
-      <w>222</w>
-      <h>132</h>
+      <x>608</x>
+      <y>128</y>
+      <w>592</w>
+      <h>352</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0;350.0;70.0;350.0;200.0</additional_attributes>
@@ -72,45 +72,45 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>6</x>
-      <y>492</y>
-      <w>72</w>
-      <h>18</h>
+      <x>0</x>
+      <y>864</y>
+      <w>192</w>
+      <h>48</h>
     </coordinates>
-    <panel_attributes>RaceOrganizer
+    <panel_attributes>RunOrganizer
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
-      <y>492</y>
-      <w>72</w>
-      <h>18</h>
+      <x>944</x>
+      <y>864</y>
+      <w>192</w>
+      <h>48</h>
     </coordinates>
-    <panel_attributes>RaceParticipant</panel_attributes>
+    <panel_attributes>RunParticipant</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>450</x>
-      <y>522</y>
-      <w>72</w>
-      <h>18</h>
+      <x>1184</x>
+      <y>944</y>
+      <w>192</w>
+      <h>48</h>
     </coordinates>
-    <panel_attributes>RaceSpectator
+    <panel_attributes>RunSpectator
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>36</x>
-      <y>396</y>
-      <w>18</w>
-      <h>108</h>
+      <x>80</x>
+      <y>608</y>
+      <w>48</w>
+      <h>288</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
@@ -118,10 +118,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>414</y>
-      <w>18</w>
-      <h>90</h>
+      <x>1104</x>
+      <y>656</y>
+      <w>48</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
@@ -129,10 +129,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>414</y>
-      <w>18</w>
-      <h>120</h>
+      <x>1184</x>
+      <y>656</y>
+      <w>48</w>
+      <h>320</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
@@ -140,10 +140,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>468</x>
-      <y>378</y>
-      <w>42</w>
-      <h>18</h>
+      <x>1232</x>
+      <y>560</y>
+      <w>112</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
@@ -151,10 +151,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>498</x>
-      <y>378</y>
-      <w>72</w>
-      <h>18</h>
+      <x>1312</x>
+      <y>560</y>
+      <w>192</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>WearableDevice
 </panel_attributes>
@@ -163,10 +163,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>192</x>
-      <y>378</y>
-      <w>78</w>
-      <h>30</h>
+      <x>496</x>
+      <y>560</y>
+      <w>208</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>DataRequest
 --
@@ -177,10 +177,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>78</x>
-      <y>360</y>
-      <w>348</w>
-      <h>24</h>
+      <x>192</x>
+      <y>512</y>
+      <w>928</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..*
@@ -190,10 +190,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>228</x>
-      <y>360</y>
-      <w>18</w>
-      <h>30</h>
+      <x>592</x>
+      <y>512</y>
+      <w>48</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
@@ -201,10 +201,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>204</x>
-      <y>486</y>
-      <w>60</w>
-      <h>60</h>
+      <x>528</x>
+      <y>848</y>
+      <w>160</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>Run
 --
@@ -219,10 +219,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>72</x>
-      <y>498</y>
-      <w>144</w>
-      <h>24</h>
+      <x>176</x>
+      <y>880</y>
+      <w>384</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -232,10 +232,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>258</x>
-      <y>498</y>
-      <w>114</w>
-      <h>24</h>
+      <x>672</x>
+      <y>880</y>
+      <w>304</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..*
@@ -245,10 +245,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>258</x>
-      <y>522</y>
-      <w>204</w>
-      <h>24</h>
+      <x>672</x>
+      <y>944</y>
+      <w>544</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..*
@@ -258,10 +258,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>630</x>
-      <y>348</y>
-      <w>78</w>
-      <h>36</h>
+      <x>1664</x>
+      <y>480</y>
+      <w>208</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>EmergencyCall
 --
@@ -273,10 +273,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>468</x>
-      <y>396</y>
-      <w>60</w>
-      <h>48</h>
+      <x>1232</x>
+      <y>608</y>
+      <w>160</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
@@ -285,27 +285,27 @@ m2=0..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>492</x>
-      <y>432</y>
-      <w>72</w>
-      <h>60</h>
+      <x>1296</x>
+      <y>704</y>
+      <w>192</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>Data
 --
 + Location
-+ Pulse
++ Heartbeat
++ Oxygen saturation
 + Blood pressure
-
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>468</x>
-      <y>354</y>
-      <w>174</w>
-      <h>24</h>
+      <x>1232</x>
+      <y>496</y>
+      <w>464</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -315,10 +315,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>144</x>
-      <y>426</y>
-      <w>84</w>
-      <h>18</h>
+      <x>368</x>
+      <y>688</y>
+      <w>224</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>StoredDataRequest
 
@@ -328,10 +328,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>246</x>
-      <y>426</y>
-      <w>96</w>
-      <h>18</h>
+      <x>640</x>
+      <y>688</y>
+      <w>256</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>SubscriptionRequest
 
@@ -341,10 +341,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>186</x>
-      <y>402</y>
-      <w>54</w>
-      <h>36</h>
+      <x>480</x>
+      <y>624</y>
+      <w>144</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;40.0</additional_attributes>
@@ -352,10 +352,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>222</x>
-      <y>402</y>
-      <w>72</w>
-      <h>36</h>
+      <x>576</x>
+      <y>624</y>
+      <w>192</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;100.0;40.0</additional_attributes>

@@ -1,12 +1,12 @@
 \section{Data4Help}
-The first alloy model focus on the lifecycle of data requests performed by TPUs on IUs, on the access from TPUs to approved data, blocked TPUs and group requests namely:
+The first alloy model focuses on the lifecycle of data requests performed by TPUs on IUs, on the access from TPUs to approved data, blocked TPUs and group requests namely:
 \begin{itemize}
-\item a request must be created waiting for approval and must then go in a deny or approve state, after which it never changes state, unless it is a subscription request whose approval can be revocked, causing the request to go from an approval state ti a deny state;
-\item a TPU has access only to data for which exists either a stored data request approved after the data was collected or a subscription request approved at the time the data was produced
-\item a TPU cannot make a request for data of an individual user if it is blocked
-\item a group request is approved only if it targets at least 1000 IUs (In the model is used 3 for a faster execution)
+\item a request must be created waiting for approval and must then go in a deny or approved state, after which it never changes state, unless it is a subscription request whose approval can be revocked, causing the request to go from an approved state to a denied state;
+\item a TPU has access only to data for which exists either a stored data request approved after the data was collected or a subscription request approved at the time the data was produced;
+\item a TPU cannot make a request for data of an individual user if it is blocked;
+\item a group request is approved only if it targets at least 1000 IUs (in the model is used 3 for a faster execution).
 \end{itemize}
-To do so we considered a time frame for which the requests have the set of state they were in every instant.  \\
+To do so we considered a time frame for which the requests have the set of the state they are in every instant.  \\
 The IUs have instead the set of blocked TPUs; this is considered already filled with the TPUs that the IU blocked and never change in the time frame. \\ 
 The TPUs have a set of data it has access to, after the time frame. \\
 The Group Request have a set of IUs that if the request is valid, it contains more than 3 IUs, else it is empty; for simplicity the info restrictions is modeled with a set of targeted info: if a IU has one of those info he is included in the request target.
@@ -25,7 +25,7 @@ The second alloy model focus on the lifecycle of an emergency call:
 \item a call must end after it has contacted the ES or after it was blocked by the IU
 \item for every time interval in which the health was critical exactly one call must have been made
 \end{itemize}
-For simplicity sake, this model considers that an abulance is called every time the status drops ti critical.
+For simplicity sake, this model considers that an abulance is called every time the status drops to critical.
 \subsection{Alloy model}
 \input{sections/alloy/alloyASOS}
 \subsection{Generated world}
@@ -39,7 +39,6 @@ The third alloy model focus on the lifecycle of a run and the restriction on par
 \item every organized run must either be canceled before they start or successfuly end;
 \item IUs can enroll to participate or spectate only during specific state of the run, respectively when the run has been organized but not started and when the run has started
 \end{itemize}
-For simplicity sake, this model considers that an abulance is called every time the status drops ti critical.
 \subsubsection{Alloy model}
 \input{sections/alloy/alloyT4R}
 \subsection{Generated world}

@@ -5,38 +5,38 @@ Reliability is a parameter to evaluate the quality of a software (or hardware) s
 for intermittent demands it’s useful the POFOD (probability of failure on demand) that is the likelihood the system will fail when a request is made, while ROCOF (rate of occurrence of failures) is used when the system has to process a large number of similar requests in a short time. This metric permits to select time units (such as row execution time, calendar time, number of transactions). Reliability is defined indeed as the measure of how long the system performs its intended function. 
 \\
 \\
-The demands rate for Data4Help system is likely to be unpredictable according to different options user can activate and the intensity of the interaction the user intends to have with the application or web page. For these reasons ROCOF metric is more appropriate to evaluate Data4Help system reliability: the time unit selected is the year and the occurrence of failure over this period must not exceed two times. 
+The demands rate for the Data4Help System is likely to be unpredictable according to different options user can activate and the intensity of the interaction the user intends to have with the application or web page. For these reasons ROCOF metric is more appropriate to evaluate the Data4Help System reliability: the time unit selected is the year and the occurrence of failure over this period must not exceed two times. 
 
 \subsection{Availability}
 Availability is a parameter particularly relevant for continuously running systems: it’s a measure of the percentage of time the system is available for use and considers the restart and the repair time. Availability can be calculated as the Mean Time Between Failure (MTBF, uptime) divided by the sum of MTBF and the Mean Time To Repair (MTTR, downtime including restart).
 \\
 \\ 
-Taking in account the fact that Data4Help operates in health services it has been selected a “four-and-a-half-nine availability” that means a percentage of 99.995, a downtime per year of 26.30 minutes, 2.19 minutes per month.  
+Taking in account the fact that the Data4Help System operates in health services, it has been selected a “four-and-a-half-nine availability” that means a percentage of 99.995, a downtime per year of 26.30 minutes, 2.19 minutes per month.  
 \subsection{Security}
 Security of a system reflects the ability to guarantee confidentiality, integrity of data and authenticity over treats from both accidental and malicious events.
 \\
 \\ 
-Data4Help authentication process (made from user identification and password) preserves confidentiality allowing users to access dedicated resources only: sensitive data such as passwords need to be encrypted implementing Hash-with-Salt or any stronger mechanism for encryption. 
+The Data4Help System authentication process (made from user identification and password) preserves confidentiality allowing users to access dedicated resources only: sensitive data such as passwords need to be encrypted implementing Hash-with-Salt or any stronger mechanism for encryption. 
 \\
 \\
-Data4Help uses TLS (transport layer security cryptographic protocol) to encrypt communications between the user and server(s).
+The Data4Help System uses TLS (transport layer security cryptographic protocol) to encrypt communications between the user and server(s).
 \\
 \\
 Backups, kept both on cloud and on hard disks, need to be fully encrypted to prevent unauthorized access. When connections are established, HTTPS (HTTP + SSL certificate at application layer) is selected over HTTP.
 \\
 \\
-Keeping data consistent over time is the concern behind Integrity: Data4Help avails itself of Web Application Firewalls (WAFs); to reduce human induced integrity errors, it should be implemented a detecting algorithm such as Damm or Luhn algorithm, while to ensure logic integrity a run-time sanity checks needs to be present (such as SQL CHECK constraints). The use of ZFS (or equivalent) should be taken in account to include an extensive protection against data corruption. 
+Keeping data consistent over time is the concern behind Integrity: The Data4Help System avails itself of Web Application Firewalls (WAFs); to reduce human induced integrity errors, it should be implemented a detecting algorithm such as Damm or Luhn algorithm, while to ensure logic integrity a run-time sanity checks needs to be present (such as SQL CHECK constraints). The use of ZFS (or equivalent) should be taken into account to include an extensive protection against data corruption. 
 \subsection{Maintainability}
 Maintainability is a measure of how easily and rapidly a software system can be corrected, improved and adapted to a new environment: it’s important for the system quality to be concerned about maintainability from the very beginning of the development, later adjustment can be very expensive.
 \\
 \\
-To achieve this quality Data4Help software will avoid high dependencies in the code and use specifics Patterns wherever it’s appropriate; the development should be iterative and incremental (such as Agile Methodology), Waterfall approach could compromise high maintainability and shouldn’t be applied. 
+To achieve this quality, the Data4Help System software will avoid high dependencies in the code and use specifics Patterns wherever it’s appropriate; the development should be iterative and incremental (such as Agile Methodology), Waterfall approach could compromise high maintainability and shouldn’t be applied. 
 \subsection{Portability}
 The concern behind “porting” is to build a program executable and usable over different environments having effort to (re)adapt the software significantly inferior to the effort for new implementation. 
 \\
 \\
-The separation between the logic and the interface of the software, that needs to be done from the very beginning of development, is essential to ensure Data4Help to be portable.  
+The separation between the logic and the interface of the software, that needs to be done from the very beginning of development, is essential to ensure the Data4Help System portability.  
 \\
 \\
-Portability can also be affected by the choice of programming language and libraries: language portability it’s kind of a debated issue, java has a bunch of standard libraries and should be portable and distributed enough. Independence from hardware enhances Data4Help portability. 
+Portability can also be affected by the choice of programming language and libraries: language portability it’s kind of a debated issue, java has a bunch of standard libraries and should be portable and distributed enough. Independence from hardware enhances the  Data4Help System portability. 
 
