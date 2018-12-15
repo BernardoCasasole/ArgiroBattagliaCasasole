@@ -1,8 +1,8 @@
 
 \section{Implementation strategy }
 
-The implementation of D4H, T4R and ASOS will follow a critical-module-first approach. According to this strategy implementation should start whith the most complex, critical and connnected components. Both a bottom-up approach or a top-down one, considered as sole strategy, would be only partially effective. As a metter of fact the great advantage given to the design structure of the project, that is to say the possibility of parallelize the implementation of the three applications, wouldn't be fully exploited.\\ The critical-module-first approach choice is due to the structure of the the Data4Help System as it has been desiged. The backbone of the three application is, indeed, the same for D4H, T4R and ASOS; so it is for sure the most critical and connected module. The implementation of the three application, once all the shared components will be tested and the integration tests will be performed, could also be done in parallel. \\ Of course this implemetation strategy requires a sort of bottom-up approach. In fact, once the backbone of the application will be completed, the actual implementation will consists in the piecing together of systems to generate more complex systems. \\ About the programming language to be used, HTML5 + Java/Javascript are feasible options, but other options as Python or Android Studio are perfectly equally valid possibilities. Considering the design of the project theres no particular recommendation about programming language choice needed. \\ In order to provide a more exhaustive description of the implementation strategy an analysis of the dependences is provided. \\
-In this section the modules of the four subsystem on the Application Server are divided logically in Backbone Application Server, D4H Application Server, ASOS Application Server and T4R Application Server although they are a single software on a single server.
+The implementation of D4H, T4R and ASOS will follow a critical-module-first approach. According to this strategy implementation should start with the most complex, critical and connected components. Both a bottom-up approach or a top-down one, considered as sole strategy, would be only partially effective. As a matter of fact the great advantage given to the design structure of the project, that is to say the possibility of parallelize the implementation of the three applications, wouldn't be fully exploited.\\ The critical-module-first approach choice is due to the structure of the the Data4Help System as it has been designed. The backbone of the three application is, indeed, the same for D4H, T4R and ASOS; so it is for sure the most critical and connected module. The implementation of the three application, once all the shared components will be tested and the integration tests will be performed, could also be done in parallel. \\ Of course this implementation strategy requires a sort of bottom-up approach. In fact, once the backbone of the application will be completed, the actual implementation will consists in the piecing together of systems to generate more complex systems. \\ About the programming language to be used, HTML5 + Java/Javascript are feasible options, but other options as Python or Android Studio are perfectly equally valid possibilities. Considering the design of the project there's no particular recommendation about programming language choice needed. \\ In order to provide a more exhaustive description of the implementation strategy an analysis of the dependences is provided. \\
+In this section the modules of the four subsystems on the Application Server are divided logically in Backbone Application Server, D4H Application Server, ASOS Application Server and T4R Application Server although they are a single software on a single server.
 \subsection{Dependencies}
 \begin{figure}[H]
 \caption{Dependencies graph}
@@ -10,56 +10,56 @@ In this section the modules of the four subsystem on the Application Server are 
 \end{figure}
 The represented modules refer to the 2.2 section. Arrows stand for -depends on-.\\
 The following order is not mandatory for developers. It is to be considered an advice given in order to optimize the implementation time.\\
-\textbf{1- Backbone On Server} is for sure the very first module to be implemented, since many modules depend on it and it is crucial in the comunication with the DBMS.\\ This module is composed by the following componets:
+\textbf{1- Backbone On Server} is for sure the very first module to be implemented, since many modules depend on it and it is crucial in the communication with the DBMS.\\ This module is composed by the following components:
 \begin{itemize}
 \item Authentication
 \item Data Dispatcher
 \end{itemize}
- \textbf{2- Backbone On Client} is the second module to be implemented in order to complete as soon as possible the applications' backbone.\\ This module is composed by the following componets:
+ \textbf{2- Backbone On Client} is the second module to be implemented in order to complete as soon as possible the applications' backbone.\\ This module is composed by the following components:
 \begin{itemize}
-\item Data Collectior/Dispatcher
+\item Data Collector/Dispatcher
 \end{itemize}
-Once applications' backbone is completed the implementation of D4H, T4R and ASOS can run independently.\\ Whether a parallelized implementation is not possible a coherent with the assigment order is suggested. Here it is a possible implementation order:\\
- \textbf{3- D4H Application Server} module is composed by the following componets:
+Once applications' backbone is completed the implementation of D4H, T4R and ASOS can run independently.\\ Whether a parallelized implementation is not possible a coherent with the assignment order is suggested. Here it is a possible implementation order:\\
+ \textbf{3- D4H Application Server} module is composed by the following components:
 \begin{itemize}
 \item D4H Router
 \item Request Status Manager
 \item Blocked TPUs Manager
 \item Anonymity Evaluator
 \end{itemize}
-\textbf{4- ASOS Application Server} module is composed by the following componets:
+\textbf{4- ASOS Application Server} module is composed by the following components:
 \begin{itemize}
 \item ASOS Router
 \item ASOS activation
-\item Health Data Analizer
+\item Health Data Analyzer
 \end{itemize}
-\textbf{5- T4R Application Server} module is composed by the following componets:
+\textbf{5- T4R Application Server} module is composed by the following components:
 \begin{itemize}
 \item T4R Router
 \item T4R activation
 \item Run Status Manager
 \end{itemize}
-\textbf{6- D4H Web Page Client/D4H Application Client} module is composed by the following componets:
+\textbf{6- D4H Web Page Client/D4H Application Client} module is composed by the following components:
 \begin{itemize}
 \item D4H view
 \end{itemize}
-\textbf{7- ASOS UI Client} module is composed by the following componets:
+\textbf{7- ASOS UI Client} module is composed by the following components:
 \begin{itemize}
 \item ASOS view
 \item Emergency Handler
 \end{itemize}
-\textbf{8- T4R Web Page Client/T4R Application Client} module is composed by the following componets:
+\textbf{8- T4R Web Page Client/T4R Application Client} module is composed by the following components:
 \begin{itemize}
 \item T4R view
 \end{itemize}
 %----------------------------------------------------------------------------------------------------
 \section{Testing on components strategy}
-Testing on single components should be done as soon as the components itself are produced. The testing order of the single components must be coherent with the implementation order indicated at 5.1. \\ 
-In testing process might be useful the support of a multiplicity of software verifcation tools which allow to run large number of tests during the development and verifcation of the whole system. Of course the choice of verifcation tools depends on the programming language chosen, anyway some useful tools could be:
+Testing on single components should be done as soon as the components themselves are produced. The testing order of the single components must be coherent with the implementation order indicated at 5.1. \\ 
+In testing process might be useful the support of a multiplicity of software verification tools which allow to run large number of tests during the development and verification of the whole system. Of course the choice of verification tools depends on the programming language chosen, anyway some useful tools could be:
 \begin{itemize}
-\item \textbf{JUnit} - JUnit is one of the commonest testing software. It can be used both in unit and integration testing; the first usage is by the way the most recomended one for the three subsystems developement; JUnit can be useful in verifing assertions on return values after method invocations. The aim of testing tool usage is of course helping the developers to verify the logic of a piece of the program. That's why, in orderd to avoid having to perform lots of manual tests, the use of JUnit and the resulting possibility of running automatically thests helps to identify software regressions introduced by changes in the source code meantime the implementation phase and leads to high test coverage of the code.
+\item \textbf{JUnit} - JUnit is one of the commonest testing software. It can be used both in unit and integration testing; the first usage is by the way the most recommended one for the three subsystems development; JUnit can be useful in verifying assertions on return values after method invocations. The aim of testing tool usage is of course helping the developers to verify the logic of a piece of the program. That's why, in order to avoid having to perform lots of manual tests, the use of JUnit and the resulting possibility of running automatically tests helps to identify software regressions introduced by changes in the source code meantime the implementation phase and leads to high test coverage of the code.
 
-\item \textbf{Mockito} - It is an indicated testing tool since it is a mock framework which can be used in conjunction with JUnit. Mockito also allows developers to create and configure mock objects, which according to the testing planning will probably be largely used. In particular, a use of the following test replacements (test doubles) for the real dependencies is recomended:
+\item \textbf{Mockito} - It is an indicated testing tool since it is a mock framework which can be used in conjunction with JUnit. Mockito also allows developers to create and configure mock objects, which according to the testing planning will probably be largely used. In particular, a use of the following test replacements (test doubles) for the real dependencies is recommended:
 \begin{itemize}
 \item Dummy object; to fill the parameters of methods.
 
@@ -153,7 +153,7 @@ The integration and integration testing should start as soon as possible. Of cou
 \item ASOS UI Client - 60-70\%
 \item T4R Web Page Client/T4R Application Client - 60-70\%
 \end{itemize}
-According to the critical-module-first approach and the testing approach expressed at point 5.2 also component integration should happen firstly in applications backbone and just then in the three applications core. Since a parallel implementation is possible, as soon as components completion meets the required percentages integration should be performed. Whether parallel implementation is not possible, the following graphical rappresentation shows a possible integration order (obviously coherent with the inplementation plan). 
+According to the critical-module-first approach and the testing approach expressed at point 5.2 also component integration should happen firstly in applications backbone and just then in the three applications core. Since a parallel implementation is possible, as soon as components completion meets the required percentages integration should be performed. Whether parallel implementation is not possible, the following graphical rappresentation shows a possible integration order (obviously coherent with the implementation plan). 
 \begin{figure}[H]
 \caption{0 and 1 integration phase}
 \includegraphics[width = \textwidth]{sections/implementationIntegrationTestGraphs/IntegrationOrder0-1phase.png}
@@ -175,10 +175,10 @@ The integration order of the following modules has to depends on the implementat
 %----------------------------------------------------------------------------------------------------
 \section{Integration test plan}
 The following section should represents  a testing guide line: some of the most important tests that is necessary to perform in the various integration phases are listed. \\
-Tests IDs are structured as follows: the firs two characters stand for the integration test number (tNumber), while the last two characters stand for the  integration phase (iNumber).
+Tests IDs are structured as follows: the first two characters stand for the integration test number (tNumber), while the last two characters stand for the  integration phase (iNumber).
 \subsection{0 integration phase}
 
-All the following tests will be generic: it is not really important the kind of data request, all that metters is submitting both valid and not valid input in order to test the server-DBMS communication. To provide a better coverage the greater possible number of different request kinds should be performed. Stub objects and oracles should be used instead of the not yet implemented components.
+All the following tests will be generic: it is not really important the kind of data request, all that matters is submitting both valid and not valid input in order to test the server-DBMS communication. To provide a better coverage the greater possible number of different request kinds should be performed. Stub objects and oracles should be used instead of the not yet implemented components.
 %--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 \begin{table}[H]
@@ -192,7 +192,7 @@ All the following tests will be generic: it is not really important the kind of 
  Input specification  	& 	  Data x that belonging to y stored in DBMS request\\
 Output specification  	& 	 Data x\\
 Requirements-goals involved & R7, R8 - G4, G6\\
-Description  	& 	To test the communication between DBMS and the Backbone On Server in dowload some data requests have to be performed. The communication should be effective and fast enough: Database Rensponse Time should not be more then 30ms (real time data) or 200ms (historical data). The autentication procedure has to be tested as well in this section.\\
+Description  	& 	To test the communication between DBMS and the Backbone On Server in download some data requests have to be performed. The communication should be effective and fast enough: Database Response Time should not be more then 30ms (real time data) or 200ms (historical data). The authentication procedure has to be tested as well in this section.\\
  \hline
 \end{tabular}
 \end{table}
@@ -208,7 +208,7 @@ Description  	& 	To test the communication between DBMS and the Backbone On Serv
  Input specification  	& 	  Data x belonging to y, storing request\\
 Output specification  	& 	Boolean: true\\
 Requirements-goals involved & R6-G3\\
-Description  	& 	 To test the communication between DBMS and the Backbone On Server in upwload some data requests have to be performed. The communication should be effective and fast enough: Database Rensponse Time should not be more then 30ms. Whether the storage is performed correctly, the return value expected is true.\\
+Description  	& 	 To test the communication between DBMS and the Backbone On Server in upload some data requests have to be performed. The communication should be effective and fast enough: Database Response Time should not be more then 30ms. Whether the storage is performed correctly, the return value expected is true.\\
  \hline
 \end{tabular}
 \end{table}
@@ -224,7 +224,7 @@ Components involved  	& 	 Data Dispatcher, Authentication, DBMS\\
  Input specification  	& 	  Data x that belonging to y not stored in DBMS request\\
 Output specification  	& 	 Warning\\
 Requirements-goals involved & R8-G3, G4, G6 \\
-Description  	& 	The system has to warn the user that the requested data are not present in DBMS. The communication should be effective and fast enough: Database Rensponse Time should not be more then 30ms (real time data) or 200ms (historical data).\\
+Description  	& 	The system has to warn the user that the requested data are not present in DBMS. The communication should be effective and fast enough: Database Response Time should not be more then 30ms (real time data) or 200ms (historical data).\\
  \hline
 \end{tabular}
 \end{table}
@@ -240,7 +240,7 @@ Components involved  	& 	 Data Dispatcher, Authentication, DBMS\\
  Input specification  	& 	Several requests of data x, stored or not in DBMS, have to be performed\\
 Output specification  	& Data requested\\
 Requirements-goals involved & R8, R13.1,R13.2,R7-G4, G6\\
-Description  	& 	A great number of requests (more than 1000) should be performed to test the system availability. This is necessary in order to be sure to have a proper backbone subsystem for the application. For each request Database Rensponse Time should not be more then 30ms (real time data) or 200ms (historical data). According to requirements system availability must be at least 99.995\%.  	\\
+Description  	& 	A great number of requests (more than 1000) should be performed to test the system availability. This is necessary in order to be sure to have a proper backbone subsystem for the application. For each request Database Response Time should not be more then 30ms (real time data) or 200ms (historical data). According to requirements system availability must be at least 99.995\%.  	\\
  \hline
 \end{tabular}
 \end{table}
@@ -263,7 +263,7 @@ The following test should be performed in order to test the behaviour of the Bac
  Input specification  	& 	 Several storing requests x belonging to y\\
 Output specification  	& boolean\\
 Requirements-goals involved & R6-G3\\
-Description  	& 	Syncronization of client data test: if the storing request is successful a true value is returned, otherwise (false value must be returned) is necessary to check whether data are still memorized (client side).\\
+Description  	& 	Synchronization of client data test: if the storing request is successful a true value is returned, otherwise (false value must be returned) is necessary to check whether data are still memorized (client side).\\
  \hline
 \end{tabular}
 \end{table}
@@ -271,7 +271,7 @@ Description  	& 	Syncronization of client data test: if the storing request is s
 %--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 
 \subsection{2nd integration phase}
-All the following test will be performed in order to test the integration between modules of the Backbone and the application servers. AuthenticationService, DataReciver and DataDispatcher are the interfaces involved in this integration phase. Each of the following test should be performed using different mocks (one per applicaiton). Stub objects and oracles should be used instead of the not yet implemented components.
+All the following test will be performed in order to test the integration between modules of the Backbone and the application servers. AuthenticationService, DataReciver and DataDispatcher are the interfaces involved in this integration phase. Each of the following test should be performed using different mocks (one per application). Stub objects and oracles should be used instead of the not yet implemented components.
 %--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \\
 \\
@@ -302,7 +302,7 @@ Description  	&  By the submission of all the required data a client should be a
  Input specification  	&  	 Individual user or third-party user update info\\
 Output specification  	& 	  boolean	\\
 Requirements-goals involved &    R4-G2 \\
-Description  	& 	 	    Individual or third-party users should be able to update of one or more personal data. In case the process end succesfully a true boolean value should be returned. Some attempts with incomplete or wrong updates should be operated in order to test the system. In this case a false boolean value should be returned.\\
+Description  	& 	 	    Individual or third-party users should be able to update of one or more personal data. In case the process ends successfully a true boolean value should be returned. Some attempts with incomplete or wrong updates should be operated in order to test the system. In this case a false boolean value should be returned.\\
  \hline
 \end{tabular}
 \end{table}
@@ -359,7 +359,7 @@ Description  	& This test should verify whether third party users are able to su
 
 \paragraph{The following tests should be performed firstly in the integration of the modules' components. This first stage doesn't depend on integration phases and can be performed as soon as the components are created according to section 5.3.1, exploiting stub objects and oracles where needed.}
 \subsection{3rd and 4th integration phase}
-During those integration processes stub objects and oracles should be gradually substituded by implemented components. In particular the integrationd should regard client modules with the Backbone on client and client modules with the respective server modules.
+During those integration processes stub objects and oracles should be gradually substituted by implemented components. In particular the integration should regard client modules with the Backbone on client and client modules with the respective server modules.
 
 %--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -450,7 +450,7 @@ Description  	& 	 	   This test should verify whether individual users are able 
  \multicolumn{2}{|c|}{Test ID: t6i3/4} \\
  
  \hline 
- Components involved  	&    Data Dispatcher, Authentication, DBMS, IU Data Dispatcher,  ASOS view, ASOS router, Health Data analyzer\\
+ Components involved  	&    Data Dispatcher, Authentication, DBMS, IU Data Dispatcher,  ASOS view, ASOS router, Health Data Analyzer\\
  Input specification  	&  	 IU\\
 Output specification  	& 	  	int\\
 Requirements-goals involved &  G7\\
