@@ -17,7 +17,7 @@
 \BOOKMARK [2][-]{subsection.2.2.2}{Data4Help}{section.2.2}% 17
 \BOOKMARK [2][-]{subsection.2.2.3}{AutomatedSOS}{section.2.2}% 18
 \BOOKMARK [2][-]{subsection.2.2.4}{Track4Run}{section.2.2}% 19
-\BOOKMARK [2][-]{subsection.2.2.5}{Full system}{section.2.2}% 20
+\BOOKMARK [2][-]{subsection.2.2.5}{Data4Help System}{section.2.2}% 20
 \BOOKMARK [2][-]{subsection.2.2.6}{Entity Relationship Diagram}{section.2.2}% 21
 \BOOKMARK [2][-]{subsection.2.2.7}{Model Interaction Diagram}{section.2.2}% 22
 \BOOKMARK [1][-]{section.2.3}{Deployment view}{chapter.2}% 23
@@ -34,7 +34,7 @@
 \BOOKMARK [0][-]{chapter.4}{Requirements Traceability}{}% 34
 \BOOKMARK [0][-]{chapter.5}{Implementation, Integration and Test plan}{}% 35
 \BOOKMARK [1][-]{section.5.1}{Implementation strategy }{chapter.5}% 36
-\BOOKMARK [2][-]{subsection.5.1.1}{Dependences}{section.5.1}% 37
+\BOOKMARK [2][-]{subsection.5.1.1}{Dependencies}{section.5.1}% 37
 \BOOKMARK [1][-]{section.5.2}{Testing on components strategy}{chapter.5}% 38
 \BOOKMARK [1][-]{section.5.3}{Integration strategy}{chapter.5}% 39
 \BOOKMARK [2][-]{subsection.5.3.1}{Completion of components before starting testing}{section.5.3}% 40

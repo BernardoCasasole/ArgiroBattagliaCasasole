@@ -1,7 +1,7 @@
 \section{Data4Help}
 The first alloy model focuses on the lifecycle of data requests performed by TPUs on IUs, on the access from TPUs to approved data, blocked TPUs and group requests namely:
 \begin{itemize}
-\item a request must be created waiting for approval and must then go in a deny or approved state, after which it never changes state, unless it is a subscription request whose approval can be revocked, causing the request to go from an approved state to a denied state;
+\item a request must be created waiting for approval and must then go in a deny or approved state, after which it never changes state, unless it is a subscription request whose approval can be revoked, causing the request to go from an approved state to a denied state;
 \item a TPU has access only to data for which exists either a stored data request approved after the data was collected or a subscription request approved at the time the data was produced;
 \item a TPU cannot make a request for data of an individual user if it is blocked;
 \item a group request is approved only if it targets at least 1000 IUs (in the model is used 3 for a faster execution).

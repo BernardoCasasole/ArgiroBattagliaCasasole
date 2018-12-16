@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.31)  10 DEC 2018 18:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.31)  16 DEC 2018 11:31
 entering extended mode
 **./DD.tex
 (DD.tex
@@ -430,7 +430,7 @@ Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
 \symwasy=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 (Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
-))
+)
 ("C:\Users\Bernardo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amssym
 b.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
@@ -443,7 +443,91 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup6
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (DD.aux)
+)))
+("C:\Users\Bernardo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\textcomp.s
+ty"
+Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+("C:\Users\Bernardo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.def
+"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+) (DD.aux)
 \openout1 = `DD.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
@@ -459,6 +543,13 @@ LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 3.
+
+("C:\Users\Bernardo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 3.
 
@@ -604,16 +695,13 @@ Chapter 1.
 (sections/introduction.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 8.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 8.
 
-("C:\Users\Bernardo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omsptm.f
+("C:\Users\Bernardo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ts1ptm.f
 d"
-File: omsptm.fd 
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--31
+Underfull \hbox (badness 10000) in paragraph at lines 29--32
 
  []
 
@@ -624,65 +712,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--31
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
-) [7]
+) [7] [8]
 Chapter 2.
-(sections/architecturalDesign.tex
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
- [8
+(sections/architecturalDesign.tex [9
 
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
-<sections/architecturalDesign/overview_1.jpg, id=318, 2431.0825pt x 1491.5725pt
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 16.
+<sections/architecturalDesign/overview_1.jpg, id=321, 2431.0825pt x 1491.5725pt
 >
 File: sections/architecturalDesign/overview_1.jpg Graphic file (type jpg)
 <use sections/architecturalDesign/overview_1.jpg>
 Package pdftex.def Info: sections/architecturalDesign/overview_1.jpg  used on i
-nput line 21.
+nput line 20.
 (pdftex.def)             Requested size: 455.24411pt x 279.30501pt.
-<sections/architecturalDesign/overview_individual_user.jpg, id=319, 1480.53125p
+<sections/architecturalDesign/overview_individual_user.jpg, id=322, 1480.53125p
 t x 757.83125pt>
 File: sections/architecturalDesign/overview_individual_user.jpg Graphic file (t
 ype jpg)
 <use sections/architecturalDesign/overview_individual_user.jpg>
 Package pdftex.def Info: sections/architecturalDesign/overview_individual_user.
-jpg  used on input line 33.
+jpg  used on input line 32.
 (pdftex.def)             Requested size: 455.24411pt x 233.01727pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9
+ [10
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.35 
+l.34 
       <./sections/architecturalDesign/overview_1.jpg>]
-<sections/architecturalDesign/overview_web.jpg, id=325, 1743.51375pt x 1191.451
+<sections/architecturalDesign/overview_web.jpg, id=328, 1743.51375pt x 1191.451
 25pt>
 File: sections/architecturalDesign/overview_web.jpg Graphic file (type jpg)
 <use sections/architecturalDesign/overview_web.jpg>
 Package pdftex.def Info: sections/architecturalDesign/overview_web.jpg  used on
- input line 43.
+ input line 42.
 (pdftex.def)             Requested size: 455.24411pt x 311.09717pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [11pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.45 
-      <./sections/architecturalDesign/overview_individual_user.jpg>] [11pdfTeX 
+l.44 
+      <./sections/architecturalDesign/overview_individual_user.jpg>] [12pdfTeX 
 warning (ext4): destination with the same identifier (name{figure.2.3}) has bee
 n already used, duplicate ignored
 
@@ -690,7 +771,7 @@ n already used, duplicate ignored
                                                   \fi \fi 
 l.69 \subsection
                 {Backbone} <./sections/architecturalDesign/overview_web.jpg>]
-<sections/architecturalDesign/BackboneDiagram.png, id=341, 2202.2275pt x 487.82
+<sections/architecturalDesign/BackboneDiagram.png, id=344, 2202.2275pt x 487.82
 25pt>
 File: sections/architecturalDesign/BackboneDiagram.png Graphic file (type png)
 <use sections/architecturalDesign/BackboneDiagram.png>
@@ -700,20 +781,20 @@ Package pdftex.def Info: sections/architecturalDesign/BackboneDiagram.png  used
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 76.
 
-Overfull \hbox (32.59366pt too wide) in paragraph at lines 76--77
- []\OT1/ptm/b/it/10.95 Data col-lec-tor/dispatcher[] \OT1/ptm/m/n/10.95 Al-low 
-sub-scrib-tion from other com-po-nents on the IU client and pub-lishes/dispatch
-es
- []
-
-
-Overfull \hbox (32.41948pt too wide) in paragraph at lines 78--80
- []\OT1/ptm/b/it/10.95 Data Dis-patcher[] \OT1/ptm/m/n/10.95 Al-low sub-scrib-t
-ion from other com-po-nents on the ap-pli-ca-tion server and pub-lishes/dispatc
+Overfull \hbox (36.85309pt too wide) in paragraph at lines 76--77
+ []\OT1/ptm/b/it/10.95 Data col-lec-tor/dispatcher[] \OT1/ptm/m/n/10.95 Al-lows
+ sub-scrip-tion from other com-po-nents on the IU client and pub-lishes/dispatc
 hes
  []
 
-<sections/architecturalDesign/D4HDiagram.png, id=343, 1347.0325pt x 553.06625pt
+
+Overfull \hbox (36.67891pt too wide) in paragraph at lines 78--80
+ []\OT1/ptm/b/it/10.95 Data Dis-patcher[] \OT1/ptm/m/n/10.95 Al-lows sub-scrip-
+tion from other com-po-nents on the ap-pli-ca-tion server and pub-lishes/dispat
+ches
+ []
+
+<sections/architecturalDesign/D4HDiagram.png, id=346, 1347.0325pt x 553.06625pt
 >
 File: sections/architecturalDesign/D4HDiagram.png Graphic file (type png)
 <use sections/architecturalDesign/D4HDiagram.png>
@@ -723,22 +804,22 @@ nput line 84.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [13pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.86 \paragraph
-               {\textit{D4H router}} Validate the requests received from the...
+               {\textit{D4H router}} Validates the requests received from th...
  <./sections/architecturalDesign/BackboneDiagram.png>]
-<sections/architecturalDesign/ASOSDiagram.png, id=355, 2533.465pt x 1025.8325pt
+<sections/architecturalDesign/ASOSDiagram.png, id=359, 2533.465pt x 1025.8325pt
 >
 File: sections/architecturalDesign/ASOSDiagram.png Graphic file (type png)
 <use sections/architecturalDesign/ASOSDiagram.png>
 Package pdftex.def Info: sections/architecturalDesign/ASOSDiagram.png  used on 
 input line 94.
 (pdftex.def)             Requested size: 455.24411pt x 184.32883pt.
- [13pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [14pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -752,14 +833,14 @@ entifier (name{figure.2.6}) has been already used, duplicate ignored
 l.101 \subsection
                  {Track4Run} <./sections/architecturalDesign/D4HDiagram.png> <.
 /sections/architecturalDesign/ASOSDiagram.png>]
-<sections/architecturalDesign/T4RDiagram.png, id=371, 2483.2775pt x 1288.815pt>
+<sections/architecturalDesign/T4RDiagram.png, id=374, 2483.2775pt x 1288.815pt>
 
 File: sections/architecturalDesign/T4RDiagram.png Graphic file (type png)
 <use sections/architecturalDesign/T4RDiagram.png>
 Package pdftex.def Info: sections/architecturalDesign/T4RDiagram.png  used on i
 nput line 106.
 (pdftex.def)             Requested size: 455.24411pt x 236.26381pt.
-<sections/architecturalDesign/ComponentDiagram.png, id=372, 2995.19pt x 2250.40
+<sections/architecturalDesign/ComponentDiagram.png, id=375, 2995.19pt x 2250.40
 75pt>
 File: sections/architecturalDesign/ComponentDiagram.png Graphic file (type png)
 
@@ -770,7 +851,7 @@ d on input line 117.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [15pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -778,7 +859,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 l.119 \paragraph
                 {\textit{Data Managing}} From a more high level point of vie...
  <./sections/architecturalDesign/T4RDiagram.png>]
-<sections/architecturalDesign/entityRelationshipDiagram.png, id=383, 1750.54pt 
+<sections/architecturalDesign/entityRelationshipDiagram.png, id=386, 1750.54pt 
 x 1206.5075pt>
 File: sections/architecturalDesign/entityRelationshipDiagram.png Graphic file (
 type png)
@@ -789,7 +870,7 @@ Package pdftex.def Info: sections/architecturalDesign/entityRelationshipDiagram
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [16pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -812,7 +893,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--139
 
  []
 
-<sections/architecturalDesign/modelInteractionDiagram.png, id=392, 1820.8025pt 
+<sections/architecturalDesign/modelInteractionDiagram.png, id=395, 1820.8025pt 
 x 1642.135pt>
 File: sections/architecturalDesign/modelInteractionDiagram.png Graphic file (ty
 pe png)
@@ -820,35 +901,35 @@ pe png)
 Package pdftex.def Info: sections/architecturalDesign/modelInteractionDiagram.p
 ng  used on input line 149.
 (pdftex.def)             Requested size: 455.24411pt x 410.5578pt.
-[16pdfTeX warning (ext4): destination with the same identifier (name{figure.2.9
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.2.9
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.151 \clearpage
                  <./sections/architecturalDesign/entityRelationshipDiagram.png>
-] [17pdfTeX warning (ext4): destination with the same identifier (name{figure.2
+] [18pdfTeX warning (ext4): destination with the same identifier (name{figure.2
 .10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.151 \clearpage
                  <./sections/architecturalDesign/modelInteractionDiagram.png>]
-<sections/architecturalDesign/DeploymentView.png, id=405, 1409.265pt x 1579.902
+<sections/architecturalDesign/DeploymentView.png, id=408, 1409.265pt x 1579.902
 5pt>
 File: sections/architecturalDesign/DeploymentView.png Graphic file (type png)
 <use sections/architecturalDesign/DeploymentView.png>
 Package pdftex.def Info: sections/architecturalDesign/DeploymentView.png  used 
 on input line 159.
 (pdftex.def)             Requested size: 455.24411pt x 510.35239pt.
-<sections/architecturalDesign/IUregistration.png, id=406, 2053.6725pt x 2009.50
+<sections/architecturalDesign/IUregistration.png, id=409, 2053.6725pt x 2009.50
 75pt>
 File: sections/architecturalDesign/IUregistration.png Graphic file (type png)
 <use sections/architecturalDesign/IUregistration.png>
 Package pdftex.def Info: sections/architecturalDesign/IUregistration.png  used 
 on input line 166.
 (pdftex.def)             Requested size: 455.24411pt x 445.43524pt.
-<sections/architecturalDesign/dataRequests.png, id=407, 2792.4325pt x 2089.8075
+<sections/architecturalDesign/dataRequests.png, id=410, 2792.4325pt x 2089.8075
 pt>
 File: sections/architecturalDesign/dataRequests.png Graphic file (type png)
 <use sections/architecturalDesign/dataRequests.png>
@@ -858,7 +939,7 @@ Package pdftex.def Info: sections/architecturalDesign/dataRequests.png  used on
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18
+ [19
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.11})
  has been already used, duplicate ignored
@@ -867,7 +948,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2.11})
                                                   \fi \fi 
 l.172 \end{figure}
                    <./sections/architecturalDesign/DeploymentView.png>]
-<sections/architecturalDesign/emergencyCall.png, id=414, 1447.4075pt x 847.165p
+<sections/architecturalDesign/emergencyCall.png, id=418, 1447.4075pt x 847.165p
 t>
 File: sections/architecturalDesign/emergencyCall.png Graphic file (type png)
 <use sections/architecturalDesign/emergencyCall.png>
@@ -877,14 +958,14 @@ n input line 176.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [20pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.177 \end{figure}
                    <./sections/architecturalDesign/IUregistration.png>]
-<sections/architecturalDesign/raceManager.png, id=422, 2631.8325pt x 2282.5275p
+<sections/architecturalDesign/raceManager.png, id=425, 2631.8325pt x 2282.5275p
 t>
 File: sections/architecturalDesign/raceManager.png Graphic file (type png)
 <use sections/architecturalDesign/raceManager.png>
@@ -894,7 +975,7 @@ input line 181.
 
 Underfull \vbox (badness 4981) has occurred while \output is active []
 
- [20pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [21pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -908,7 +989,7 @@ l.184 \section
 l.184 \section
               {Component interfaces} <./sections/architecturalDesign/dataReques
 ts.png> <./sections/architecturalDesign/emergencyCall.png>]
-<sections/architecturalDesign/componentInterfaces.png, id=432, 4107.345pt x 315
+<sections/architecturalDesign/componentInterfaces.png, id=435, 4107.345pt x 315
 3.7825pt>
 File: sections/architecturalDesign/componentInterfaces.png Graphic file (type p
 ng)
@@ -919,7 +1000,7 @@ used on input line 191.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [22pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -929,16 +1010,16 @@ l.194 \section
 turalDesign/raceManager.png>]
 Underfull \vbox (badness 3579) has occurred while \output is active []
 
- [22pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [23pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.204 
-       <./sections/architecturalDesign/componentInterfaces.png>]) [23]
+       <./sections/architecturalDesign/componentInterfaces.png>]) [24]
 Chapter 3.
 (sections/userInterfaceDesign.tex
-<sections/userInterfacesGraphs/UserExperienceDesktop.png, id=451, 1870.99pt x 1
+<sections/userInterfacesGraphs/UserExperienceDesktop.png, id=454, 1870.99pt x 1
 778.645pt>
 File: sections/userInterfacesGraphs/UserExperienceDesktop.png Graphic file (typ
 e png)
@@ -946,7 +1027,7 @@ e png)
 Package pdftex.def Info: sections/userInterfacesGraphs/UserExperienceDesktop.pn
 g  used on input line 4.
 (pdftex.def)             Requested size: 455.24411pt x 432.77289pt.
- [24
+ [25
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) 
@@ -956,7 +1037,7 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.6 \clearpage
                <./sections/userInterfacesGraphs/UserExperienceDesktop.png>]
-<sections/userInterfacesGraphs/UserExperienceScreenSX.png, id=458, 1652.1725pt 
+<sections/userInterfacesGraphs/UserExperienceScreenSX.png, id=462, 1652.1725pt 
 x 2180.145pt>
 File: sections/userInterfacesGraphs/UserExperienceScreenSX.png Graphic file (ty
 pe png)
@@ -964,7 +1045,7 @@ pe png)
 Package pdftex.def Info: sections/userInterfacesGraphs/UserExperienceScreenSX.p
 ng  used on input line 10.
 (pdftex.def)             Requested size: 455.24411pt x 600.72269pt.
-<sections/userInterfacesGraphs/UserExperienceScreenDX.png, id=459, 1658.195pt x
+<sections/userInterfacesGraphs/UserExperienceScreenDX.png, id=463, 1658.195pt x
  2087.8pt>
 File: sections/userInterfacesGraphs/UserExperienceScreenDX.png Graphic file (ty
 pe png)
@@ -975,7 +1056,7 @@ ng  used on input line 14.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25
+ [26
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2}) 
 has been already used, duplicate ignored
@@ -983,8 +1064,8 @@ has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.16 \paragraph
-               {\textit{Individual user}}The two schemes above represents th...
- <./sections/userInterfacesGraphs/UserExperienceScreenSX.png>]) [26pdfTeX warni
+               {\textit{Individual user}}The two schemes above represent the...
+ <./sections/userInterfacesGraphs/UserExperienceScreenSX.png>]) [27pdfTeX warni
 ng (ext4): destination with the same identifier (name{figure.3.3}) has been alr
 eady used, duplicate ignored
 
@@ -1019,7 +1100,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--39
 
  []
 
-[27
+[28
 
 
 ]
@@ -1042,7 +1123,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
-[28]
+[29]
 Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
@@ -1057,7 +1138,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
 
-[29]
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 158--159
 
  []
@@ -1077,7 +1158,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
 
-[30]
+[31]
 Underfull \hbox (badness 10000) in paragraph at lines 213--214
 
  []
@@ -1087,28 +1168,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
 
-) [31]
+) [32]
 Chapter 5.
 (sections/implementationIntegrationTestplan.tex
-<sections/implementationIntegrationTestGraphs/DependenciesGraph.png, id=496, 18
+<sections/implementationIntegrationTestGraphs/DependenciesGraph.png, id=499, 18
 70.99pt x 758.835pt>
 File: sections/implementationIntegrationTestGraphs/DependenciesGraph.png Graphi
 c file (type png)
 <use sections/implementationIntegrationTestGraphs/DependenciesGraph.png>
 Package pdftex.def Info: sections/implementationIntegrationTestGraphs/Dependenc
-iesGraph.png  used on input line 8.
+iesGraph.png  used on input line 9.
 (pdftex.def)             Requested size: 455.24411pt x 184.63673pt.
- [32
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1}) 
-has been already used, duplicate ignored
+]
+[34pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.13 \begin{itemize}
-                     <./sections/implementationIntegrationTestGraphs/Dependenci
-esGraph.png>] [33]
+l.39 \item T
+            4R activation <./sections/implementationIntegrationTestGraphs/Depen
+denciesGraph.png>] [35]
 Overfull \hbox (0.89906pt too wide) in paragraph at lines 82--82
 []|\OT1/ptm/m/n/10.95 Neg.| 
  []
@@ -1188,13 +1273,9 @@ Overfull \hbox (23.29146pt too wide) in paragraph at lines 80--140
  [][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [34]
-[35]
+[36]
 <sections/implementationIntegrationTestGraphs/IntegrationOrder0-1phase.png, id=
-516, 607.26875pt x 145.54375pt>
+519, 607.26875pt x 145.54375pt>
 File: sections/implementationIntegrationTestGraphs/IntegrationOrder0-1phase.png
  Graphic file (type png)
 <use sections/implementationIntegrationTestGraphs/IntegrationOrder0-1phase.png>
@@ -1202,52 +1283,45 @@ File: sections/implementationIntegrationTestGraphs/IntegrationOrder0-1phase.png
 Package pdftex.def Info: sections/implementationIntegrationTestGraphs/Integrati
 onOrder0-1phase.png  used on input line 159.
 (pdftex.def)             Requested size: 455.24411pt x 109.11089pt.
-<sections/implementationIntegrationTestGraphs/IntegrationOrder2phase.png, id=51
-7, 647.41875pt x 242.9075pt>
+<sections/implementationIntegrationTestGraphs/IntegrationOrder2phase.png, id=52
+0, 647.41875pt x 242.9075pt>
 File: sections/implementationIntegrationTestGraphs/IntegrationOrder2phase.png G
 raphic file (type png)
 <use sections/implementationIntegrationTestGraphs/IntegrationOrder2phase.png>
 Package pdftex.def Info: sections/implementationIntegrationTestGraphs/Integrati
 onOrder2phase.png  used on input line 163.
 (pdftex.def)             Requested size: 455.24411pt x 170.80502pt.
-<sections/implementationIntegrationTestGraphs/IntegrationOrder3phase.png, id=51
-8, 614.295pt x 155.58125pt>
+<sections/implementationIntegrationTestGraphs/IntegrationOrder3phase.png, id=52
+1, 614.295pt x 155.58125pt>
 File: sections/implementationIntegrationTestGraphs/IntegrationOrder3phase.png G
 raphic file (type png)
 <use sections/implementationIntegrationTestGraphs/IntegrationOrder3phase.png>
 Package pdftex.def Info: sections/implementationIntegrationTestGraphs/Integrati
 onOrder3phase.png  used on input line 168.
 (pdftex.def)             Requested size: 455.24411pt x 115.29924pt.
-<sections/implementationIntegrationTestGraphs/IntegrationOrder4phase.png, id=51
-9, 770.88pt x 237.88875pt>
+<sections/implementationIntegrationTestGraphs/IntegrationOrder4phase.png, id=52
+2, 770.88pt x 237.88875pt>
 File: sections/implementationIntegrationTestGraphs/IntegrationOrder4phase.png G
 raphic file (type png)
 <use sections/implementationIntegrationTestGraphs/IntegrationOrder4phase.png>
 Package pdftex.def Info: sections/implementationIntegrationTestGraphs/Integrati
 onOrder4phase.png  used on input line 172.
 (pdftex.def)             Requested size: 455.24411pt x 140.48381pt.
- [36pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [37pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.174 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-5.3}) has been already used, duplicate ignored
+l.173 \end{figure}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{figure.5.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.174 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-5.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.174 
-       <./sections/implementationIntegrationTestGraphs/IntegrationOrder0-1phase
-.png> <./sections/implementationIntegrationTestGraphs/IntegrationOrder2phase.pn
-g> <./sections/implementationIntegrationTestGraphs/IntegrationOrder3phase.png>]
-
+l.173 \end{figure}
+                   <./sections/implementationIntegrationTestGraphs/IntegrationO
+rder0-1phase.png> <./sections/implementationIntegrationTestGraphs/IntegrationOr
+der2phase.png>]
 Overfull \hbox (13.37357pt too wide) in paragraph at lines 186--198
  [][] 
  []
@@ -1258,6 +1332,23 @@ Overfull \hbox (13.37357pt too wide) in paragraph at lines 202--214
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.214 \end{table}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{figure.5.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.214 \end{table}
+                  <./sections/implementationIntegrationTestGraphs/IntegrationOr
+der3phase.png> <./sections/implementationIntegrationTestGraphs/IntegrationOrder
+4phase.png>]
 Overfull \hbox (13.37357pt too wide) in paragraph at lines 218--230
  [][] 
  []
@@ -1267,19 +1358,12 @@ Overfull \hbox (13.37357pt too wide) in paragraph at lines 234--246
  [][] 
  []
 
-[37pdfTeX warning (ext4): destination with the same identifier (name{figure.5.5
-}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.246 \end{table}
-                  <./sections/implementationIntegrationTestGraphs/IntegrationOr
-der4phase.png>]
 Overfull \hbox (13.37357pt too wide) in paragraph at lines 257--269
  [][] 
  []
 
-
+[39]
 Overfull \hbox (13.37357pt too wide) in paragraph at lines 280--292
  [][] 
  []
@@ -1300,14 +1384,14 @@ Overfull \hbox (13.37357pt too wide) in paragraph at lines 296--308
  []
 
 
-Underfull \vbox (badness 2828) has occurred while \output is active []
-
- [38]
 Overfull \hbox (13.37357pt too wide) in paragraph at lines 312--324
  [][] 
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [40]
 Overfull \hbox (13.37357pt too wide) in paragraph at lines 328--340
  [][] 
  []
@@ -1318,9 +1402,6 @@ Overfull \hbox (13.37357pt too wide) in paragraph at lines 344--356
  []
 
 
-Underfull \vbox (badness 7740) has occurred while \output is active []
-
- [39]
 Underfull \hbox (badness 6348) in paragraph at lines 373--374
 []|\OT1/ptm/m/n/10.95 Data Dis-patcher, Au-then-ti-ca-tion, DBMS, IU Data Dis-p
 atcher,
@@ -1337,6 +1418,9 @@ Overfull \hbox (13.37357pt too wide) in paragraph at lines 384--396
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41]
 Overfull \hbox (13.37357pt too wide) in paragraph at lines 400--412
  [][] 
  []
@@ -1351,12 +1435,15 @@ Overfull \hbox (13.37357pt too wide) in paragraph at lines 432--444
  [][] 
  []
 
-[40]
+
 Overfull \hbox (13.37357pt too wide) in paragraph at lines 448--460
  [][] 
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42]
 Overfull \hbox (13.37357pt too wide) in paragraph at lines 464--475
  [][] 
  []
@@ -1371,54 +1458,49 @@ Overfull \hbox (13.37357pt too wide) in paragraph at lines 494--505
  [][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [41])
-[42]
+) [43]
 Chapter 6.
-(sections/effort.tex [43
+(sections/effort.tex [44
 
 
-] [44
+] [45
 
-]) [45
+]) [46
 
 ]
 Chapter 7.
-(sections/references.tex [46
+(sections/references.tex [47
 
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 84.
- [47]
+ [48]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 84.
  (DD.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 84.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 84.
 Package rerunfilecheck Info: File `DD.out' has not changed.
-(rerunfilecheck)             Checksum: 64E0022B7C5364F515F87B9A8714DF1D;3607.
+(rerunfilecheck)             Checksum: 89BEFFB5EAE9744910BDE1ABEED0DCAC;3613.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 84.
  ) 
 Here is how much of TeX's memory you used:
- 9086 strings out of 493305
- 139072 string characters out of 3128497
- 268746 words of memory out of 3000000
- 12284 multiletter control sequences out of 15000+200000
- 24168 words of font info for 56 fonts, out of 3000000 for 9000
+ 9526 strings out of 493305
+ 146009 string characters out of 3128497
+ 268036 words of memory out of 3000000
+ 12713 multiletter control sequences out of 15000+200000
+ 24482 words of font info for 57 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,21n,35p,1673b,582s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,21n,35p,1611b,582s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Bernardo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.
 enc}<C:/Users/Bernardo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb><C:/Users/Bernardo/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Bernardo/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Bernardo/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/Bernardo/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Bernar
-do/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on DD.pdf (47 pages, 4574037 bytes).
+fonts/symbols/msam10.pfb><C:/Users/Bernardo/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/urw/times/utmb8a.pfb><C:/Users/Bernardo/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/Bernardo/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Bernardo/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on DD.pdf (48 pages, 4567861 bytes).
 PDF statistics:
- 670 PDF objects out of 1000 (max. 8388607)
- 156 named destinations out of 1000 (max. 500000)
+ 671 PDF objects out of 1000 (max. 8388607)
+ 157 named destinations out of 1000 (max. 500000)
  542 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -6,7 +6,7 @@ Cloud server solutions, over local servers, are the ideal fit for system having 
 \item to avoid hardware faults: the Data4Help System availability percentage needs to be equal or superior to 99.995. Since this percentage does not take into account hardware faults and a local server cannot guarantee an hundred percent availability, the Data4Help System availability cannot be affected by the one of a local server
 \item to enhance security
 \item to only pay for the exact amount of server space used
-\item minimization of data losses and recovery time: the availabitly of a system is affected by recovery (restart and repair) time. The Data4Help System, to guarantee an availability of 99.995 percent, needs to avail itself with a recovery-time minimize solution
+\item minimization of data losses and recovery time: the availability of a system is affected by recovery (restart and repair) time. The Data4Help System, to guarantee an availability of 99.995 percent, needs to avail itself with a recovery-time minimize solution
 \end{itemize} 
 Many cloud-server-hosting providers exist, solutions furnished are quite similar and valid.
 Google Cloud Platform might be chosen over other cloud-server-hosting providers because of the possibility to use both SQL and NoSQL databases. It\textquotesingle s up to developers to evaluate the provider to use, according to the budget assigned and a future possible differentiation of services that nowadays seems to offer similar solution at the same price. The
@@ -32,7 +32,7 @@ The proxy links the Server Architecture with the component charged with the inte
 \includegraphics[width = \textwidth]{sections/architecturalDesign/overview_individual_user.jpg}
 \end{figure}
 
-The Data4Help Mobile Application receives data from the smartwatch and exchanges informations (using differen modalities) with the Individual User and the Application Server. 
+The Data4Help Mobile Application receives data from the smartwatch and exchanges informations (using different modalities) with the Individual User and the Application Server. 
 At 3 different levels are specified protocols that are supposed to generate the connection with the Application Server; a STREAMING API communication need to be established to exchange real time data, all other information to be exchanged use REST API communication. 
  
 
@@ -62,7 +62,7 @@ The Data4Help System is divided in four subsystem:
 \end{itemize}
 The subsystems realizing the main services, namely the D4H services, are the backbone and Data4Help.
 The Backbone is the core of the system: all other subsystems interact with it and don't interact with each other. The backbone provides interfaces for authentication and to receive live data published from the Backbone with a event-based paradigm.\\
-The last three are divided, on the Application server, in a router that provides an interface gathering all the subsystems functionalities, and a module, containing all other components of the subsystem, which uses the exposed method of the DBMS to be able to work indipendently. \\
+The last three are divided, on the Application server, in a router that provides an interface gathering all the subsystems functionalities, and a module, containing all other components of the subsystem, which uses the exposed method of the DBMS to be able to work independently. \\
 On the IU and TPU clients the view component represents the presentation layer of the system, which Users can access directly.\\
 The relation between the components and the model is further defined in figure \ref{fig:ModelInteractionDiagram}.
 %BackBone---------------------------------------------------------------------------------------------------
@@ -116,8 +116,8 @@ This is the backbone of the system: collects the data of the device, keeps it sy
 \centering
 \includegraphics[width = \textwidth]{sections/architecturalDesign/ComponentDiagram.png}
 \end{figure}
-\paragraph{\textit{Data Managing}} From a more high level point of view, the backbone provides services to retrive the Individual Users live data. \\
-This makes the red components and modules of the architecture the backbone, collecting and dispatching data, while the other subsystems can handle their unique authorization condition: D4H authorizing data dispatching based on approved requests, ASOS on the activation of the service and T4R on the enrollement in competitions. \\
+\paragraph{\textit{Data Managing}} From a more high level point of view, the backbone provides services to retrieve the Individual Users live data. \\
+This makes the red components and modules of the architecture the backbone, collecting and dispatching data, while the other subsystems can handle their unique authorization condition: D4H authorizing data dispatching based on approved requests, ASOS on the activation of the service and T4R on the enrollment in competitions. \\
 This way all subsystem can work independently from each other.%EntityRelationshipDiagram-------------------------------------------------------------------------------------------------
 \subsection{Entity Relationship Diagram}
 The following section provides a conceptual representation of the model.
@@ -137,7 +137,7 @@ The following section provides a conceptual representation of the model.
 \item \textbf{\textit{Anonym Request}}(\underline{Request Identification Number}, TPU, Time, State, Subscription?, Min Age, Max Age, Min Weight, Max Weight, Min Height, Max Height, Gender, Address)
 \\
 \item \textbf{\textit{Run}}(\underline{Run Identification number}, TPU, IU, Path, Start Time, End Time, Min Age, Max Age, Min participants, Max Participants)
-\item \textbf{\textit{Run Result}}(\underline{Run Identification number}, \underline{IU}, Lenght, Time, Arrival Position)
+\item \textbf{\textit{Run Result}}(\underline{Run Identification number}, \underline{IU}, Length, Time, Arrival Position)
 \end{itemize}
 %ModelInteractionDiagram-------------------------------------------------------------------------------------------------
 \subsection{Model Interaction Diagram}
@@ -197,14 +197,14 @@ The architecture style chosen is a client/server structure with multiple tiers. 
 The application server hosts the logic layer, exposing API to the clients, in order to access the subsystem functionalities and, for the D4H router, also to non-human TPUs which might access directly through the APIs; the application server is divided in four subsystems, each handling a piece of logic: a backbone, handling the core logic, storing data and user authorization, and providing interfaces to other subsystem to use its functionality, while the other subsystem independently handles the functionalities of the three services offered: D4H, ASOS and T4R. \\
 The database server hosts the data layer and all the subsystems on the application server and independently interacts with it.
 \\
-This will make for a modular software, enabling a fairly independent implementation and testing of each subsystem; morever, alongside the tiered structure, will improve scalability and maintainability.
+This will make for a modular software, enabling a fairly independent implementation and testing of each subsystem; moreover, alongside the tiered structure, will improve scalability and maintainability.
 
 \subsection{Event based paradigm}
 The backbone, namely the Data Dispatcher components, is an event-based subsystem that handles the dispatch of live data through the system. Live data, collected by the Data Collector/Dispatcher, serves as the event, broadcasted to all registered components. While introducing potential scalability problems, it simplifies the addition of the other subsystem.
 
 \subsection{REST and Real-Time API}
 \label{subsect:API}
-By creating a RESTful system, that uses REST API and using a stateless protocol which relieve the server from storing client context between requests, we increase performance, reliability, and scalability. That said, using this software architectural style only could be too restrictive since it doesn't cope well with Real-Time trasmission of data: for example within the Backbone, meaning between the component that collects the data on the client and the component on the server that receives, stores and forwards it. \\
+By creating a RESTful system, that uses REST API and using a stateless protocol which relieve the server from storing client context between requests, we increase performance, reliability, and scalability. That said, using this software architectural style only could be too restrictive since it doesn't cope well with Real-Time transmission of data: for example within the Backbone, meaning between the component that collects the data on the client and the component on the server that receives, stores and forwards it. \\
 To publish data as fast as possible a Real-Time oriented API is used as support to handle the automated, synchronous and bi-directional communication between the server and both the clients and eventual non-human TPUs, while the REST API will be used for all other needs. \\
 In particular a Streaming API is named in the \ref{subsect:highLevel} section, which implements a real time approach through a live connection. Other more event-based or push based methods are available.
 
